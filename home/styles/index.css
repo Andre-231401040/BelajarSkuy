@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #79caf5;
+  font-family: "Quicksand", sans-serif;
+}
+
+nav {
+  width: 100vw;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
+
+h1 {
+  flex: 2;
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  background: linear-gradient(202deg, #144166 -15.21%, #2577ba 57.53%, #2982cc 147.15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav a {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.navigation {
+  flex: 6;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-evenly;
+}
+
+.navigation a:hover {
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+.login_register {
+  flex: 2;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.login {
+  color: #2982cc;
+  padding: 12px;
+  font-weight: bolder;
+}
+
+.register {
+  color: white;
+  padding: 12px;
+  width: 108px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #2577ba;
+  font-weight: bolder;
+}
+
+.jumbotron {
+  height: 110vh;
+  display: flex;
+  padding: 36px;
+  justify-content: space-evenly;
+}
+
+.text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.jumbotron img {
+  height: 400px;
+  align-self: center;
+}
+
+.text h2 {
+  font-size: 32px;
+}
+
+.text .highlight {
+  font-size: 40px;
+  font-family: "Kaisei HarunoUmi";
+  background: linear-gradient(186deg, #0a6ddf 31.73%, #01131f 93.82%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text p {
+  font-size: 18px;
+}
+
+.link a {
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.apply {
+  color: white;
+  display: inline-block;
+  width: 160px;
+  font-weight: bolder;
+  padding: 12px;
+  margin-right: 36px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #60aede 42.3%, #345e78 89.99%);
+}
+
+.readmore {
+  color: black;
+  display: inline-block;
+  width: 160px;
+  font-weight: bolder;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid #2577ba;
+  background-color: #a6d3ee;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.faq img {
+  width: 120px;
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+}
+
+article {
+  gap: 20px;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#about p {
+  width: 50%;
+}
+
+.image {
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image img {
+  width: 320px;
+  height: 225px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course {
+  gap: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.course img {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 12px;
+  object-position: center;
+}
+
+.course a {
+  width: 150px;
+  padding: 5px;
+  color: black;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 40px;
+  text-decoration: none;
+  border: 2px solid #000;
+  background-color: #d9d9d9;
+  align-self: center;
+}
+
+footer {
+  width: 100vw;
+  background-color: #2e7dbf;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer h2 {
+  color: white;
+}
+
+.nama-website {
+  display: flex;
+  align-items: center;
+}
+
+.nama-website img {
+  width: 200px;
+}
+
+.nama-website h2 {
+  margin-left: -36px;
+}
+
+#social-media .gambar {
+  margin-top: 5px;
+}
+
+#social-media img {
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+}
