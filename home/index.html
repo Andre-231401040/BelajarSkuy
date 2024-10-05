@@ -30,7 +30,13 @@
         </div>
         <div class="login_register">
           <a href="" class="login">Login</a>
-          <a href="" class="register">Register</a>
+          <div class="register">
+            <button href="" class="register-button">Register</button>
+            <div class="register-option">
+              <a href="">as student</a>
+              <a href="">as teacher</a>
+            </div>
+          </div>
         </div>
       </nav>
       <div class="jumbotron">
@@ -40,23 +46,28 @@
             <h2 class="highlight">E-Learning</h2>
             <h2>At Your Home</h2>
           </header>
-          <p>Tingkatkan keterampilanmu dengan kursus online interaktif. Akses materi berkualitas, mentor berpengalaman, dan komunitas pembelajar yang siap mendukung perjalananmu. Mulai belajar hari ini dan raih impianmu!</p>
+          <p>Improve your skills with interactive online courses. Access quality materials, experienced mentors, and a learning community ready to support your journey. Start learning today and achieve your dreams!</p>
           <div class="link">
-            <a href="" class="apply">Apply Now</a>
-            <a href="" class="readmore">Read More</a>
+            <div class="apply">
+              <button href="" class="apply-button">Apply Now</button>
+              <div class="apply-option">
+                <a href="">as student</a>
+                <a href="">as teacher</a>
+              </div>
+            </div>
+            <a href="#about" class="readmore">Read More</a>
           </div>
         </div>
         <img src="../images/vektor.png" alt="gambar vektor dua orang sedang berbicara" />
       </div>
     </header>
     <main>
-      <a href="#" class="faq"><img src="../images/Main Logo.png" alt="logo faq" /></a>
+      <a href="faq.html" class="faq"><img src="../images/Main Logo.png" alt="logo faq" /></a>
       <article id="about">
         <h2>About Us</h2>
         <p>
-          Kami adalah platform kursus online yang berdedikasi untuk membantu kamu mengembangkan keterampilan dan pengetahuan di berbagai bidang, dari teknologi hingga kreativitas. Dengan akses ke materi yang up-to-date dan mentor
-          profesional, kami percaya bahwa setiap orang berhak untuk belajar tanpa batasan waktu dan tempat. Misi kami adalah menciptakan pengalaman belajar yang fleksibel, interaktif, dan berkualitas, sehingga kamu bisa meraih tujuan karier
-          dan pribadi dengan lebih percaya diri.
+          We are an online course platform dedicated to helping you develop skills and knowledge in various fields, from technology to creativity. With access to up-to-date materials and professional mentors, we believe that everyone has
+          the right to learn without limitations of time and place. Our mission is to create flexible, interactive and quality learning experiences, so you can achieve your career and personal goals with more confidence.
         </p>
         <div class="image">
           <img src="../images/development.jpg" alt="gambar vektor pengembangan aplikasi" />
@@ -71,7 +82,7 @@
             <img src="../images/webdev.jpg" alt="gambar kelas pengembangan web" />
             <h3>Web Development</h3>
             <p>Endriano Kitswanto</p>
-            <p>120000 siswa terdaftar</p>
+            <p>120000 registered students</p>
             <p>Rp500000</p>
             <a href="">Buy</a>
           </div>
@@ -79,7 +90,7 @@
             <img src="../images/physics.jpg" alt="gambar kelas fisika" />
             <h3>Physics</h3>
             <p>Alya Debora Panggabean</p>
-            <p>100000 siswa terdaftar</p>
+            <p>100000 registered students</p>
             <p>Rp0</p>
             <a href="">Enroll</a>
           </div>
@@ -87,7 +98,7 @@
             <img src="../images/finance.jpg" alt="gambar kelas keuangan" />
             <h3>Finance</h3>
             <p>Felicia Jennifer Febiola Simarmata</p>
-            <p>75000 siswa terdaftar</p>
+            <p>75000 registered students</p>
             <p>Rp250000</p>
             <a href="">Buy</a>
           </div>
@@ -100,7 +111,7 @@
         <h2>BelajarSkuy</h2>
       </div>
       <div id="social-media">
-        <h2>Hubungi Kami</h2>
+        <h2>Contact Us</h2>
         <div class="gambar">
           <a href="mailto:andrelim806@gmail.com" target="_blank"><img src="../images/gmail.png" alt="logo gmail" /></a>
           <a href="https://www.instagram.com/dree_lim" target="_blank"><img src="../images/instagram.png" alt="logo instagram" /></a>
@@ -108,5 +119,26 @@
         </div>
       </div>
     </footer>
+    <script>
+      const registerButton = document.querySelector(".register-button");
+      const registerOption = document.querySelector(".register-option");
+      registerButton.addEventListener("click", () => {
+        if (registerOption.style.opacity == 0) {
+          registerOption.style.opacity = 1;
+        } else {
+          registerOption.style.opacity = 0;
+        }
+      });
+
+      const applyButton = document.querySelector(".apply-button");
+      const applyOption = document.querySelector(".apply-option");
+      applyButton.addEventListener("click", () => {
+        if (applyOption.style.opacity == 0) {
+          applyOption.style.opacity = 1;
+        } else {
+          applyOption.style.opacity = 0;
+        }
+      });
+    </script>
   </body>
 </html>
