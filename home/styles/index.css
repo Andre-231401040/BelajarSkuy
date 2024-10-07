@@ -94,6 +94,11 @@ button {
   background-color: #d9d9d9;
 }
 
+.register-option a:hover,
+.apply-option a:hover {
+  background-color: darkgray;
+}
+
 .jumbotron {
   height: 110vh;
   display: flex;
