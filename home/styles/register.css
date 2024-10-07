@@ -46,7 +46,7 @@ main {
 
 form {
   flex: 7;
-  padding: 40px 64px;
+  padding: 60px 64px;
   background-color: white;
   border-radius: 36px 0 0 36px;
   display: flex;

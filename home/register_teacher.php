@@ -1,3 +1,31 @@
+<?php 
+require "function.php";
+
+if(isset($_POST["submit"])){
+    $nama = $_POST["first-name"] . ' ' . $_POST["last-name"];
+    $tanggal_lahir = $_POST["birth-date"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $confirm_password = $_POST["confirmation-password"];
+
+    if($password !== $confirm_password){
+        echo "<p class='failed'>Registrasi Gagal</p>";
+    }else{
+        $query = "INSERT INTO pengajar (nama, tanggal_lahir, email, password) VALUES ('$nama', '$tanggal_lahir', '$email', '$password')";
+        $result = pg_query($con, $query);
+    
+        if(!$result){
+            echo "<p class='failed'>Registrasi Gagal</p>";
+        }else{
+            echo "<p class='success'>Registrasi Berhasil</p>";
+        }
+    }
+
+    pg_close($con);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +45,20 @@
         .input-data.birth-date{
             width: 100%;
         }
+        .success, .failed{
+            width: 160px;
+            padding: 8px;
+            position: absolute;
+            left: 50%;
+            margin: 12px 0 0 -160px;  
+            border: 1px solid green;
+            background-color: rgba(153, 255, 51, 0.5);
+        }
+
+        .failed{
+            border: 1px solid red;
+            background-color: rgba(255, 153, 153, 0.5);
+        }
     </style>
   </head>
   <body>
@@ -28,7 +70,7 @@
             <h2>Your Teaching Journey Starts Here!</h2>
             <img src="../images/logo.png" alt="logo belajarskuy">
         </div>
-        <form action="">
+        <form method="post" action="register_teacher.php">
             <h1>Create Teacher Account</h1>
             <div class="form-row">
                 <div class="input-data">
@@ -37,7 +79,7 @@
                 </div>
                 <div class="input-data">
                     <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" name="last-name" required>
+                    <input type="text" id="last-name" name="last-name">
                 </div>
             </div>
             <div class="form-row">
@@ -64,7 +106,7 @@
             </div>
             <div class="form-row">
                 <div class="create-btn">
-                    <button type="submit">Create Account</button>
+                    <button type="submit" name="submit">Create Account</button>
                 </div>
             </div>
             <div class="links">Already have an account? <a href="login.php">Login</a></div>
