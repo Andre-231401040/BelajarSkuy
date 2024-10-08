@@ -1,3 +1,34 @@
+<?php 
+require "function.php";
+
+if(isset($_POST["login"])){
+  $email = $_POST["email"];
+  $isFoundStudent = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE email = '$email'"));
+  $isFoundTeacher = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE email = '$email'"));
+
+  if($isFoundStudent){
+    $password = $_POST["password"];
+    if($password === $isFoundStudent['password']){
+      header("Location: ../siswa/coba.html");
+    }else{
+      echo "<p class='failed'>Password Salah</p>";
+    }
+  }else if($isFoundTeacher){
+    $password = $_POST["password"];
+    if($password === $isFoundTeacher["password"]){
+      header("Location: ../pengajar/coba.html");
+    }else{
+      echo "<p class='failed'>Password Salah</p>";
+    }
+  }else{
+      echo "<p class='failed'>Email tidak ditemukan</p>";
+  }
+}
+
+pg_close($con);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,6 +47,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
     <!-- Style -->
     <link rel="stylesheet" href="styles/login.css" />
+
+    <style>
+        .failed{
+            width: 180px;
+            padding: 8px;
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            margin: 12px 0 0 -160px;  
+            border: 1px solid red;
+            background-color: rgba(255, 153, 153, 0.5);
+        }
+    </style>
   </head>
   <body>
     <header>
@@ -24,7 +68,7 @@
     <main>
       <article class="login-form">
         <img src="../images/Belajar skuy (2).png" alt="logo belajarskuy" />
-        <form action="">
+        <form method="post" action="login.php">
           <h1>Login</h1>
           <div class="input-data">
             <input type="text" name="email" id="email" required />
@@ -36,7 +80,7 @@
             <div class="underline"></div>
             <label for="password">Password</label>
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" name="login">Login</button>
           <div class="links">    
             <a href="register_student.php">Create an account</a>  
             <a href="">Forget Password?</a>

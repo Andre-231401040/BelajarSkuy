@@ -20,9 +20,9 @@ if(isset($_POST["submit"])){
             echo "<p class='success'>Registrasi Berhasil</p>";
         }
     }
-
-    pg_close($con);
 }
+
+pg_close($con);
 
 ?>
 
