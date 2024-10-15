@@ -1,5 +1,5 @@
 <?php 
-require "function.php";
+require "../function.php";
 
 if(isset($_POST["submit"])){
     $nama = $_POST["first-name"] . ' ' . $_POST["last-name"];

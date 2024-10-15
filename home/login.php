@@ -1,22 +1,24 @@
 <?php 
-require "function.php";
+require "../function.php";
 
 if(isset($_POST["login"])){
+  session_start();
   $email = $_POST["email"];
   $isFoundStudent = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE email = '$email'"));
   $isFoundTeacher = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE email = '$email'"));
+  $_SESSION["id"] = $isFoundTeacher["id"];
 
   if($isFoundStudent){
     $password = $_POST["password"];
     if($password === $isFoundStudent['password']){
-      header("Location: ../siswa/coba.html");
+      header("Location: ../siswa/home.php");
     }else{
       echo "<p class='failed'>Password Salah</p>";
     }
   }else if($isFoundTeacher){
     $password = $_POST["password"];
     if($password === $isFoundTeacher["password"]){
-      header("Location: ../pengajar/coba.html");
+      header("Location: ../pengajar/home.php?");
     }else{
       echo "<p class='failed'>Password Salah</p>";
     }
