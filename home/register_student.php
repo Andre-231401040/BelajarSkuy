@@ -61,14 +61,14 @@ if(isset($_POST["submit"])){
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="../images/home (1).png" alt="logo menu home" /></a>
+      <a href="../index.html"><img src="../images/home (1).png" alt="logo menu home" /></a>
     </header>
     <main>
         <div class="image">
             <h2>Your Learning Journey Starts Here!</h2>
             <img src="../images/logo.png" alt="logo belajarskuy">
         </div>
-        <form method="post" action="register_student.php">
+        <form method="post" action="register_student.php" autocomplete="off">
             <h1>Create Student Account</h1>
             <div class="form-row">
                 <div class="input-data">

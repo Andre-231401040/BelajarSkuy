@@ -19,7 +19,7 @@ header img {
   width: 48px;
 }
 
-.login-form {
+.reset-form {
   gap: 64px;
   display: flex;
   margin-top: 20px;
@@ -27,7 +27,7 @@ header img {
   align-items: center;
 }
 
-.login-form img {
+.reset-form img {
   width: 450px;
   border-radius: 60px;
 }
@@ -119,12 +119,8 @@ form button {
   font-weight: 700;
 }
 
-form .links {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 36px;
-  font-size: 12px;
+p {
+  margin-top: 20px;
 }
 
 .failed {
