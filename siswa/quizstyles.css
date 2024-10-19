@@ -1,0 +1,211 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #EEEED0;
+    font-family: "Quicksand", sans-serif;
+}
+
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rectangle{
+    display: flex;
+    align-items: left;
+    background-color: #77E8FA;
+    border-radius: 50px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    border: 2px solid #000; 
+}
+
+.circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #C9F8FC;
+    margin-right: 10px;
+    border: 2px solid #000; 
+}
+
+.nama{
+    font-weight: bold;
+    left: 80px;
+    top: 15px;
+}
+
+.container-sebelumtabel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.container-search{
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.rectangle-2{
+    display: flex;
+    align-items: right;
+    background-color: #77E8FA;
+    border-radius: 50px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px;
+    border: 2px solid #000;  
+}
+
+.circle-2{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #C9F8FC;
+    margin-right: 10px;
+    border: 2px solid #000;  
+}
+
+
+nav{
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    position:absolute;
+    top : 0;
+}
+
+.navigation {
+    flex: 6;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-evenly;
+    margin-left: 300px;
+    margin-top: 15px;
+
+}
+
+nav a,
+button {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+    transition: 0.2s;
+    opacity: 0.5;
+}
+
+.navkanan {
+    text-decoration: none;       
+    color: black;                
+}
+
+.container{
+    margin-bottom: 50PX;
+}
+
+.container-table{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+table{
+    border : 1px solid black;
+    width : 100%;
+    max-width : 411px;
+    height : 100%;
+    max-height : 576px;
+}
+
+.gambarKurs{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width : 100%;
+    max-width : 360px;
+    height : 100%;
+    max-height : 221px;
+    border : 1px solid black;
+}
+
+.container-circle{
+    display : flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.container-linktabel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 50px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid #000; 
+}
+
+table tr td a{
+    text-decoration: none;
+    color : black;
+    text-align: center;
+}
+
+.container-circle2{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.circle-3{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    margin-right: 10px;
+    border: 2px solid #000; 
+}
+
+@media (max-width: 600px) {
+    .rectangle {
+      max-width: 300px;
+      padding: 8px 15px;
+    }
+  
+    .circle {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .nama, .navigation {
+      font-size: 14px;
+    }
+
+    .navigation{
+        gap: 30px;
+    }
+  }
