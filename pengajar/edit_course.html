@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course</title>
+    <title> Edit Course</title>
     <!-- Quicksand Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
             border: 2px solid black; 
             width: 600px;
             height: 60px;
-            position: relative;
+            /* position: relative; */
         }
 
         .profil-circle {
@@ -87,49 +87,45 @@
             color: #36b5ff;
         }
 
-        .course-container {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px;
         }
 
-        .course-list {
+        /* Kolom Kiri untuk Teks */
+        .left-content {
+            width: 40%; /* Lebar kolom kiri */
+            padding-left: 20px;
+        }
+
+        .left-content h2 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        /* Kolom Kanan untuk .course-card */
+        .right-content {
+            width: 60%; /* Lebar kolom kanan */
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            flex-direction: column;
+            align-items: flex-end; /* Agar .course-card berada di kanan */
+            gap: 10px; /* Jarak antar card */
         }
 
         .course-card {
-            border: 2px solid #000;
-            width: 30%;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 0px;
-            text-align: left;
-            background-position: center;
-        }
-
-        .course-card img {
+            /* display: flex; */
+            /* align-items: center; */
+            background-color: #bec1c2; 
+            border-radius: 20px; 
+            padding: 10px 20px;
             width: 100%;
-            height: auto;
-            background-color: #ddd;
-            margin-bottom: 10px;
-            border: 2px solid #000;
-            object-fit: contain; 
-            transition: transform 0.3s ease;
+            height: 10px;
+            /* position: relative; */
         }
 
-        .course-card img:hover {
-        transform: scale(1.05); /* Zoom sedikit saat hover */
-}
-
-        .course-info {
-            text-align: left;
-        }
-
-        .course-info p {
-            margin: 5px 0;
-        }
-
-        .add-course {
+        .finish-course {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -141,11 +137,12 @@
             height: auto;
             position: absolute;
             right: 20px;
-            top: 150px;
+            bottom: 80px;
             color: black;
             text-decoration: none;
             font-weight: bold;
         }
+
 
     </style>
 </head>
@@ -169,39 +166,32 @@
         </nav>
     </header>
 
-    <a href="#" class="add-course"> + Kursus</a>
+    <div class="container">
+        <div class="left-content">
+            <h2>Judul</h2>
+            <h2>Deskripsi</h2>
+            <h2>Kategori</h2>
+            <h2>Harga</h2>
+            <h2>Materi (PDF)</h2>
+            <h2>Materi (Video)</h2>
+            <h2>Tugas</h2>
+            <h2>Kuis</h2>
+        </div>
 
-    <div class="course-container">
-        <h2 style="visibility: hidden;">Courses</h2> <!-- Menyembunyikan h2 tapi tetap menjaga ruang -->
-        <div class="course-list">
-            <div class="course-card">
-                <img src="../images/finance.jpg" alt="kursus 1">
-                <h2>Kursus 1</h2>
-                <div class="course-info">
-                    <p>Banyak Siswa</p>
-                    <p>Status Kursus</p>
-                    <p>Harga Kursus</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="../images/physics.jpg" alt="kursus 2">
-                <h2>Kursus 2</h2>
-                <div class="course-info">
-                    <p>Banyak Siswa</p>
-                    <p>Status Kursus</p>
-                    <p>Harga Kursus</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="../images/business.jpg" alt="kursus 3">
-                <h2>Kursus 3</h2>
-                <div class="course-info">
-                    <p>Banyak Siswa</p>
-                    <p>Status Kursus</p>
-                    <p>Harga Kursus</p>
-                </div>
-            </div>
+        <div class="right-content">
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
         </div>
     </div>
+
+
+    <a href="#" class="finish-course"> selesai </a>
+
 </body>
 </html>
