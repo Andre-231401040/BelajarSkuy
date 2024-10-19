@@ -63,14 +63,14 @@ pg_close($con);
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="../images/home (1).png" alt="logo menu home" /></a>
+      <a href="../index.html"><img src="../images/home (1).png" alt="logo menu home" /></a>
     </header>
     <main>
         <div class="image">
             <h2>Your Teaching Journey Starts Here!</h2>
             <img src="../images/logo.png" alt="logo belajarskuy">
         </div>
-        <form method="post" action="register_teacher.php">
+        <form method="post" action="register_teacher.php" autocomplete="off">
             <h1>Create Teacher Account</h1>
             <div class="form-row">
                 <div class="input-data">
