@@ -42,6 +42,11 @@ body{
     top: 15px;
 }
 
+.underline{
+    text-decoration: underline;
+    text-decoration-color: #069CB4;
+}
+
 .container-sebelumtabel{
     display: flex;
     align-items: center;
@@ -120,8 +125,8 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 70px;
+    justify-content: flex-start;
 }
 
 table{
@@ -133,7 +138,7 @@ table{
 }
 
 .gambarKurs{
-    display: block;
+    display: flex;
     margin-right: auto;
     margin-left: auto;
     width : 100%;
@@ -170,6 +175,10 @@ table{
     border: 2px solid #000; 
 }
 
+.judul{
+    padding: 10px 20px;
+}
+
 table tr td a{
     text-decoration: none;
     color : black;
@@ -179,6 +188,7 @@ table tr td a{
 .container-circle2{
     display: flex;
     justify-content: flex-start;
+    padding : 10px 20px;
 }
 
 .circle-3{
