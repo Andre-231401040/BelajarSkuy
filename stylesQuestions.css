@@ -74,6 +74,14 @@ button {
     text-decoration-color: #069CB4;
 }
 
+.profile-pic {
+    float: left;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
 .content {
     padding: 100px 20px; /* Add padding to avoid content being hidden behind the fixed header */
 }
@@ -103,7 +111,7 @@ button {
 }
 
 .ask-question:hover {
-    background-color: #0d95e8; /* Warna latar belakang saat hover */
+    background-color: #069db486; /* Warna latar belakang saat hover */
 }
 
 .side-navbar {
@@ -150,95 +158,54 @@ button {
     margin-top: 100px;
 }
 
-.tweet {
-    background-color: #d9d9d9;
-    border: 1px solid #e1e8ed;
-    border-radius: 10px;
+.form-container {
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.profile-pic {
-    float: left;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-}
-
-.tweet-header {
+    margin-left: 100px; /* Jarak dari sidebar */
+    width: calc(85% - 250px); /* Sesuaikan lebar form */
+    box-sizing: border-box;
+    background-color: #d9d9d9; /* Warna latar belakang kotak */
+    border: 2px solid #ccc; /* Border kotak */
+    border-radius: 10px; /* Membuat sudut kotak melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek kedalaman */
+    margin-top: 30px;
     display: flex;
-    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
 }
 
-.user-info {
-    display: inline-block;
+.form-container input#topic {
+    width: 100%; /* Atur lebar kotak Topic Discussion */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.username {
-    font-weight: bold;
-    display: block;
+.form-container textarea#new-tweet-content {
+    width: 100%; /* Atur lebar kotak Write Your Tweets lebih besar dari Topic */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 225px; /* Tambahkan tinggi minimum agar textarea lebih besar */
 }
 
-.time {
-    color: #657786;
-    font-size: 0.9em;
-}
 
-.tweet-content {
-    margin-top: 10px;
-    clear: both;
-}
-
-.tweet-content p {
-    font-size: 1.1em;
-}
-
-.tweet-footer {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-icon {
-    width: 20px;  /* Ubah ukuran gambar sesuai keinginan */
-    height: 20px; /* Sesuaikan tinggi gambar */
-    margin-right: 15px; /* Tambahkan jarak antara gambar */
-}
-
-.left-icons,
-.right-icons {
-    display: flex;
-    align-items: center;
-}
-
-.left-icons .icon,
-.right-icons .icon {
-    margin-right: 10px;
+.form-container button {
+    padding: 10px;
+    background-color: #069CB4;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    padding: 5px;
-    color: #1da1f2;
-    font-size: 1em;
+    margin-left: 795px;
+    width: 200px;
 }
 
-.right-icons {
-    margin-left: auto;
-}
-
-.icon:hover {
-    color: #0d95e8;
-}
-
-.icon {
-    font-size: 20px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.tweet-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.form-container button:hover {
+    background-color: #069db486;
 }
