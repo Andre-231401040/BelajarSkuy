@@ -30,60 +30,6 @@
     margin-top: 10px;
 }
 
-.square-container-2{
-    display: grid;
-    gap: 5px;
-    margin-top: 10px;
-}
-
-.square-2{
-    position: relative;
-    width: 260px;
-    height: 35px;
-    border-radius: 20px;
-    border: 2px solid black;
-    background-color: #C9F8FC;
-    margin-left: 6px;
-    margin-top: 1px ;
-    text-align: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.square-3{
-    position: relative;
-    width: 100px;
-    height: 35px;
-    border-radius: 20px;
-    border: 2px solid black;
-    background-color: #C9F8FC;
-    margin-top: 1px ;
-    margin-right: 6px;
-    text-align: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.square-4{
-    position: relative;
-    width: 370px;
-    height: 35px;
-    border-radius: 20px;
-    border: 2px solid black;
-    background-color: #C9F8FC;
-    margin-left: 6px;
-    margin-top: 1px ;
-    text-align: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .square-5{
     position: relative;
@@ -145,9 +91,6 @@
     background-color: #77E8FA;    
 }
 
-.rectangle-container-2{
-    margin-top: 15px;
-}
 
 .course{
     font-weight: bold;

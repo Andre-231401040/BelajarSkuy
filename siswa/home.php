@@ -1,3 +1,16 @@
+<?php 
+require "../function.php";
+session_start();
+
+$id_siswa = $_SESSION["id"];
+$data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
+$nama = $data_siswa["nama"];
+$gambar = $data_siswa["foto_profil"];
+
+pg_close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,91 +32,42 @@
 
 </head>
 <body>
-    <div class="container">
-        <div class="rectangle">
-            <div class="circle"></div>
-            <p class="nama">hana katharine</p>
-            <nav>
-                <div class="navigation">
-                <a href="#home">home</a>
-                <a href="#course">course</a>
-                <a href="#forum">forum</a>
-                <a href="#assignment">assignment</a>
-                <a href="#quiz">quiz</a>
+    <nav>
+        <a href="./profil_siswa.php" class="profil">
+            <?php if($gambar != null){ ?>
+                <img src="../images/siswa/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+            <?php }else{ ?>
+                <img src="../images/siswa/foto_profil/foto-1.jpg" alt="foto profil default">
+            <?php } ?>
+            <div class="nama">
+                <h2><?= $nama; ?></h2>
+                <div class="underline"></div>
             </div>
-            </nav>
-        </div>
-    </div>
+        </a>
+        <ul>
+            <li>
+                <a href="./home.php">Home</a>
+                <div class="underline"></div>
+            </li>
+            <li>
+                <a href="./course.php">Course</a>
+                <div class="underline"></div>
+            </li>
+            <li>
+                <a href="">Forum</a>
+                <div class="underline"></div>
+            </li>
+        </ul>
+    </nav>
 
-    <h1 style="margin-left: 30px;">HELLO, HANA KATHARINE</h1>
+    <h1 style="margin-left: 30px;">HELLO, <? echo $nama; ?></h1>
 
-
-
-    <div id="layout">
-            <div class="square">
-                <div class="circle-2">
-                    <p class="title">course</p>
-                </div>
-                    <div class="square-container">
-                        <div class="square-2">
-                            <p class="course">title</p>
-                        </div>
-                        <div class="square-3">
-                            <p class="course">status</p>
-                        </div>
-                        <div class="square-2"></div>
-                        <div class="square-3"></div>
-                        <div class="square-2"></div>
-                        <div class="square-3"></div>
-                        <div class="square-2"></div>
-                        <div class="square-3"></div>
-                        <div class="square-2"></div>
-                        <div class="square-3"></div>
-                        <div class="square-2"></div>
-                        <div class="square-3"></div>
-                    </div>
-            </div>
-            
-            
-
-            <div class="square">
-                <div class="circle-2">
-                    <p class="title">latest course</p>
-                </div>
-                    <div class="square-container-2">
-                        <div class="square-4">
-                            <p class="course">title</p>
-                        </div>
-                        <div class="square-4"></div>
-                        <div class="square-4"></div>
-                        <div class="square-4"></div>
-                        <div class="square-4"></div>
-                        <div class="square-4"></div>  
-                    </div>
-            </div>
-
-             <div class="square">
-                <div class="circle-2">
-                    <p class="title">agenda</p>
-                </div>
-                    <div class="square-container-2">
-                        <div class="square-4">
-                            <p class="course">title</p>
-                        </div>
-                        <div class="square-4"></div>
-                        <div class="square-4"></div>
-                        <div class="square-4"></div>
-                        <div class="square-4"></div>
-                        <div class="square-4"></div>  
-                    </div>
-            </div>
-    </div>
 
     <div id="activities">
-    <div class="rectangle-2">
-        <div class="circle-2">
-            <p class="title">activities</p>
-        </div>
+        <div class="rectangle-2">
+            <div class="circle-2">
+                <p class="title">course</p>
+            </div>
             <div class="square-container">
                 <div class="square-6">
                     <p class="course">date</p>
@@ -111,18 +75,61 @@
                 <div class="square-5">
                     <p class="course">title</p>
                 </div>
-                <div class="square-6"></div>
-                <div class="square-5"></div>
-                <div class="square-6"></div>
-                <div class="square-5"></div>
-                <div class="square-6"></div>
-                <div class="square-5"></div>
-                <div class="square-6"></div>
-                <div class="square-5"></div>
-                <div class="square-6"></div>
-                <div class="square-5"></div>
+                <div class="square-6">
+                </div>
+                <div class="square-5">
+                </div>
+                <div class="square-6">
+                </div>
+                <div class="square-5">
+                </div>
+                <div class="square-6">
+                </div>
+                <div class="square-5">
+                </div>
+                <div class="square-6">
+                </div>
+                <div class="square-5">
+                </div>
+                <div class="square-6">
+                </div>
+                <div class="square-5">
+                </div>
             </div>
-</div>
+        </div>
+    </div>
+    
+    <div id="activities">
+        <div class="rectangle-2">
+            <div class="circle-2">
+                <p class="title">latest course</p>
+            </div>
+            <div class="square-container">
+                <div class="square-6">
+                    <p class="course">date</p>
+                </div>
+                <div class="square-5">
+                    <p class="course">title</p>
+                </div>
+                <div class="square-6">
+                </div>
+                <div class="square-5">
+                </div><div class="square-6">
+                </div>
+                <div class="square-5">
+                </div><div class="square-6">
+                </div>
+                <div class="square-5">
+                </div><div class="square-6">
+                </div>
+                <div class="square-5">
+                </div><div class="square-6">
+                </div>
+                <div class="square-5">
+                </div>
+            </div>
+        </div>
+    </div>
    
 </body>
 </html>
