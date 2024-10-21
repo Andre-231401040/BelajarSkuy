@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="stylesforum.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/50" alt="Profile" class="profile-pic">
+                <p class="nama">username</p>
+            </div>
+            <nav class="navigation">
+                <a href="#home">home</a>
+                <a href="#course">course</a>
+                <a href="#forum" class="underline">forum</a>
+            </nav>
+    </header>
+    
+    <div class="main-container">
+        <div class="ask-question-container">
+            <button class="ask-question">Ask Question</button>
+        </div>
+        <!-- Side Navbar -->
+        <div class="side-navbar">
+            <ul>
+                <li><img src="ImagesFigma/discussion.png" alt="discussion" class="icon"><span onclick="showAll()">All Discussion</span></li>
+                <li><img src="ImagesFigma/newpost.png" alt="discussion" class="icon"><span onclick="showNewPosts()">New Posts</span></li>
+                <li><img src="ImagesFigma/myposts.png" alt="discussion" class="icon"><span onclick="showMyPosts()">My Posts</span></li>
+                <li><img src="ImagesFigma/save.png" alt="discussion" class="icon"><span onclick="showSavedPosts()">Saved Posts</span></li>
+                <li><img src="ImagesFigma/notification.png" alt="discussion" class="icon"><span onclick="showNotification()">Notification</span></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <!-- Example of a tweet -->
+            <div class="tweet" data-author="Felicia" data-time="6h ago" data-saved="false">
+                <div class="tweet-header">
+                    <img src="https://via.placeholder.com/50" alt="Profile" class="profile-pic">
+                    <div class="user-info">
+                        <span class="username">Felicia Jennifer</span><br>
+                        <span class="time">6h ago</span>
+                    </div>
+                </div>
+                <div class="tweet-content">
+                    <p>This is an example of a tweet. You can save this tweet!</p>
+                </div>
+                <div class="tweet-footer">
+                    <div class="left-icons">
+                        <img src="ImagesFigma/chat-bubble.png" alt="Comment Icon" class="footer-icon" onclick="comment()">
+                        <img src="ImagesFigma/more.png" alt="Like Icon" class="footer-icon" onclick="like()">
+                    </div>
+                    <div class="right-icons">
+                        <img src="ImagesFigma/save.png" alt="Save Icon" class="footer-icon" onclick="save(this)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another tweet -->
+            <div class="tweet" data-author="John" data-time="1d ago" data-saved="true">
+                <div class="tweet-header">
+                    <img src="https://via.placeholder.com/50" alt="Profile" class="profile-pic">
+                    <div class="user-info">
+                        <span class="username">John Doe</span><br>
+                        <span class="time">1d ago</span>
+                    </div>
+                </div>
+                <div class="tweet-content">
+                    <p>Loving the new web design! Excited to see more projects like this one!</p>
+                </div>
+                <div class="tweet-footer">
+                    <div class="left-icons">
+                        <img src="ImagesFigma/chat-bubble.png" alt="Comment Icon" class="footer-icon" onclick="comment()">
+                        <img src="ImagesFigma/more.png" alt="Like Icon" class="footer-icon" onclick="like()">
+                    </div>
+                    <div class="right-icons">
+                        <img src="ImagesFigma/save.png" alt="Save Icon" class="footer-icon" onclick="save(this)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another example tweet -->
+            <div class="tweet" data-author="Felicia" data-time="6h ago" data-saved="false">
+                <div class="tweet-header">
+                    <img src="https://via.placeholder.com/50" alt="Profile" class="profile-pic">
+                    <div class="user-info">
+                        <span class="username">Felicia Jennifer</span><br>
+                        <span class="time">6h ago</span>
+                    </div>
+                </div>
+                <div class="tweet-content">
+                    <p>This is an example of a tweet. You can save this tweet!</p>
+                </div>
+                <div class="tweet-footer">
+                    <div class="left-icons">
+                        <img src="ImagesFigma/chat-bubble.png" alt="Comment Icon" class="footer-icon" onclick="comment()">
+                        <img src="ImagesFigma/more.png" alt="Like Icon" class="footer-icon" onclick="like()">
+                    </div>
+                    <div class="right-icons">
+                        <img src="ImagesFigma/save.png" alt="Save Icon" class="footer-icon" onclick="save(this)">
+                    </div>
+                </div>
+            </div>            
+
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="scripts.js"></script>
+</body>
+</html>

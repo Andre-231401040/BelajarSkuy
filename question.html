@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Tweet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add a New Tweet</h2>
+        <form onsubmit="postNewTweet(); return false;">
+            <input type="text" id="topic" placeholder="Topic Discussion" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Topic Discussion')" required>
+            <textarea id="new-tweet-content" placeholder="Write your tweets" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Write your tweets')" required></textarea>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
