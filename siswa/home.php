@@ -18,7 +18,7 @@ pg_close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="styles/homeStyle.css">
 
     <!-- Fonts -->
     <!-- Racing Sans One -->
@@ -32,16 +32,17 @@ pg_close();
 
 </head>
 <body>
-    <nav>
-        <a href="./profil_siswa.php" class="profil">
-            <?php if($gambar != null){ ?>
-                <img src="../images/siswa/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
-            <?php }else{ ?>
-                <img src="../images/siswa/foto_profil/foto-1.jpg" alt="foto profil default">
-            <?php } ?>
-            <div class="nama">
-                <h2><?= $nama; ?></h2>
-                <div class="underline"></div>
+    <div class="container">
+        <div class="rectangle">
+            <div class="circle"></div>
+            <p class="nama">hana katharine</p>
+            <nav>
+                <div class="navigation">
+                <a href="#home">home</a>
+                <a href="#course">course</a>
+                <a href="#forum">forum</a>
+                <a href="#assignment">assignment</a>
+                <a href="#quiz">quiz</a>
             </div>
         </a>
         <ul>
