@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="styles/homeStyle.css">
 
     <!-- Fonts -->
     <!-- Racing Sans One -->
@@ -25,11 +25,9 @@
             <p class="nama">hana katharine</p>
             <nav>
                 <div class="navigation">
-                <a href="#home">home</a>
-                <a href="#course">course</a>
+                <a href="home.php">home</a>
+                <a href="course.php">course</a>
                 <a href="#forum">forum</a>
-                <a href="#assignment">assignment</a>
-                <a href="#quiz">quiz</a>
             </div>
             </nav>
         </div>
