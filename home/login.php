@@ -8,7 +8,7 @@ if(isset($_POST["login"])){
   $isFoundTeacher = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE email = '$email'"));
   
   if($isFoundStudent){
-    $_SESSION["id"] = $isFoundStudent["id"];
+    $_SESSION["id_siswa"] = $isFoundStudent["id"];
     $password = $_POST["password"];
     if($password === $isFoundStudent['password']){
       header("Location: ../siswa/home.php");
@@ -16,7 +16,7 @@ if(isset($_POST["login"])){
       echo "<p class='failed'>Password Salah</p>";
     }
   }else if($isFoundTeacher){
-    $_SESSION["id"] = $isFoundTeacher["id"];
+    $_SESSION["id_pengajar"] = $isFoundTeacher["id"];
     $password = $_POST["password"];
     if($password === $isFoundTeacher["password"]){
       header("Location: ../pengajar/home.php?");
