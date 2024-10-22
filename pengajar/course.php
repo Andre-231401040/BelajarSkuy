@@ -48,80 +48,17 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="">Forum</a>
+                    <a href="../forum.html">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <a href="#" class="add-course"> + Kursus</a>
+    <a href="./edit_course.php" class="add-course"> + Kursus</a>
 
     <div class="course-container">
-      <h2 style="visibility: hidden">Courses</h2>
-      
-      <div class="course-list">
-        <div class="course-card">
-          <div class="menu-container">
-            <div class="menu-trigger">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            <div class="dropdown-menu">
-              <a href="edit_course.php?id=<?= $course_id; ?>" class="edit-course">Edit</a>
-              <a href="#" class="delete-course">Hapus</a>
-            </div>
-          </div>
-          <img src="../images/finance.jpg" alt="kursus 1" />
-          <h2>Kursus 1</h2>
-          <div class="course-info">
-            <p>Banyak Siswa</p>
-            <p>Status Kursus</p>
-            <p>Harga Kursus</p>
-          </div>
-        </div>
-        <div class="course-card">
-        <div class="menu-container">
-            <div class="menu-trigger">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            <div class="dropdown-menu">
-            <a href="#" class="edit-course">Edit</a>
-            <a href="#" class="delete-course">Hapus</a>
-          </div>
-          </div>
-          <img src="../images/physics.jpg" alt="kursus 2" />
-          <h2>Kursus 2</h2>
-          <div class="course-info">
-            <p>Banyak Siswa</p>
-            <p>Status Kursus</p>
-            <p>Harga Kursus</p>
-          </div>
-        </div>
-        <div class="course-card">
-        <div class="menu-container">
-            <div class="menu-trigger">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            <div class="dropdown-menu">
-            <a href="#" class="edit-course">Edit</a>
-            <a href="#" class="delete-course">Hapus</a>
-          </div>
-          </div>
-          <img src="../images/business.jpg" alt="kursus 3" />
-          <h2>Kursus 3</h2>
-          <div class="course-info">
-            <p>Banyak Siswa</p>
-            <p>Status Kursus</p>
-            <p>Harga Kursus</p>
-          </div>
-        </div>
-      </div>
+
     </div>
     
     <script>
@@ -145,6 +82,5 @@ pg_close();
         });
       });
     </script>
-
   </body>
 </html>

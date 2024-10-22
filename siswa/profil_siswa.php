@@ -2,7 +2,7 @@
 require "../function.php";
 session_start();
 
-$id_siswa = $_SESSION["id"];
+$id_siswa = $_SESSION["id_siswa"];
 $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
 
 $nama = $data_siswa["nama"];

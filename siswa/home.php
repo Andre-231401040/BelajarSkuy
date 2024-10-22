@@ -2,7 +2,7 @@
 require "../function.php";
 session_start();
 
-$id_siswa = $_SESSION["id"];
+$id_siswa = $_SESSION["id_siswa"];
 $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
 $nama = $data_siswa["nama"];
 $gambar = $data_siswa["foto_profil"];
@@ -34,7 +34,7 @@ pg_close();
 <body>
     <header>
         <nav>
-            <a href="./edit_profil.php" class="profil">
+            <a href="./profil_siswa.php" class="profil">
                 <?php if($gambar != null){ ?>
                     <img src="../images/siswa/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>
