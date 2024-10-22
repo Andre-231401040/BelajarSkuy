@@ -7,6 +7,8 @@ $data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id 
 $nama = $data_pengajar["nama"];
 $gambar = $data_pengajar["foto_profil"];
 
+$data = pg_query($con, "SELECT * FROM kursus WHERE id_pengajar = $id_pengajar");
+
 pg_close();
 ?>
 
@@ -58,7 +60,30 @@ pg_close();
     <a href="./edit_course.php" class="add-course"> + Kursus</a>
 
     <div class="course-container">
-
+      <?php while($row = pg_fetch_assoc($data)){ ?>
+        <div class="course-card">
+          <div class="menu-container">
+            <div class="menu-trigger">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="dropdown-menu">
+              <a href="edit_course.php?id_kursus=<?= $row["id"]; ?>">Edit</a>
+              <a href="hapus_course.php?id_kursus=<?= $row["id"]; ?>">Hapus</a>
+            </div>
+          </div>
+          <img src="../thumbnail/<?= $row["thumbnail"]; ?>" alt="thumbnail kursus <?= $row["judul"]; ?>">
+          <h2><?= $row["judul"]; ?></h2>
+          <?php if(is_null($row["jumlah_siswa"])){ ?>
+            <p>0 siswa terdaftar</p>
+          <?php }else{ ?>
+            <p><?= $row["jumlah_siswa"]; ?> siswa terdaftar</p>
+          <?php } ?>
+          <p><?= $row["kategori"]; ?></p>
+          <p>Rp<?= $row["harga"]; ?></p>
+        </div>
+      <?php } ?>
     </div>
     
     <script>
