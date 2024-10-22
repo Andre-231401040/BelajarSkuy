@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a Question</title>
+    <link rel="stylesheet" href="stylesQuestions.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div class="rectangle">
+                <img src="https://via.placeholder.com/50" alt="Profile" class="profile-pic">
+                <p class="nama">username</p>
+            </div>
+            <nav class="navigation">
+                <a href="#home">home</a>
+                <a href="#course">course</a>
+                <a href="#forum" class="underline">forum</a>
+            </nav>
+    </header>
+    
+    <div class="main-container">
+        <div class="ask-question-container">
+            <button class="ask-question">Ask Question</button>
+        </div>
+        <!-- Side Navbar -->
+        <div class="side-navbar">
+            <ul>
+                <li><img src="images/discussion.png" alt="discussion" class="icon"><span onclick="showAll()">All Discussion</span></li>
+                <li><img src="images/newpost.png" alt="discussion" class="icon"><span onclick="showNewPosts()">New Posts</span></li>
+                <li><img src="images/myposts.png" alt="discussion" class="icon"><span onclick="showMyPosts()">My Posts</span></li>
+                <li><img src="images/save.png" alt="discussion" class="icon"><span onclick="showSavedPosts()">Saved Posts</span></li>
+            </ul>
+        </div>
+
+    <div class="form-container">
+        <form onsubmit="postNewTweet(); return false;">
+            <input type="text" id="topic" placeholder="Topic Discussion" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Topic Discussion')" required>
+            <textarea id="new-tweet-content" placeholder="Write your question" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Write your tweets')" required></textarea>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

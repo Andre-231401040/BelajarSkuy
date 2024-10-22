@@ -1,7 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Quicksand", sans-serif;
-  background-color: #e5e2b5;
-  /* background-color: #f9f4d4; */
+  background-color: #eeeed0;
   margin: 0;
   padding: 0;
 }
@@ -10,73 +15,128 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #e5e2b5;
+  background-color: #eeeed0;
   padding: 20px;
 }
 
-.pengajar-card {
+nav .profil {
+  gap: 12px;
+  width: 25%;
+  padding: 4px;
+  color: black;
   display: flex;
   align-items: center;
-  background-color: #73d9e8;
-  border-radius: 50px;
-  padding: 10px 20px;
-  border: 2px solid black;
-  width: 600px;
-  height: 60px;
-  position: relative;
+  border-radius: 25px;
+  text-decoration: none;
+  background-color: #77e8fa;
 }
 
-.profil-circle {
-  width: 60px;
-  height: 60px;
-  background-color: #b7f0f7; /* Warna biru muda lebih terang */
+.profil img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 2px solid black;
-  margin-right: 20px;
+  object-position: center;
 }
 
-.nama {
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
+.profil .nama {
+  gap: 2px;
+  width: 60%;
+  display: flex;
+  margin-top: -5px;
+  flex-direction: column;
 }
 
-.underline {
-  margin-top: 5px;
+.profil .underline {
   width: 100%;
   height: 2px;
   background-color: black;
 }
 
 nav {
+  width: 100%;
+  padding: 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+nav ul {
   display: flex;
+  width: 75%;
+  justify-content: space-evenly;
 }
 
-ul li {
-  margin: 0 15px;
+nav ul li {
+  list-style-type: none;
 }
 
-ul li a {
+nav ul li a {
+  padding: 12px;
+  color: black;
+  font-size: 20px;
   text-decoration: none;
-  color: #000;
-  font-weight: bold;
 }
 
-ul li a.active {
-  text-decoration: underline;
-  color: #36b5ff;
+nav ul li a:hover {
+  background-color: rgba(91, 206, 224, 0.29);
+}
+
+.menu-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  left: 320px;
+}
+
+.menu-trigger:hover .dot {
+  background-color: #77e8fa;
+}
+
+.menu-trigger {
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+}
+
+.menu-trigger .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #94a0a1;
+  border-radius: 50%;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 5px 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #77e8fa;
+}
+
+.menu-container.active .dropdown-menu {
+  display: block;
 }
 
 .course-container {
   padding: 20px;
+  margin-top: 60px;
 }
 
 .course-list {
@@ -93,6 +153,7 @@ ul li a.active {
   border-radius: 0px;
   text-align: left;
   background-position: center;
+  position: relative;
 }
 
 .course-card img {
@@ -102,11 +163,6 @@ ul li a.active {
   margin-bottom: 10px;
   border: 2px solid #000;
   object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.course-card img:hover {
-  transform: scale(1.05); /* Zoom sedikit saat hover */
 }
 
 .course-info {
