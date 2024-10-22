@@ -1,3 +1,18 @@
+<?php
+require "../function.php";
+session_start();
+
+//ini w tes dulu pake database sendiri
+$id_course = 1; //untuk sementara taruk 1 dulu biar bisa jalan phpnya
+$data_course = pg_fetch_assoc(pg_query($con, "SELECT * FROM course WHERE id = $id_course"));
+$nama_course = $data_course["namacourse"];
+$harga_course = $data_course['hargacourse'];
+
+pg_close();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +23,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <script type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="SB-Mid-client-_S8Yz3vjKJxC6Bjr"></script>
     <link rel="stylesheet" href="PayStyle.css">
 </head>
 <body>
@@ -28,30 +46,13 @@
     </header>
     <main>
         <div class="container-payment">
-            <div class="rectangle-4"><p>Nama Course</p></div>
-            <div class="rectangle-5"><p>Harga </p></div>
-            <div class="rectangle-6"><p>Last Payment Method</p></div>
-            <div class="rectangle-6"><p>All Payment Method</p></div>
-            <div class="container-PaymentMethod">
-                <div class="content">
-                    <img src="../images/logo_bca.jpg" alt="Logo BCA" class="gambarPayment">
-                  </div>
-                  <div class="content">
-                    <img src="../images/logo_dana.jpg" alt="Logo dana" class="gambarPayment">
-                  </div>
-                  <div class="content">
-                    <img src="../images/logo_ovo.jpg" alt="Logo ovo" class="gambarPayment">
-                  </div>
-                  <div class="content">
-                    <img src="../images/logo_gopay.jpg" alt="Logo gopay" class="gambarPayment">
-                  </div>
-            </div>
+            <div class="rectangle-4"><span class = "Text"><strong><?= $nama_course; ?></strong><span></div>
+            <div class="rectangle-5"><span class = "Text"><strong>TOTAL : <?= $harga_course; ?></strong><span></div>           
             <div class="container-linktabel">
-                <div class="rectangle-3">
-                    <a href="#">Pay</a>
-                </div>
+            <form> <button class="rectangle-3" type="submit" id="pay" value="checkout"> Pay </button></form>
             </div>
         </div>
     </main>
+    <script src="pay.js"></script>
 </body>
 </html>
