@@ -123,7 +123,8 @@ textarea::-webkit-scrollbar {
 }
 
 #materi_pdf,
-#materi_video {
+#materi_video,
+#thumbnail {
   height: fit-content;
 }
 
