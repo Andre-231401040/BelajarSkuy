@@ -32,36 +32,37 @@ pg_close();
 
 </head>
 <body>
-    <div class="container">
-        <div class="rectangle">
-            <div class="circle"></div>
-            <p class="nama">hana katharine</p>
-            <nav>
-                <div class="navigation">
-                <a href="#home">home</a>
-                <a href="#course">course</a>
-                <a href="#forum">forum</a>
-                <a href="#assignment">assignment</a>
-                <a href="#quiz">quiz</a>
-            </div>
-        </a>
-        <ul>
-            <li>
-                <a href="./home.php">Home</a>
-                <div class="underline"></div>
-            </li>
-            <li>
-                <a href="./course.php">Course</a>
-                <div class="underline"></div>
-            </li>
-            <li>
-                <a href="">Forum</a>
-                <div class="underline"></div>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <a href="./edit_profil.php" class="profil">
+                <?php if($gambar != null){ ?>
+                    <img src="../images/siswa/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                <?php }else{ ?>
+                    <img src="../images/siswa/foto_profil/foto-1.jpg" alt="foto profil default">
+                <?php } ?>
+                <div class="nama">
+                    <h2><?= $nama; ?></h2>
+                    <div class="underline"></div>
+                </div>
+            </a>
+            <ul>
+                <li>
+                    <a href="./home.php">Home</a>
+                    <div class="underline"></div>
+                </li>
+                <li>
+                    <a href="./course.php">Course</a>
+                    <div class="underline"></div>
+                </li>
+                <li>
+                    <a href="">Forum</a>
+                    <div class="underline"></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <h1 style="margin-left: 30px;">HELLO, <? echo $nama; ?></h1>
+    <h1 style="margin-left: 30px;">HELLO, <? echo $nama ?> </h1>
 
 
     <div id="activities">
@@ -107,7 +108,7 @@ pg_close();
             </div>
             <div class="square-container">
                 <div class="square-6">
-                    <p class="course">date</p>
+                    <p class="course">price</p>
                 </div>
                 <div class="square-5">
                     <p class="course">title</p>
@@ -133,4 +134,4 @@ pg_close();
     </div>
    
 </body>
-</html>
+</html> 
