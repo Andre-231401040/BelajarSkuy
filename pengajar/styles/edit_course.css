@@ -98,6 +98,10 @@ label {
   align-items: center;
 }
 
+label {
+  font-weight: bold;
+}
+
 input,
 textarea {
   border: none;
