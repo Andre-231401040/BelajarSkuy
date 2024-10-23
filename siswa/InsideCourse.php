@@ -27,54 +27,48 @@
       </div>
     </header>
     <main>
-      <h1>COURSE 1</h1>
+      <h1 style="margin: 20px">COURSE 1</h1>
       <div class="container-namapengajar">
         <div class="circle"></div>
         <h2>nama pengajar</h2>
       </div>
-      <div class="container-table">
-        <table>
-          <tr>
-            <td>
-              <img src="../images/business.jpg" class="gambarKurs" />
-              <h1 class="judul">PDF</h1>
-              <div class="container-deskripsi">
-                <div class="rectangle-4">
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque neque explicabo accusamus porro corrupti, sapiente exercitationem minima unde quos, quam eligendi, cumque eveniet doloribus distinctio
-                    tenetur dignissimos accusantium quidem.
-                  </p>
-                </div>
-              </div>
-              <div class="container-linktabel">
-                <div class="rectangle-3">
-                  <a href="#">Download</a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <table>
-          <tr>
-            <td>
-              <img src="../images/business.jpg" class="gambarKurs" />
-              <h1 class="judul">Video</h1>
-              <div class="container-deskripsi">
-                <div class="rectangle-4">
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque neque explicabo accusamus porro corrupti, sapiente exercitationem minima unde quos, quam eligendi, cumque eveniet doloribus distinctio
-                    tenetur dignissimos accusantium quidem.
-                  </p>
-                </div>
-              </div>
-              <div class="container-linktabel">
-                <div class="rectangle-3">
-                  <a href="#">Watch</a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
+      <div class="container-main">
+        <div class="container-materi">
+          <img src="../images/business.jpg" class="gambarKurs">
+          <h1 class="judul">PDF</h1>
+          <div class="container-linktabel">
+              <form>
+                <button class="rectangle-3" type="submit" id="download-pdf">Download</button>
+              </form>
+          </div>
+        </div>
+        <div class="container-materi">
+          <img src="../images/business.jpg" class="gambarKurs">
+          <h1 class="judul">Video</h1>
+          <div class="container-linktabel">
+              <form>
+                <button class="rectangle-3" type="submit" id="download-video">Download</button>
+              </form>
+          </div>
+        </div>
+        <div class="container-materi">
+          <img src="../images/business.jpg" class="gambarKurs">
+          <h1 class="judul">Quiz</h1>
+          <div class="container-linktabel">
+              <form>
+                <button class="rectangle-3" type="submit" id="do_now">Do Now</button>
+              </form>
+          </div>
+        </div>
+        <div class="container-materi">
+          <img src="../images/business.jpg" class="gambarKurs">
+          <h1 class="judul">Assignment</h1>
+          <div class="container-linktabel">
+              <form>
+                <button class="rectangle-3" type="submit" id="submit">Submit</button>
+              </form>
+          </div>
+        </div>
       </div>
     </main>
   </body>

@@ -2,7 +2,7 @@
 require "../function.php";
 session_start();
 
-$id_siswa = $_SESSION["id_siswa"];
+$id_siswa = 1;
 $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
 $nama = $data_siswa["nama"];
 $gambar = $data_siswa["foto_profil"];
@@ -62,7 +62,7 @@ pg_close();
         </nav>
     </header>
 
-    <h1 style="margin-left: 30px;">HELLO, <? echo $nama ?> </h1>
+    <h1 style="margin-left: 30px;">HELLO,<?= $nama; ?> </h1>
 
 
     <div id="activities">
