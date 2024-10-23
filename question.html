@@ -27,6 +27,7 @@
         <!-- Side Navbar -->
         <div class="side-navbar">
             <ul>
+                
                 <li><img src="images/discussion.png" alt="discussion" class="icon"><span onclick="showAll()">All Discussion</span></li>
                 <li><img src="images/newpost.png" alt="discussion" class="icon"><span onclick="showNewPosts()">New Posts</span></li>
                 <li><img src="images/myposts.png" alt="discussion" class="icon"><span onclick="showMyPosts()">My Posts</span></li>
@@ -34,14 +35,13 @@
             </ul>
         </div>
 
-    <div class="form-container">
-        <form onsubmit="postNewTweet(); return false;">
-            <input type="text" id="topic" placeholder="Topic Discussion" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Topic Discussion')" required>
-            <textarea id="new-tweet-content" placeholder="Write your question" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this, 'Write your tweets')" required></textarea>
-            <button type="submit">Post</button>
-        </form>
-    </div>
-
-    <script src="scripts.js"></script>
-</body>
-</html>
+        <div class="form-container">
+            <form action="ask_question.php" method="post">
+                <input type="text" id="topic" name="topic" placeholder="Topic Discussion" required>
+                <textarea id="new-tweet-content" name="new-tweet-content" placeholder="Write your question" required></textarea>
+                <button type="submit" name="submit">Post</button>
+            </form>
+        </div>
+    
+    </body>
+    </html>
