@@ -2,7 +2,7 @@
 require "../function.php";
 session_start();
 
-$id_siswa = 1;
+$id_siswa = $_SESSION["id_siswa"];
 $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
 $nama = $data_siswa["nama"];
 $profil = $data_siswa["foto_profil"];
@@ -96,59 +96,6 @@ pg_close();
           </div>
         </div>
         <?php } ?>
-        <!-- <div class="container-course">
-          <div class="container-circle">
-          <div class="circle-2"></div>
-          <div class="circle-2"></div>
-          <div class="circle-2"></div>
-          </div>
-          <img src="../images/business.jpg" class="gambarKurs" />
-          <h1 class="judul">Kursus 1</h1>
-          <div class="container-circle2">
-            <div class="circle-3"></div>
-            <p>Banyak Siswa</p>
-          </div>
-          <div class="container-circle2">
-          <div class="circle-3"></div>
-            <p>Status Kursus</p>
-          </div>
-          <div class="container-circle2">
-            <div class="circle-3"></div>
-            <p>Harga Kursus</p>
-          </div>
-          <div class="container-linktabel">
-              <form>
-                <button class="rectangle-3" type="submit" id="Enroll">Enroll Me</button>
-              </form>
-          </div>
-        </div>
-        <div class="container-course">
-          <div class="container-circle">
-          <div class="circle-2"></div>
-          <div class="circle-2"></div>
-          <div class="circle-2"></div>
-          </div>
-          <img src="../images/business.jpg" class="gambarKurs" />
-          <h1 class="judul">Kursus 1</h1>
-          <div class="container-circle2">
-            <div class="circle-3"></div>
-            <p>Banyak Siswa</p>
-          </div>
-          <div class="container-circle2">
-          <div class="circle-3"></div>
-            <p>Status Kursus</p>
-          </div>
-          <div class="container-circle2">
-            <div class="circle-3"></div>
-            <p>Harga Kursus</p>
-          </div>
-          <div class="container-linktabel">
-              <form>
-                <button class="rectangle-3" type="submit" id="Enroll">Enroll Me</button>
-              </form>
-          </div>
-        </div>
-      </div> -->
     </main>
     <script src="course.js"></script>
   </body>
