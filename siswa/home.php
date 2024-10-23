@@ -72,10 +72,10 @@ pg_close();
             </div>
             <div class="square-container">
                 <div class="square-6">
-                    <p class="course">date</p>
+                    <p class="title">date</p>
                 </div>
                 <div class="square-5">
-                    <p class="course">title</p>
+                    <p class="title">title</p>
                 </div>
                 <div class="square-6">
                 </div>
