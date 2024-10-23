@@ -1,32 +1,37 @@
 <?php
-// Konfigurasi database PostgreSQL
-$host = "localhost";
-$dbname = "forum";
-$user = "postgres"; // Sesuaikan dengan username PostgreSQL
-$password = "password"; // Masukkan password PostgreSQL
+require "function.php";
+session_start();
 
-// Membuat koneksi
-$conn = pg_connect("host=$host dbname=$dbname user=$user password=$password");
+if(isset($_SESSION["id_siswa"])){
+    $id_siswa = $_SESSION["id_siswa"];
+    $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
+}
+
+if(isset($_SESSION["id_pengajar"])){
+    $id_pengajar = $_SESSION["id_pengajar"];
+    $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
+}
 
 // Memeriksa koneksi
-if (!$conn) {
+if (!$con) {
     die("Connection failed: " . pg_last_error());
 }
-session_start();
 
 if (isset($_POST["submit"])) {
     // Debug: cek data yang diterima
     var_dump($_POST); // Periksa isi $_POST
     
-    $topic = htmlspecialchars($_POST['topic']);
-    $content = htmlspecialchars($_POST['new-tweet-content']);
+    $nama_pembuat = $data["nama"];
+    $topik = htmlspecialchars($_POST['topik']);
+    $konten = htmlspecialchars($_POST['konten']);
+    $foto_pembuat = $data["foto_profil"];
     
     // Menyimpan pertanyaan ke database
-    $query = "INSERT INTO questions (topic, content) VALUES ('$topic', '$content')";
-    $result = pg_query($conn, $query);
+    $query = "INSERT INTO pertanyaan (nama_pembuat, topik, konten, foto_pembuat) VALUES ('$nama_pembuat', '$topik', '$konten', '$foto_pembuat')";
+    $result = pg_query($con, $query);
     
     if ($result) {
-        header("Location: forum.html");
+        header("Location: forum.php");
     } else {
         echo "Pertanyaan tidak berhasil diupload";
     }

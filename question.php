@@ -1,3 +1,24 @@
+<?php 
+require "function.php";
+session_start();
+
+if(isset($_SESSION["id_pengajar"])){
+    $id_pengajar = $_SESSION["id_pengajar"];
+    $data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
+    $nama = $data_pengajar["nama"];
+    $gambar = $data_pengajar["foto_profil"];
+    $jalur = "pengajar";
+}else if(isset($_SESSION["id_siswa"])){
+    $id_siswa = $_SESSION["id_siswa"];
+    $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
+    $nama = $data_siswa["nama"];
+    $gambar = $data_siswa["foto_profil"];
+    $jalur = "siswa";
+}
+
+pg_close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +31,8 @@
     <header>
         <div class="container-header">
             <div class="rectangle">
-                <img src="https://via.placeholder.com/50" alt="Profile" class="profile-pic">
-                <p class="nama">username</p>
+                <img src="./images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>" class="profile-pic">
+                <p class="nama"><?= $nama; ?></p>
             </div>
             <nav class="navigation">
                 <a href="#home">home</a>
@@ -36,9 +57,9 @@
         </div>
 
         <div class="form-container">
-            <form action="ask_question.php" method="post">
-                <input type="text" id="topic" name="topic" placeholder="Topic Discussion" required>
-                <textarea id="new-tweet-content" name="new-tweet-content" placeholder="Write your question" required></textarea>
+            <form action="ask_question.php" method="post" autocomplete="off">
+                <input type="text" id="topik" name="topik" placeholder="Topic Discussion" required>
+                <textarea id="konten" name="konten" placeholder="Write your question" required></textarea>
                 <button type="submit" name="submit">Post</button>
             </form>
         </div>

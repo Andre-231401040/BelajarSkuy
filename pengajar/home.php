@@ -30,9 +30,9 @@ pg_close();
         <nav>
             <a href="./edit_profil.php" class="profil">
                 <?php if($gambar != null){ ?>
-                    <img src="../images/pengajar/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>
-                    <img src="../images/pengajar/foto_profil/foto-1.jpg" alt="foto profil default">
+                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
@@ -49,7 +49,7 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="">Forum</a>
+                    <a href="../forum.php">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>
