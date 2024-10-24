@@ -7,7 +7,7 @@ $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_
 $nama = $data_siswa["nama"];
 $profil = $data_siswa["foto_profil"];
 
-$query = "SELECT * FROM kursus WHERE id = 3";
+$query = "SELECT * FROM kursus";
 $data_course = pg_query($con, $query);
 pg_close();
 ?>
