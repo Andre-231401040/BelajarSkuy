@@ -14,6 +14,7 @@ body {
     align-items: center;
     width: 90%;
 }
+
 header {
     display: flex;
     width: 100%;
@@ -113,7 +114,6 @@ button {
     top: 100px;
     left: 50px;
     margin-top: 0;
-    
 }
 
 .side-navbar ul {
@@ -145,7 +145,7 @@ button {
 }
 
 .container {
-    margin-left: 180px; /* Adjust for the sidebar */
+    margin-left: 100px; /* Adjust for the sidebar */
     width: 60%;
     margin-top: 100px;
 }
@@ -157,6 +157,8 @@ button {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Atur lebar tweet untuk responsivitas */
+    width: 100%; /* Full width on smaller screens */
 }
 
 .profile-pic {
@@ -169,16 +171,39 @@ button {
 
 .tweet-header {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
 }
 
+.profile-pic-tweet {
+    margin-top: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.profile-tweet {
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+}
+
 .user-info {
-    display: inline-block;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-left: 10px;
+}
+
+.topic {
+    font-size: 20px; /* Gaya untuk topic */
+    font-weight: bold; /* Tebal */
+    margin-top: 3px; /* Ruang antara topic dan username */
+    margin-left: 5px;
 }
 
 .username {
     font-weight: bold;
-    display: block;
+    margin-top: 20px;
 }
 
 .time {
@@ -241,4 +266,64 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Media Query untuk responsivitas */
+@media (max-width: 768px) {
+    .tweet {
+        padding: 15px; /* Padding lebih kecil */
+    }
+
+    .tweet-content p {
+        font-size: 1em; /* Ukuran font lebih kecil */
+    }
+
+    .username {
+        font-size: 1.2em; /* Ukuran font username lebih kecil */
+    }
+
+    .time {
+        font-size: 0.8em; /* Ukuran font waktu lebih kecil */
+    }
+
+    .ask-question-container {
+        padding-left: 20px;
+    }
+
+    .ask-question {
+        width: 100%;
+    }
+
+    .side-navbar {
+        left: 0;
+        width: 32%; /* Lebar sidebar lebih kecil */
+        top: 100px; /* Penyesuaian posisi sidebar */
+        height: 330px
+    }
+
+    .container {
+        margin-left: 10px; /* Sesuaikan dengan lebar sidebar */
+        width: 80%; /* Lebar kontainer lebih besar */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+/* Media Query untuk layar sangat kecil (misalnya ponsel) */
+@media (max-width: 480px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .side-navbar ul li {
+        font-size: 16px;
+    }
+    
+    .form-container button {
+        width: 90%;
+    }
 }

@@ -2,7 +2,7 @@
 require "../function.php";
 session_start();
 
-$id_pengajar = $_SESSION["id"];
+$id_pengajar = $_SESSION["id_pengajar"];
 $data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
 $nama = $data_pengajar["nama"];
 $gambar = $data_pengajar["foto_profil"];
@@ -112,9 +112,9 @@ pg_close();
         <nav>
             <a href="./edit_profil.php" class="profil">
                 <?php if($gambar != null){ ?>
-                    <img src="../images/pengajar/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>
-                    <img src="../images/pengajar/foto_profil/foto-1.jpg" alt="foto profil default">
+                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
@@ -131,7 +131,11 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
+<<<<<<< HEAD
                     <a href="../forum.html">Forum</a>
+=======
+                    <a href="../forum.php">Forum</a>
+>>>>>>> dd01038bf4937f7d83226d2d7b0328ae8049864c
                     <div class="underline"></div>
                 </li>
             </ul>

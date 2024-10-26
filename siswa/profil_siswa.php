@@ -51,7 +51,7 @@ if(isset($_POST["submit"])){
                     // generate nama file baru
                     $foto_profil = uniqid();
                     $foto_profil .= "." . $ekstensi_gambar;
-                    move_uploaded_file($tmp_name, "../images/siswa/foto_profil/" . $foto_profil);
+                    move_uploaded_file($tmp_name, "../images/foto_profil/" . $foto_profil);
                     $query = "UPDATE siswa 
                     SET nama = '$nama', tanggal_lahir = '$tanggal_lahir', email = '$email', password = '$password', asal_sekolah = '$asal_sekolah', nomor_handphone = '$nomor_handphone',minat = '$minat', deskripsi_diri = '$deskripsi_diri', foto_profil = '$foto_profil'
                     WHERE id = $id_siswa";
@@ -104,9 +104,9 @@ pg_close($con);
     <main>
         <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
             <?php if($foto_profil != null){ ?>
-                <img src="../images/siswa/foto_profil/<?= $foto_profil; ?>" alt="foto profil <?= $nama; ?>">
+                <img src="../images/foto_profil/<?= $foto_profil; ?>" alt="foto profil <?= $nama; ?>">
             <?php }else{ ?>
-                <img src="../images/siswa/foto_profil/foto-1.jpg" alt="foto profil default">
+                <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
             <?php } ?>
             <label for="nama">Nama
                 <input type="text" id="nama" name="nama" value="<?= $nama; ?>" required>

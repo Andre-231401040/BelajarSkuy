@@ -2,7 +2,7 @@
 require "../function.php";
 session_start();
 
-$id_siswa = $_SESSION["id"];
+$id_siswa = 1;
 $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
 $nama = $data_siswa["nama"];
 $gambar = $data_siswa["foto_profil"];
@@ -36,9 +36,9 @@ pg_close();
         <nav>
             <a href="./profil_siswa.php" class="profil">
                 <?php if($gambar != null){ ?>
-                    <img src="../images/siswa/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>
-                    <img src="../images/siswa/foto_profil/foto-1.jpg" alt="foto profil default">
+                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
@@ -55,14 +55,14 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="">Forum</a>
+                    <a href="../forum.php">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <h1 style="margin-left: 30px;">HELLO, <? echo $nama ?> </h1>
+    <h1 style="margin-left: 30px;">HELLO,<?= $nama; ?> </h1>
 
 
     <div id="activities">
