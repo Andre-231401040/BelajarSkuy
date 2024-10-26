@@ -14,7 +14,7 @@ if(isset($_SESSION["id_pengajar"])){
     $gambar = $data_siswa["foto_profil"];
 }
 
-$data_pertanyaan = pg_query($con, "SELECT * FROM pertanyaan");
+$data_pertanyaan = pg_query($con, "SELECT * FROM questions");
 
 $dateNow = new DateTime();
 
@@ -26,23 +26,43 @@ pg_close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum</title>
+    <title><?= $nama; ?> |  Forum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="stylesforum.css">
 </head>
 <body>
     <header>
-        <div class="container-header">
-            <div class="rectangle">
-                <img src="./images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>" class="profile-pic">
-                <p class="nama"><?= $nama; ?></p>
-            </div>
-            <nav class="navigation">
-                <a href="#home">home</a>
-                <a href="#course">course</a>
-                <a href="#forum" class="underline">forum</a>
+        <nav>
+            <a href="./edit_profil.php" class="profil">
+                <?php if($gambar != null){ ?>
+                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                    <?php }else{ ?>
+                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+                <?php } ?>
+                <div class="nama">
+                    <h2><?= $nama; ?></h2>
+                    <div class="underline"></div>
+                </div>
+            </a>
+                <ul>
+                    <li>
+                        <a href="./home.php">Home</a>
+                        <div class="underline"></div>
+                    </li>
+                    <li>
+                        <a href="./course.php">Course</a>
+                        <div class="underline"></div>
+                    </li>
+                    <li>
+                        <a href="../forum.php">Forum</a>
+                        <div class="underline"></div>
+                    </li>
+                </ul>
             </nav>
-    </header>
+        </header>
     
     <div class="main-container">
         <div class="ask-question-container">
