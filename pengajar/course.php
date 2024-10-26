@@ -7,6 +7,8 @@ $data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id 
 $nama = $data_pengajar["nama"];
 $gambar = $data_pengajar["foto_profil"];
 
+$data = pg_query($con, "SELECT * FROM kursus WHERE id_pengajar = $id_pengajar");
+
 pg_close();
 ?>
 
@@ -48,19 +50,17 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="">Forum</a>
+                    <a href="../forum.html">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <a href="#" class="add-course"> + Kursus</a>
+    <a href="./edit_course.php" class="add-course"> + Kursus</a>
 
     <div class="course-container">
-      <h2 style="visibility: hidden">Courses</h2>
-      
-      <div class="course-list">
+      <?php while($row = pg_fetch_assoc($data)){ ?>
         <div class="course-card">
           <div class="menu-container">
             <div class="menu-trigger">
@@ -69,59 +69,21 @@ pg_close();
               <span class="dot"></span>
             </div>
             <div class="dropdown-menu">
-              <a href="edit_course.php?id=<?= $course_id; ?>" class="edit-course">Edit</a>
-              <a href="#" class="delete-course">Hapus</a>
+              <a href="edit_course.php?id_kursus=<?= $row["id"]; ?>">Edit</a>
+              <a href="hapus_course.php?id_kursus=<?= $row["id"]; ?>">Hapus</a>
             </div>
           </div>
-          <img src="../images/finance.jpg" alt="kursus 1" />
-          <h2>Kursus 1</h2>
-          <div class="course-info">
-            <p>Banyak Siswa</p>
-            <p>Status Kursus</p>
-            <p>Harga Kursus</p>
-          </div>
+          <img src="../thumbnail/<?= $row["thumbnail"]; ?>" alt="thumbnail kursus <?= $row["judul"]; ?>">
+          <h2><?= $row["judul"]; ?></h2>
+          <?php if(is_null($row["jumlah_siswa"])){ ?>
+            <p>0 siswa terdaftar</p>
+          <?php }else{ ?>
+            <p><?= $row["jumlah_siswa"]; ?> siswa terdaftar</p>
+          <?php } ?>
+          <p><?= $row["kategori"]; ?></p>
+          <p>Rp<?= $row["harga"]; ?></p>
         </div>
-        <div class="course-card">
-        <div class="menu-container">
-            <div class="menu-trigger">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            <div class="dropdown-menu">
-            <a href="#" class="edit-course">Edit</a>
-            <a href="#" class="delete-course">Hapus</a>
-          </div>
-          </div>
-          <img src="../images/physics.jpg" alt="kursus 2" />
-          <h2>Kursus 2</h2>
-          <div class="course-info">
-            <p>Banyak Siswa</p>
-            <p>Status Kursus</p>
-            <p>Harga Kursus</p>
-          </div>
-        </div>
-        <div class="course-card">
-        <div class="menu-container">
-            <div class="menu-trigger">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            <div class="dropdown-menu">
-            <a href="#" class="edit-course">Edit</a>
-            <a href="#" class="delete-course">Hapus</a>
-          </div>
-          </div>
-          <img src="../images/business.jpg" alt="kursus 3" />
-          <h2>Kursus 3</h2>
-          <div class="course-info">
-            <p>Banyak Siswa</p>
-            <p>Status Kursus</p>
-            <p>Harga Kursus</p>
-          </div>
-        </div>
-      </div>
+      <?php } ?>
     </div>
     
     <script>
@@ -145,6 +107,5 @@ pg_close();
         });
       });
     </script>
-
   </body>
 </html>

@@ -34,7 +34,7 @@ pg_close();
 <body>
     <header>
         <nav>
-            <a href="./edit_profil.php" class="profil">
+            <a href="./profil_siswa.php" class="profil">
                 <?php if($gambar != null){ ?>
                     <img src="../images/siswa/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>

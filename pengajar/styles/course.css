@@ -19,7 +19,6 @@ header {
   padding: 20px;
 }
 
-
 nav .profil {
   gap: 12px;
   width: 25%;
@@ -83,21 +82,30 @@ nav ul li a:hover {
   background-color: rgba(91, 206, 224, 0.29);
 }
 
-.menu-container {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 10px;
-  left: 320px;
+.course-container {
+  gap: 24px;
+  padding: 20px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
 }
 
-.menu-trigger:hover .dot {
-  background-color: #77e8fa; 
+.course-card {
+  gap: 12px;
+  width: 320px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 16px;
 }
 
 .menu-trigger {
+  gap: 5px;
+  width: 100%;
   cursor: pointer;
   display: flex;
-  gap: 5px;
+  justify-content: flex-end;
 }
 
 .menu-trigger .dot {
@@ -107,17 +115,20 @@ nav ul li a:hover {
   border-radius: 50%;
 }
 
+.menu-trigger:hover .dot {
+  background-color: #77e8fa;
+}
+
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 20px;
-  right: 0;
+  top: 32px;
+  right: 20px;
   background-color: #ddd;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  
 }
 
 .dropdown-menu a {
@@ -136,45 +147,11 @@ nav ul li a:hover {
   display: block;
 }
 
-.course-container {
-  padding: 20px;
-  margin-top: 60px;
-}
-
-.course-list {
-  display: flex;
-  justify-content: flex-start;
-  gap: 20px;
-}
-
-.course-card {
-  border: 2px solid #000;
-  width: 30%;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 0px;
-  text-align: left;
-  background-position: center;
-  position: relative;
-}
-
 .course-card img {
   width: 100%;
-  height: auto;
-  background-color: #ddd;
-  margin-bottom: 10px;
-  border: 2px solid #000;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
-
-.course-info {
-  text-align: left;
-}
-
-.course-info p {
-  margin: 5px 0;
-}
-
 
 .add-course {
   display: flex;
@@ -186,11 +163,10 @@ nav ul li a:hover {
   border: 2px solid black;
   width: auto;
   height: auto;
-  position: fixed;
+  position: absolute;
   right: 20px;
   top: 150px;
   color: black;
   text-decoration: none;
   font-weight: bold;
-  z-index: 1000;
 }
