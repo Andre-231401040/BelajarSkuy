@@ -9,80 +9,15 @@ body{
     font-family: "Quicksand", sans-serif;
 }
 
-.container{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.rectangle{
-    display: flex;
-    align-items: left;
-    background-color: #77E8FA;
-    border-radius: 50px;
-    padding: 10px 20px;
-    width: 50%;
-    max-width: 400px;
-    margin: 20px;
-    margin-bottom : -20px;
-    border: 2px solid #000; 
-}
-
-.circle img{
-    width: 56px;
-    height: 56px;
-    margin-right: 10px;
-    object-fit: cover;
-    border-radius: 50%;
-    object-position: center;
-}
-
 .nama{
-    gap: 2px;
-    width: 60%;
-    display: flex;
-    margin-top: -5px;
-    flex-direction: column;
+    font-weight: bold;
+    left: 80px;
+    top: 15px;
 }
 
 .underline{
     text-decoration: underline;
     text-decoration-color: #069CB4;
-}
-
-.container-sebelummain{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.container-search{
-    justify-content: flex-end;
-    padding: 20px;
-}
-
-.rectangle-2{
-    display: flex;
-    align-items: right;
-    background-color: #77E8FA;
-    border-radius: 50px;
-    padding: 10px 20px;
-    width: 100%;
-    max-width: 200px;
-    margin: 20px;
-    border: 2px solid #000; 
-}
-
-.circle-2{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #C9F8FC;
-    margin-right: 10px;
-    border: 2px solid #000;  
 }
 
 @media (min-width: 789px){
@@ -222,49 +157,11 @@ body{
         background-color: rgba(91, 206, 224, 0.29);
       }
 }
-.container-main{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
 
-.container-course{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border : 1px solid black;
-    width : 100%;
-    max-width : 411px;
-    height : 100%;
-    max-height : 576px;
-    margin : 20px;
-}
-
-.gambarKurs{
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
-    width : 100%;
-    max-width : 360px;
-    height : 100%;
-    max-height : 221px;
-    border : 1px solid black;
-}
-
-.container-circle{
-    display : flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 10px;
-    margin-top : 20px;
-    margin-bottom: 20px;
-}
 
 .container-linktabel{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -277,52 +174,63 @@ body{
     padding: 10px 20px;
     width: 100%;
     max-width: 200px;
-    margin-top : 20px;
-    margin-bottom: 20px;
+    margin : 1rem auto;
     text-align: center;
-    text-decoration: none;
-    border: 2px solid #000;
-    cursor : pointer; 
+    border: 2px solid #000; 
+    cursor : pointer;
 }
 
-.judul{
-    padding: 10px 20px;
-}
-
-
-.container-circle2{
+.container-payment{
     display: flex;
-    justify-content: flex-start;
-    padding : 10px 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
-.circle-3{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #D9D9D9;
-    margin-right: 10px;
+.rectangle-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A6DDF;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px;
+    text-align: center;
     border: 2px solid #000; 
 }
 
-@media (max-width: 900px){
-    .container-main{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.rectangle-5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C5C5C5;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid #000; 
 }
 
-@media (max-width: 400px){
-    .gambarKurs{
-        display: flex;
-        margin-right: auto;
-        margin-left: auto;
-        width : 90%;
-        max-width : 360px;
-        height : 90%;
-        max-height : 221px;
-        border : 1px solid black;
+
+@media (max-width: 600px) {
+    .rectangle {
+      max-width: 300px;
+      padding: 8px 15px;
     }
-}
+  
+    .circle {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .nama, .navigation {
+      font-size: 14px;
+    }
+
+    .navigation{
+        gap: 30px;
+    }
+  }
