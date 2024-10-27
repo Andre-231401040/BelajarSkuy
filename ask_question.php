@@ -2,12 +2,12 @@
 require "function.php";
 session_start();
 
-if(isset($_SESSION["id_siswa"])){
+if($_SESSION["isFound"] === "student"){
     $id_siswa = $_SESSION["id_siswa"];
     $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
 }
 
-if(isset($_SESSION["id_pengajar"])){
+if($_SESSION["isFound"] === "teacher"){
     $id_pengajar = $_SESSION["id_pengajar"];
     $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
 }
@@ -25,14 +25,17 @@ if (isset($_POST["submit"])) {
     $topik = htmlspecialchars($_POST['topik']);
     $konten = htmlspecialchars($_POST['konten']);
     $foto_pembuat = $data["foto_profil"];
-    $waktu_dibuat = date("Y-m-d H:i:s"); // Waktu posting saat ini
     
     // Menyimpan pertanyaan ke database
-    $query = "INSERT INTO pertanyaan (nama_pembuat, topik, konten, foto_pembuat, waktu_dibuat) VALUES ('$nama_pembuat', '$topik', '$konten', '$foto_pembuat', '$waktu_dibuat')";
+    $query = "INSERT INTO pertanyaan (nama_pembuat, topik, konten, foto_pembuat) VALUES ('$nama_pembuat', '$topik', '$konten', '$foto_pembuat')";
     $result = pg_query($con, $query);
     
     if ($result) {
-        header("Location: forum.php");
+        if($_GET["status"] == "siswa"){
+            header("Location: forum_siswa.php");
+        }else{
+            header("Location: forum_pengajar.php");
+        }
     } else {
         echo "Pertanyaan tidak berhasil diupload";
     }

@@ -50,7 +50,7 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="../forum.php">Forum</a>
+                    <a href="../forum_pengajar.php">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>

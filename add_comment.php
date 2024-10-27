@@ -3,10 +3,10 @@ require "function.php";
 session_start();
 
 // Mengambil data pengguna
-if (isset($_SESSION["id_siswa"])) {
+if ($_SESSION["isFound"] === "student") {
     $id_siswa = $_SESSION["id_siswa"];
     $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
-} elseif (isset($_SESSION["id_pengajar"])) {
+} else if ($_SESSION["isFound"] === "teacher") {
     $id_pengajar = $_SESSION["id_pengajar"];
     $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
 } else {

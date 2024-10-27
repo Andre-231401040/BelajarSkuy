@@ -15,8 +15,13 @@ $check_id_course = $check_id_siswa["id_kursus"];
 if(($check_id_course != $id_course)){
     $query1 = "INSERT INTO enroll(id_siswa, id_kursus) VALUES ($id_siswa, $id_course)";
     $result1 = pg_query($con,$query1);
-    $query2 = "UPDATE kursus SET jumlah_siswa = jumlah_siswa + 1 WHERE id = $id_course";
-    $result2 = pg_query($con,$query2);
+    if(is_null($data_course["jumlah_siswa"])){
+        $query2 = "UPDATE kursus SET jumlah_siswa = 1 WHERE id = $id_course";
+        $result2 = pg_query($con,$query2); 
+    }else{
+        $query2 = "UPDATE kursus SET jumlah_siswa = jumlah_siswa + 1 WHERE id = $id_course";
+        $result2 = pg_query($con,$query2); 
+    }
 }
 if (!$result1) {
     header("Location: InsideCourse.php");

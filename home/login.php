@@ -3,6 +3,7 @@ require "../function.php";
 
 if(isset($_POST["login"])){
   session_start();
+  // $_SESSION = array();
   $email = $_POST["email"];
   $isFoundStudent = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE email = '$email'"));
   $isFoundTeacher = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE email = '$email'"));
