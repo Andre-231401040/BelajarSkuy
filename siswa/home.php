@@ -34,7 +34,7 @@ pg_close();
     
     <link rel="stylesheet" href="styles/homeStyle.css">
 
-    <!-- Fonts -->
+   
     <!-- Racing Sans One -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
