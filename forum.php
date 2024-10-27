@@ -16,6 +16,7 @@ if(isset($_SESSION["id_pengajar"])){
 
 $data_pertanyaan = pg_query($con, "SELECT * FROM pertanyaan");
 
+date_default_timezone_set("Asia/Jakarta");
 $dateNow = new DateTime();
 
 pg_close();
@@ -70,8 +71,8 @@ pg_close();
                             <span class="time"><?php 
                                 $dateCreated = date_create($row["waktu_dibuat"]);
                                 $diff = date_diff($dateCreated, $dateNow);
-                                if($diff->h - 4 < 24){
-                                    echo $diff->h - 4 . "h ago";
+                                if($diff->h < 24){
+                                    echo $diff->h . "h ago";
                                 }else{
                                     echo $diff->d . "d ago";
                                 }
