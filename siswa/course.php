@@ -7,8 +7,14 @@ $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_
 $nama = $data_siswa["nama"];
 $profil = $data_siswa["foto_profil"];
 
-$query = "SELECT * FROM kursus WHERE id = 3";
-$data_course = pg_query($con, $query);
+$data_course = pg_query($con, "SELECT * FROM kursus");
+
+$data_success = pg_fetch_assoc(pg_query($con, "SELECT * FROM success_payment WHERE id_siswa = $id_siswa"));
+if($data_success != null){
+  $id_course_success = $data_success["id"];
+} else{
+  $id_course_success = null;
+}
 pg_close();
 ?>
 
@@ -51,7 +57,7 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="../forum.php">Forum</a>
+                    <a href="">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>
@@ -60,12 +66,6 @@ pg_close();
     <main>
       <div class="container-sebelummain">
         <h2>Most Popular Course</h2>
-        <div class="container-search">
-          <div class="rectangle-2">
-            <div class="circle-2"></div>
-            <p class="nama">search course</p>
-          </div>
-        </div>
       </div>
       <div class="container-main">
         <?php while($row = pg_fetch_assoc($data_course)) { ?>
@@ -75,28 +75,32 @@ pg_close();
           <div class="circle-2"></div>
           <div class="circle-2"></div>
           </div>
-          <img src="../images/business.jpg" class="gambarKurs" />
+          <img src="../thumbnail/<?= $row["thumbnail"]?>" class="gambarKurs" alt="<?= $row["judul"]?>"/>
           <h1 class="judul"><?= $row["judul"] ?></h1>
           <div class="container-circle2">
             <div class="circle-3"></div>
-            <p><?= $row["jumlah_siswa"] ?></p>
+            <p><?= $row["jumlah_siswa"]; ?></p>
           </div>
           <div class="container-circle2">
           <div class="circle-3"></div>
-            <p><?= $row["kategori"]?></p>
+            <p><?= $row["kategori"]; ?></p>
           </div>
           <div class="container-circle2">
             <div class="circle-3"></div>
             <p><?= $row["harga"]; ?></p>
           </div>
           <div class="container-linktabel">
-              <form>
-                <button class="rectangle-3" type="submit" id="Enroll">Enroll Me</button>
-              </form>
+            <?php if (($row["id"] == $id_course_success)) { ?>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Start</a>
+            <?php } else if ($row["harga"] != 0) { ?>
+              <a href="pay.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll">Enroll Me</a>
+            <?php } else { ?>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Enroll Me</a>
+            <?php } ?>
           </div>
         </div>
         <?php } ?>
+      </div>
     </main>
-    <script src="course.js"></script>
   </body>
 </html>
