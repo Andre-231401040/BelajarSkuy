@@ -31,7 +31,7 @@ pg_close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <!--css-->
     <link rel="stylesheet" href="styles/homeStyle.css">
 
     <!-- Fonts -->
