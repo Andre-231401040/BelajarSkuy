@@ -7,8 +7,8 @@ $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_
 $nama = $data_siswa["nama"];
 $profil = $data_siswa["foto_profil"];
 
-$id_course = $_SESSION["id_course"];
-$data_course = pg_fetch_assoc(pg_query($con, "SELECT * FROM kursus WHERE id = $id_course"));
+$id = $_GET["id"];
+$data_course = pg_fetch_assoc(pg_query($con, "SELECT * FROM kursus WHERE id = $id"));
 $id_pengajar = $data_course["id_pengajar"];
 $data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
 $nama_pengajar = $data_pengajar["nama"];
@@ -35,6 +35,15 @@ pg_close();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles/InsideCoursestyle.css" />
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('already_enrolled')) {
+                alert("kamu sudah terdaftar dalam kelas ini");
+            }
+        };
+    </script>
   </head>
   <body>
     <header>

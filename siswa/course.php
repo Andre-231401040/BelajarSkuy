@@ -8,13 +8,6 @@ $nama = $data_siswa["nama"];
 $profil = $data_siswa["foto_profil"];
 
 $data_course = pg_query($con, "SELECT * FROM kursus");
-
-$data_success = pg_fetch_assoc(pg_query($con, "SELECT * FROM success_payment WHERE id_siswa = $id_siswa"));
-if($data_success != null){
-  $id_course_success = $data_success["id"];
-} else{
-  $id_course_success = null;
-}
 pg_close();
 ?>
 
@@ -90,12 +83,10 @@ pg_close();
             <p><?= $row["harga"]; ?></p>
           </div>
           <div class="container-linktabel">
-            <?php if (($row["id"] == $id_course_success)) { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Start</a>
-            <?php } else if ($row["harga"] != 0) { ?>
+            <?php if ($row["harga"] != 0) { ?>
               <a href="pay.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll">Enroll Me</a>
             <?php } else { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Enroll Me</a>
+              <a href="enrollment.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll">Enroll Me</a>
             <?php } ?>
           </div>
         </div>
