@@ -5,30 +5,27 @@ function showAll() {
   });
 }
 
+const currentUserId = isset($currentUserId) ? $currentUserId : 'null'; // Ambil ID pengguna saat ini
 function showNewPosts() {
-  const tweets = document.querySelectorAll(".tweet");
-  tweets.forEach((tweet) => {
-    const time = tweet.getAttribute("data-time");
-    // Show only tweets with "h ago" (hours ago) indicating recent posts
-    if (time.includes("h")) {
-      tweet.style.display = "block";
-    } else {
-      tweet.style.display = "none";
-    }
-  });
-}
+  const allPosts = document.querySelectorAll('.tweet');
+            allPosts.forEach(post => {
+                if (post.classList.contains('new-post')) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
 
 function showMyPosts() {
-  const tweets = document.querySelectorAll(".tweet");
-  tweets.forEach((tweet) => {
-    const author = tweet.getAttribute("data-author");
-    // Show only tweets by the user "Felicia"
-    if (author === "Felicia") {
-      tweet.style.display = "block";
+  document.querySelectorAll('.tweet').forEach(tweet => {
+    const tweetUserId = tweet.getAttribute('data-user-id');
+    if (tweetUserId == currentUserId) {
+        tweet.style.display = 'block'; // Tampilkan postingan user saat ini
     } else {
-      tweet.style.display = "none";
+        tweet.style.display = 'none'; // Sembunyikan postingan dari user lain
     }
-  });
+});
 }
 
 function showSavedPosts() {
@@ -59,3 +56,31 @@ function save(element) {
     element.src = "images/bookmark.png"; // Ubah ikon menjadi penuh
   }
 }
+
+// Fungsi untuk menambahkan komentar baru ke DOM
+function addComment(namaPengguna, waktuDibuat, komentar) {
+  const commentsContainer = document.getElementById('commentsContainer');
+  
+  // Membuat elemen baru untuk komentar
+  const newComment = document.createElement('div');
+  newComment.classList.add('comment');
+  newComment.innerHTML = `<p><strong>${namaPengguna}</strong> (${waktuDibuat})</p><p>${komentar}</p>`;
+  
+  // Menambahkan komentar baru ke container
+  commentsContainer.appendChild(newComment);
+}
+
+// Menangani pengiriman form komentar
+document.querySelector('.form-container form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Mencegah pengiriman form default
+
+  const konten = document.getElementById('konten').value; // Ambil nilai dari textarea
+  const namaPengguna = '<?= $nama; ?>'; // Ambil nama pengguna dari PHP
+  const waktuDibuat = new Date().toLocaleString(); // Waktu saat ini
+
+  // Menambahkan komentar baru ke DOM
+  addComment(namaPengguna, waktuDibuat, konten);
+
+  // Kosongkan textarea setelah komentar ditambahkan
+  document.getElementById('konten').value = '';
+});

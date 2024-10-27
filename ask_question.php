@@ -25,9 +25,10 @@ if (isset($_POST["submit"])) {
     $topik = htmlspecialchars($_POST['topik']);
     $konten = htmlspecialchars($_POST['konten']);
     $foto_pembuat = $data["foto_profil"];
+    $waktu_dibuat = date("Y-m-d H:i:s"); // Waktu posting saat ini
     
     // Menyimpan pertanyaan ke database
-    $query = "INSERT INTO pertanyaan (nama_pembuat, topik, konten, foto_pembuat) VALUES ('$nama_pembuat', '$topik', '$konten', '$foto_pembuat')";
+    $query = "INSERT INTO pertanyaan (nama_pembuat, topik, konten, foto_pembuat, waktu_dibuat) VALUES ('$nama_pembuat', '$topik', '$konten', '$foto_pembuat', '$waktu_dibuat')";
     $result = pg_query($con, $query);
     
     if ($result) {
