@@ -30,25 +30,25 @@ if(isset($_POST["submit"])){
     if($password !== $confirmation_password){
         echo "<script>alert('Password dan Confirmation Password Harus Sama')</script>";
     }else{
-        // upload gambar
+
         if($_FILES["foto-profil"]["size"] !== 0){
             $nama_file = $_FILES["foto-profil"]["name"];
             $ukuran_file = $_FILES["foto-profil"]["size"];
             $error = $_FILES["foto-profil"]["error"];
             $tmp_name = $_FILES["foto-profil"]["tmp_name"];
     
-            // cek apakah gambar valid atau tidak
+            
             $ekstensi_valid = ["jpg", "png", "jpeg"];
             $ekstensi_gambar = explode(".", $nama_file);
             $ekstensi_gambar = strtolower(end($ekstensi_gambar));
             if(!in_array($ekstensi_gambar, $ekstensi_valid)){
                 echo "<script>alert('Silahkan masukkan gambar dengan ekstensi jpg, jpeg, atau png')</script>";
             }else{
-                // cek ukuran gambar
+                
                 if($ukuran_file > 2000000){
                     echo "<script>alert('Ukuran gambar terlalu besar')</script>";
                 }else{
-                    // generate nama file baru
+                    
                     $foto_profil = uniqid();
                     $foto_profil .= "." . $ekstensi_gambar;
                     move_uploaded_file($tmp_name, "../images/foto_profil/" . $foto_profil);
@@ -97,7 +97,7 @@ pg_close($con);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
     <!-- Style -->
-     <link rel="stylesheet" href="./styles/edit_profil.css">
+     <link rel="stylesheet" href="./styles/profil_siswa.css">
     
 </head>
 <body>
