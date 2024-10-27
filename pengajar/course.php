@@ -50,7 +50,11 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
+<<<<<<< HEAD
+                    <a href="../forum.html">Forum</a>
+=======
                     <a href="../forum.php">Forum</a>
+>>>>>>> dd01038bf4937f7d83226d2d7b0328ae8049864c
                     <div class="underline"></div>
                 </li>
             </ul>

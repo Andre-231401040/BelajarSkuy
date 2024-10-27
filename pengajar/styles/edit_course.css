@@ -98,10 +98,13 @@ label {
   align-items: center;
 }
 
+<<<<<<< HEAD
+=======
 label {
   font-weight: bold;
 }
 
+>>>>>>> dd01038bf4937f7d83226d2d7b0328ae8049864c
 input,
 textarea {
   border: none;
