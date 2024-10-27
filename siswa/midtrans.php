@@ -1,13 +1,20 @@
 <?php
+require "../function.php";
+session_start();
 
-/*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
-composer require midtrans/midtrans-php
-                              
-Alternatively, if you are not using **Composer**, you can download midtrans-php library 
-(https://github.com/Midtrans/midtrans-php/archive/master.zip), and then require 
-the file manually.   
+$id_siswa = $_SESSION["id_siswa"];
+$data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
+$nama = $data_siswa["nama"];
+$no_hp = $data_siswa["nomor_handphone"];
+$email = $data_siswa["email"];
 
-require_once dirname(__FILE__) . '/pathofproject/Midtrans.php'; */
+$id = $_SESSION["id"]; //untuk sementara taruk 1 dulu biar bisa jalan phpnya
+$data_course = pg_fetch_assoc(pg_query($con, "SELECT * FROM kursus WHERE id = $id"));
+$harga_course = $data_course["harga"];
+$judul_course = $data_course["judul"];
+pg_close();
+
+
 require_once dirname(__FILE__) . '/midtrans-php-master/Midtrans.php'; 
 //SAMPLE REQUEST START HERE
 
@@ -25,10 +32,12 @@ require_once dirname(__FILE__) . '/midtrans-php-master/Midtrans.php';
 $params = array(
     'transaction_details' => array(
         'order_id' => rand(),
-        'gross_amount' => 10000,
+        'gross_amount' => $harga_course,
     ),
     'customer_details' => array(
-        'name' => 'Endri',
+        'first_name' => $nama,
+        'email' => $email,
+        'phone' => $no_hp,
     ),
 );
 
