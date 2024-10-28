@@ -238,7 +238,6 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-<<<<<<< HEAD
     padding: 20px;
 }
 
@@ -499,8 +498,6 @@ nav ul li a:hover {
 
 .container-materi{
     display: flex;
-=======
->>>>>>> bcae9f7a841d1d9120bebf964866729df01ae721
     flex-direction: row;
   }
 
