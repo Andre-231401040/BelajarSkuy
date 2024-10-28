@@ -54,7 +54,7 @@ pg_close($con);
   </head>
   <body>
     <header>
-      <a href="../index.html"><img src="../images/home (1).png" alt="logo menu home" /></a>
+      <a href="../index.php"><img src="../images/home (1).png" alt="logo menu home" /></a>
     </header>
     <main>
       <article class="login-form">

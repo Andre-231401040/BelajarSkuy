@@ -83,7 +83,7 @@ pg_close();
             <h3>Comments</h3>
             <?php while ($komentar = pg_fetch_assoc($data_komentar)): ?>
                 <div class="comment" style="border: 1px solid #ddd; padding: 10px; margin-top: 10px; border-radius: 5px; background-color: #ffffff;">
-                    <p><strong><?= htmlspecialchars($komentar['nama_pengguna']); ?></strong> (<?= $komentar['waktu_dibuat']; ?>)</p>
+                    <p><strong><?= htmlspecialchars($komentar['nama_pembuat']); ?></strong> (<?= $komentar['waktu_dibuat']; ?>)</p>
                     <p><?= htmlspecialchars($komentar['komentar']); ?></p>
                 </div>
             <?php endwhile; ?>

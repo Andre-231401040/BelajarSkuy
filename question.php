@@ -68,7 +68,7 @@ pg_close();
         </div>
 
         <div class="form-container">
-            <form action="ask_question.php?status=<?= $status; ?>" method="post" autocomplete="off">
+            <form action="ask_question.php" method="post" autocomplete="off">
                 <input type="text" id="topik" name="topik" placeholder="Topic Discussion" required>
                 <textarea id="konten" name="konten" placeholder="Write your question" required></textarea>
                 <button type="submit" name="submit">Post</button>

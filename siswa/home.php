@@ -7,16 +7,11 @@ $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_
 $nama = $data_siswa["nama"];
 $gambar = $data_siswa["foto_profil"];
 
-
-$data_enrolled_courses = pg_query($con, "SELECT kursus.judul, kursus.harga, enrollment.enrollment_date 
-    FROM kursus INNER JOIN enrollment ON kursus.id = enrollment.id_kursus 
-    WHERE enrollment.id_siswa = $id_siswa
-    ORDER BY enrollment.enrollment_date DESC");
+$data_enrolled_courses = pg_query($con, "SELECT DISTINCT ON (enroll.id_kursus) * FROM kursus INNER JOIN enroll ON kursus.id = enroll.id_kursus WHERE enroll.id_siswa = $id_siswa");
 $courses = pg_fetch_all($data_enrolled_courses);
 
 $data_latest_courses = pg_query($con, "SELECT judul, harga FROM kursus LIMIT 6");
 $latest_courses = pg_fetch_all($data_latest_courses);
-
 
 pg_close();
 ?>
@@ -66,7 +61,7 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="../forum.php">Forum</a>
+                    <a href="../forum_siswa.php">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>
@@ -74,56 +69,53 @@ pg_close();
     </header>
 
     <h1 style="margin-left: 30px;">Hi, <?= $nama; ?> </h1>
-
-
-    <div id="activities">
-    <div class="rectangle-2">
-        <div class="circle-2">
-            <p class="title">Course</p>
-        </div>
-        <div class="square-container">
-            <div class="square-6">
-                <p class="text">Date</p>
-            </div>
-            <div class="square-5">
-                <p class="text">Title</p>
-            </div>
-
-            <?php
-            $min_courses = 6; 
-            $total_courses = count($courses);
-            $course_count = max($total_courses, $min_courses); 
-
-            
-            for ($i = 0; $i < $course_count; $i++): 
-                if ($i < $total_courses): 
-            ?>
-                    <div class="square-6">
-                        <p class="text"><?= $courses[$i]['enrollment_date']; ?></p>
-                    </div>
-                    <div class="square-5">
-                        <p class="text"><?= $courses[$i]['judul']; ?></p>
-                    </div>
-                <?php else: ?>
-                    <div class="square-6"></div>
-                    <div class="square-5"></div>
-                <?php endif; ?>
-            <?php endfor; ?>
-        </div>
-    </div>
-</div>
     
     <div id="activities">
+        <div class="rectangle-2">
+            <div class="circle-2">
+                <p class="title">Kursus</p>
+            </div>
+            <div class="square-container">
+                <div class="square-6">
+                    <p class="text">Kategori</p>
+                </div>
+                <div class="square-5">
+                    <p class="text">Judul</p>
+                </div>
+                <?php
+                    $min_courses = 6; 
+                    $total_courses = count($courses);
+                    $course_count = max($total_courses, $min_courses); 
+
+                    for ($i = 0; $i < $course_count; $i++): 
+                        if ($i < $total_courses): 
+                ?>
+                            <div class="square-6">
+                                <p class="text"><?= $courses[$i]['kategori']; ?></p>
+                            </div>
+                            <div class="square-5">
+                                <p class="text"><?= $courses[$i]['judul']; ?></p>
+                            </div>
+                        <?php else: ?>
+                            <div class="square-6"></div>
+                            <div class="square-5"></div>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+            </div>
+        </div>
+    </div>
+
+    <div id="activities">
     <div class="rectangle-2">
         <div class="circle-2">
-            <p class="title">Latest Courses</p>
+            <p class="title">Kursus Terbaru</p>
         </div>
         <div class="square-container">
             <div class="square-6">
-                <p class="text">Price</p>
+                <p class="text">Harga</p>
             </div>
             <div class="square-5">
-                <p class="text">Title</p>
+                <p class="text">Judul</p>
             </div>
 
             <?php if ($latest_courses): ?>

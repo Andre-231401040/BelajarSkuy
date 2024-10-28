@@ -21,13 +21,14 @@ if (isset($_POST["submit"])) {
     // Debug: cek data yang diterima
     var_dump($_POST); // Periksa isi $_POST
     
+    $email_pembuat = $data["email"];
     $nama_pembuat = $data["nama"];
     $topik = htmlspecialchars($_POST['topik']);
     $konten = htmlspecialchars($_POST['konten']);
     $foto_pembuat = $data["foto_profil"];
     
     // Menyimpan pertanyaan ke database
-    $query = "INSERT INTO pertanyaan (nama_pembuat, topik, konten, foto_pembuat) VALUES ('$nama_pembuat', '$topik', '$konten', '$foto_pembuat')";
+    $query = "INSERT INTO pertanyaan (email_pembuat, nama_pembuat, topik, konten, foto_pembuat) VALUES ('$email_pembuat', '$nama_pembuat', '$topik', '$konten', '$foto_pembuat')";
     $result = pg_query($con, $query);
     
     if ($result) {

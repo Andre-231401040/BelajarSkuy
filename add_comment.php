@@ -28,12 +28,14 @@ if (isset($_POST["submit"])) {
     if ($id_postingan <= 0) {
         die("Invalid Post ID.");
     }
-    $nama_pengguna = $data["nama"]; // Nama pengguna dari sesi
+    $email_pembuat = $data["email"];
+    $nama_pembuat = $data["nama"]; // Nama pengguna dari sesi
     $komentar = htmlspecialchars($_POST['konten']); // Konten komentar
+    date_default_timezone_set("Asia/Jakarta");
     $waktu_dibuat = date("Y-m-d H:i:s"); // Waktu posting saat ini
 
     // Menyimpan komentar ke database
-    $query = "INSERT INTO komentar (id_postingan, nama_pengguna, komentar, waktu_dibuat) VALUES ($id_postingan, '$nama_pengguna', '$komentar', '$waktu_dibuat')";
+    $query = "INSERT INTO komentar (id_postingan, email_pembuat, nama_pembuat, komentar, waktu_dibuat) VALUES ($id_postingan, '$email_pembuat', '$nama_pembuat', '$komentar', '$waktu_dibuat')";
     $result = pg_query($con, $query);
 
     if ($result) {

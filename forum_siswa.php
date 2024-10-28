@@ -56,111 +56,69 @@ pg_close();
         <!-- Side Navbar -->
         <div class="side-navbar">
             <ul>
-                <li><img src="images/discussion.png" alt="discussion" class="icon"><span onclick="showAll()">All Discussion</span></li>
-                <li><img src="images/newpost.png" alt="discussion" class="icon"><span onclick="showNewPosts()">New Posts</span></li>
-                <li><img src="images/myposts.png" alt="discussion" class="icon"><span onclick="showMyPosts()">My Posts</span></li>
-                <li><img src="images/save.png" alt="discussion" class="icon"><span onclick="showSavedPosts()">Saved Posts</span></li>
+                <li><a href="./forum_siswa.php"><img src="images/discussion.png" alt="discussion" class="icon">All Discussion</a></li>
+                <li><a href="./new_post.php"><img src="images/newpost.png" alt="discussion" class="icon">New Posts</a></li>
+                <li><a href="./my_post.php"><img src="images/myposts.png" alt="discussion" class="icon">My Posts</a></li>
+                <li><a href="./saved_post.php"><img src="images/save.png" alt="discussion" class="icon">Saved Posts</a></li>
             </ul>
         </div>
 
         <div class="container">
             <?php 
             while($row = pg_fetch_assoc($data_pertanyaan)){
-                $dateCreated = new DateTime($row["waktu_dibuat"]);
-                $dateNow = new DateTime(); // Waktu sekarang
-                $diff = $dateNow->diff($dateCreated); // Menghitung selisih waktu
-                $isNew = ($diff->d < 1); // Selisih hari kurang dari 1 (kurang dari 24 jam)
+                $id_postingan = $row["id"];
+                $dateCreated = date_create($row["waktu_dibuat"]);
+                $diff = date_diff($dateCreated, $dateNow); // Menghitung selisih waktu
                 $isNewMinute = ($diff->h == 0 && $diff->i == 0 && $diff->s < 60); // Cek jika umur postingan kurang dari 1 menit
             ?>
-        <div class="tweet <?= $isNew ? 'new-post' : ''; ?>" data-time="<?= $diff->h; ?>h ago" data-user-id="<?= $row['id']; ?>">
-        <div class="tweet-header">
-            <div class="topic"><?= $row["topik"]; ?></div>
-            <div class="profile-tweet">
-                <?php if(($row["foto_pembuat"]) != ""){ ?>
-                    <img src="./images/foto_profil/<?= $row["foto_pembuat"]; ?>" alt="foto profil <?= $row["nama_pembuat"]; ?>" class="profile-pic-tweet">
-                <?php }else{ ?>
-                    <img src="./images/foto_profil/foto-1.jpg" alt="foto profil default" class="profile-pic-tweet">
-                <?php } ?>
-                <div class="user-info">
-                <span class="username"><?= $row["nama_pembuat"]; ?></span><br>
-                <span class="time">
-                <?php 
-                    // Penghitungan waktu yang ditampilkan
-                    if ($isNewMinute) {
-                        echo "new"; // Jika kurang dari 1 menit
-                    } else if ($diff->h < 1) {
-                        echo $diff->i . "m ago"; // Jika kurang dari 1 jam
-                    } else if ($diff->d < 1) {
-                        echo $diff->h . "h ago"; // Jika kurang dari 1 hari
-                    } else {
-                        echo $diff->d . "d ago"; // Jika lebih dari 1 hari
-                    }
-                    ?>
-                </span>
-                </div>
-            </div>
-        </div>
-        <div class="tweet-content">
-            <p><?= $row["konten"]; ?></p>
-        </div>
-        <div class="tweet-footer">
-        <div class="left-icons">
-                <a href="comments.php?id=<?= $row['id']; ?>&email=<?= $email; ?>">
-                    <img src="images/chat-bubble.png" alt="Comment Icon" class="footer-icon">
-                </a>
-            </div>
-            <div class="right-icons">
-                <img src="images/save.png" alt="Save Icon" class="footer-icon" onclick="save(this)">
-            </div>
-        </div>
-    </div>
-<?php } ?>
-    </div>
-
-    <div id="myPostsContainer" class="container" style="display: none;">
-            <?php 
-            while($row = pg_fetch_assoc($data_my_posts)){
-                $dateCreated = new DateTime($row["waktu_dibuat"]);
-                $diff = (new DateTime())->diff($dateCreated);
-                $isNew = ($diff->d < 1);
-                $isNewMinute = ($diff->h == 0 && $diff->i == 0 && $diff->s < 60);
-            ?>
-            <div class="tweet <?= $isNew ? 'new-post' : ''; ?>">
-                <div class="tweet-header">
-                    <div class="topic"><?= $row["topik"]; ?></div>
-                    <div class="profile-tweet">
-                        <img src="./images/foto_profil/<?= $row["foto_pembuat"]; ?>" alt="foto profil <?= $row["nama_pembuat"]; ?>" class="profile-pic-tweet">
-                        <div class="user-info">
+                <div class="tweet <?= $isNew ? 'new-post' : ''; ?>" data-time="<?= $diff->h; ?>h ago" data-user-id="<?= $row['id']; ?>">
+                    <div class="tweet-header">
+                        <div class="topic"><?= $row["topik"]; ?></div>
+                        <div class="profile-tweet">
+                            <?php if(($row["foto_pembuat"]) != ""){ ?>
+                                <img src="./images/foto_profil/<?= $row["foto_pembuat"]; ?>" alt="foto profil <?= $row["nama_pembuat"]; ?>" class="profile-pic-tweet">
+                            <?php }else{ ?>
+                                <img src="./images/foto_profil/foto-1.jpg" alt="foto profil default" class="profile-pic-tweet">
+                            <?php } ?>
+                            <div class="user-info">
                             <span class="username"><?= $row["nama_pembuat"]; ?></span><br>
-                            <span class="time"><?php 
-                                $dateCreated = date_create($row["waktu_dibuat"]);
-                                $diff = date_diff($dateCreated, $dateNow);
-                                if($diff->h < 24){
-                                    echo $diff->h . "h ago";
-                                }else{
-                                    echo $diff->d . "d ago";
+                            <span class="time">
+                            <?php 
+                                // Penghitungan waktu yang ditampilkan
+                                if ($isNewMinute) {
+                                    echo "new"; // Jika kurang dari 1 menit
+                                } else if ($diff->h < 1) {
+                                    echo $diff->i . "m ago"; // Jika kurang dari 1 jam
+                                } else if ($diff->d < 1) {
+                                    echo $diff->h . "h ago"; // Jika kurang dari 1 hari
+                                } else {
+                                    echo $diff->d . "d ago"; // Jika lebih dari 1 hari
                                 }
-                            ?>
+                                ?>
                             </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        <p><?= $row["konten"]; ?></p>
+                    </div>
+                    <div class="tweet-footer">
+                    <div class="left-icons">
+                            <a href="comments.php?id=<?= $id_postingan; ?>">
+                                <img src="images/chat-bubble.png" alt="Comment Icon" class="footer-icon">
+                            </a>
+                        </div>
+                        <div class="right-icons">
+                            <?php if(pg_affected_rows(pg_query($con, "SELECT * FROM posting_disimpan WHERE id_postingan = $id_postingan AND email_penyimpan = '$email'")) === 0){ ?>
+                                <a href="./save_post.php?id=<?= $id_postingan; ?>&email_penyimpan=<?= $email; ?>&jalur=forum_siswa"><img src="images/save.png" alt="Save Icon" class="footer-icon"></a>
+                            <?php }else{ ?>
+                                <a href="./delete_saved.php?id=<?= $id_postingan; ?>&email_penyimpan=<?= $email; ?>&jalur=forum_siswa"><img src="images/bookmark.png" alt="Saved Icon" class="footer-icon"></a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
-                <div class="tweet-content">
-            <p><?= $row["konten"]; ?></p>
+            <?php } ?>
         </div>
-        <div class="tweet-footer">
-            <div class="left-icons">
-                <a href="comments.php?id=<?= $row['id']; ?>">
-                    <img src="images/chat-bubble.png" alt="Comment Icon" class="footer-icon">
-                </a>
-            </div>
-            <div class="right-icons">
-                <img src="images/save.png" alt="Save Icon" class="footer-icon" onclick="save(this)">
-            </div>
-        </div>
-
-<?php } ?>
-    </div>
 
     <!-- Link to external JavaScript file -->
     <script src="scripts.js"></script>

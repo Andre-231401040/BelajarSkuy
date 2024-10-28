@@ -1,360 +1,366 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Quicksand", sans-serif;
-    background-color: #eeeed0;
+  font-family: "Quicksand", sans-serif;
+  background-color: #eeeed0;
 }
 
 .container-header {
-    display: flex;
-    align-items: center;
-    width: 90%;
+  display: flex;
+  align-items: center;
+  width: 90%;
 }
 
 header {
-    display: flex;
-    width: 100%;
-    height: 80px;  /* Fixed header height */
-    position: fixed;
-    top: 10px;
-    left: 0;
-    z-index: 1000;  /* Ensures it stays on top */
-    padding-left: 20px;  /* Adding space for sidebar */
-    align-items: flex-start;
-    background-color: #eeeed0;
+  display: flex;
+  width: 100%;
+  height: 80px; /* Fixed header height */
+  position: fixed;
+  top: 10px;
+  left: 0;
+  z-index: 1000; /* Ensures it stays on top */
+  padding-left: 20px; /* Adding space for sidebar */
+  align-items: flex-start;
+  background-color: #eeeed0;
 }
 
 .rectangle {
-    display: flex;
-    align-items: center;
-    background-color: #77E8FA;
-    border-radius: 50px;
-    padding: 10px 30px;
-    width: 400px; /* Sesuaikan dengan lebar maksimum yang diinginkan */
-    margin-right: 20px; /* Jarak dengan navigasi */
-    border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  background-color: #77e8fa;
+  border-radius: 50px;
+  padding: 10px 30px;
+  width: 400px; /* Sesuaikan dengan lebar maksimum yang diinginkan */
+  margin-right: 20px; /* Jarak dengan navigasi */
+  border: 2px solid #000;
 }
 
 .nama {
-    font-weight: bold;
-    left: 80px;
-    top: 15px;
+  font-weight: bold;
+  left: 80px;
+  top: 15px;
 }
 
 nav a,
 button {
-    color: black;
-    font-size: 20px;
-    text-decoration: none;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .navigation {
-    flex: 6; /* Biarkan navigasi mengisi ruang yang tersisa */
-    display: flex;
-    justify-content: space-between; /* Jarak antar item navigasi */
+  flex: 6; /* Biarkan navigasi mengisi ruang yang tersisa */
+  display: flex;
+  justify-content: space-between; /* Jarak antar item navigasi */
 }
 
 .navigation a {
-    color: black;
-    font-size: 20px;
-    text-decoration: none;
-    margin: 0 15px; /* Menambahkan margin kiri dan kanan untuk jarak */
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 0 15px; /* Menambahkan margin kiri dan kanan untuk jarak */
 }
 
 .navigation a:hover {
-    transition: 0.2s;
-    opacity: 0.5;
+  transition: 0.2s;
+  opacity: 0.5;
 }
 
 .underline {
-    text-decoration: underline;
-    text-decoration-color: #069CB4;
+  text-decoration: underline;
+  text-decoration-color: #069cb4;
 }
 
 .content {
-    padding: 100px 20px; /* Add padding to avoid content being hidden behind the fixed header */
+  padding: 100px 20px; /* Add padding to avoid content being hidden behind the fixed header */
 }
 
 .main-container {
-    display: flex;
-    padding-top: 80px;
-    align-items: flex-start;
+  display: flex;
+  padding-top: 80px;
+  align-items: flex-start;
 }
 
 .ask-question-container {
-    position: absolute;
-    top: 110px;
-    padding-left: 50px; /* Jarak dari sisi kiri */
-    margin-right: 20px; /* Jarak antara tombol dan sidebar */
+  position: absolute;
+  top: 110px;
+  padding-left: 50px; /* Jarak dari sisi kiri */
+  margin-right: 20px; /* Jarak antara tombol dan sidebar */
 }
 
 .ask-question {
-    background-color: #069CB4; /* Warna latar belakang tombol */
-    color: white; /* Warna teks */
-    width: 210px;
-    border: none; /* Tanpa border */
-    border-radius: 5px; /* Membuat sudut tombol melengkung */
-    padding: 10px 20px; /* Padding untuk tombol */
-    font-size: 16px; /* Ukuran font */
-    cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
+  background-color: #069cb4; /* Warna latar belakang tombol */
+  color: white; /* Warna teks */
+  width: 210px;
+  border: none; /* Tanpa border */
+  border-radius: 5px; /* Membuat sudut tombol melengkung */
+  padding: 10px 20px; /* Padding untuk tombol */
+  font-size: 16px; /* Ukuran font */
+  cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
 }
 
 .ask-question:hover {
-    background-color: #0d95e8; /* Warna latar belakang saat hover */
+  background-color: #0d95e8; /* Warna latar belakang saat hover */
 }
 
 .side-navbar {
-    width: 210px;
-    background-color: #d9d9c4;
-    position: relative;
-    top: 100px;
-    left: 50px;
-    margin-top: 0;
+  width: 210px;
+  background-color: #d9d9c4;
+  position: relative;
+  top: 100px;
+  left: 50px;
+  margin-top: 0;
 }
 
 .side-navbar ul {
-    list-style-type: none;
-    padding: 1px;
-    margin: 20px 0;
+  list-style-type: none;
+  padding: 1px;
+  margin: 20px 0;
 }
 
 .side-navbar ul li {
-    display: flex; /* Menggunakan flexbox untuk membuat ikon dan teks sejajar */
-    align-items: center; /* Menyelaraskan gambar dan teks secara vertikal */
-    margin: 20px;
-    font-size: 18px;
-    color: black;
-    padding: 10px;
-    cursor: pointer;
+  display: flex; /* Menggunakan flexbox untuk membuat ikon dan teks sejajar */
+  align-items: center; /* Menyelaraskan gambar dan teks secara vertikal */
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.side-navbar ul li a {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
 }
 
 .side-navbar ul li img.icon {
-    width: 20px;  /* Atur lebar ikon */
-    height: 20px; /* Atur tinggi ikon */
-    margin-right: 8px; /* Jarak antara ikon dan teks */
+  width: 20px; /* Atur lebar ikon */
+  height: 20px; /* Atur tinggi ikon */
+  margin-right: 8px; /* Jarak antara ikon dan teks */
 }
 
 .side-navbar ul li:hover {
-    color: #3f3c3a;
-    opacity: 0.7;
-    transition: 0.3s;
+  color: #3f3c3a;
+  opacity: 0.7;
+  transition: 0.3s;
 }
 
 .container {
-    margin-left: 100px; /* Adjust for the sidebar */
-    width: 60%;
-    margin-top: 100px;
+  margin-left: 100px; /* Adjust for the sidebar */
+  width: 60%;
+  margin-top: 100px;
 }
 
 .tweet {
-    background-color: #d9d9d9;
-    border: 1px solid #e1e8ed;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* Atur lebar tweet untuk responsivitas */
-    width: 100%; /* Full width on smaller screens */
+  background-color: #d9d9d9;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Atur lebar tweet untuk responsivitas */
+  width: 100%; /* Full width on smaller screens */
 }
 
 .profile-pic {
-    float: left;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
+  float: left;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
 }
 
 .tweet-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .profile-pic-tweet {
-    margin-top: 20px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 
 .profile-tweet {
-    display: flex;
-    align-items: center;
-    margin-top: 3px;
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
 }
 
 .user-info {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    margin-left: 10px;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  margin-left: 10px;
 }
 
 .topic {
-    font-size: 20px; /* Gaya untuk topic */
-    font-weight: bold; /* Tebal */
-    margin-top: 3px; /* Ruang antara topic dan username */
-    margin-left: 5px;
+  font-size: 20px; /* Gaya untuk topic */
+  font-weight: bold; /* Tebal */
+  margin-top: 3px; /* Ruang antara topic dan username */
+  margin-left: 5px;
 }
 
 .username {
-    font-weight: bold;
-    margin-top: 20px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .time {
-    color: #657786;
-    font-size: 0.9em;
+  color: #657786;
+  font-size: 0.9em;
 }
 
 .tweet-content {
-    margin-top: 10px;
-    clear: both;
+  margin-top: 10px;
+  clear: both;
 }
 
 .tweet-content p {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 
 .tweet-footer {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-icon {
-    width: 20px;  /* Ubah ukuran gambar sesuai keinginan */
-    height: 20px; /* Sesuaikan tinggi gambar */
-    margin-right: 15px; /* Tambahkan jarak antara gambar */
-    pointer-events: auto;
-    position: relative;
-    z-index: 10;
+  width: 20px; /* Ubah ukuran gambar sesuai keinginan */
+  height: 20px; /* Sesuaikan tinggi gambar */
+  margin-right: 15px; /* Tambahkan jarak antara gambar */
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .left-icons,
 .right-icons {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .left-icons .icon,
 .right-icons .icon {
-    margin-right: 10px;
-    cursor: pointer;
-    padding: 5px;
-    color: #1da1f2;
-    font-size: 1em;
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 5px;
+  color: #1da1f2;
+  font-size: 1em;
 }
 
 .right-icons {
-    margin-left: auto;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.right-icons:hover {
+  opacity: 0.7;
 }
 
 .icon:hover {
-    color: #0d95e8;
+  color: #0d95e8;
 }
 
 .icon {
-    font-size: 20px;
-    cursor: pointer;
-    margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .tweet-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .form-container {
-    margin-bottom: 20px; /* Jarak antara form dan komentar */
+  margin-bottom: 20px; /* Jarak antara form dan komentar */
 }
 
 .second-container {
-    border: 1px solid #ccc; /* Garis border di sekeliling container */
-    padding: 20px; /* Ruang di dalam container */
-    margin-top: 20px; /* Jarak antara form dan comments container */
-    border-radius: 10px; /* Sudut melengkung untuk tampilan lebih halus */
-    background-color: #f9f9f9; /* Warna latar belakang container */
+  border: 1px solid #ccc; /* Garis border di sekeliling container */
+  padding: 20px; /* Ruang di dalam container */
+  margin-top: 20px; /* Jarak antara form dan comments container */
+  border-radius: 10px; /* Sudut melengkung untuk tampilan lebih halus */
+  background-color: #f9f9f9; /* Warna latar belakang container */
 }
 
 .comments-container {
-    margin-top: 10px; /* Jarak antara judul dan daftar komentar */
+  margin-top: 10px; /* Jarak antara judul dan daftar komentar */
 }
 
 .comment {
-    border: 1px solid #ddd; /* Border untuk setiap komentar */
-    padding: 10px; /* Ruang di dalam komentar */
-    margin-top: 10px; /* Jarak antar komentar */
-    border-radius: 5px; /* Sudut melengkung */
-    background-color: #ffffff; /* Warna latar belakang komentar */
+  border: 1px solid #ddd; /* Border untuk setiap komentar */
+  padding: 10px; /* Ruang di dalam komentar */
+  margin-top: 10px; /* Jarak antar komentar */
+  border-radius: 5px; /* Sudut melengkung */
+  background-color: #ffffff; /* Warna latar belakang komentar */
 }
 
 /* Media Query untuk responsivitas */
 @media (max-width: 768px) {
-    .tweet {
-        padding: 15px; /* Padding lebih kecil */
-    }
+  .tweet {
+    padding: 15px; /* Padding lebih kecil */
+  }
 
-    .tweet-content p {
-        font-size: 1em; /* Ukuran font lebih kecil */
-    }
+  .tweet-content p {
+    font-size: 1em; /* Ukuran font lebih kecil */
+  }
 
-    .username {
-        font-size: 1.2em; /* Ukuran font username lebih kecil */
-    }
+  .username {
+    font-size: 1.2em; /* Ukuran font username lebih kecil */
+  }
 
-    .time {
-        font-size: 0.8em; /* Ukuran font waktu lebih kecil */
-    }
+  .time {
+    font-size: 0.8em; /* Ukuran font waktu lebih kecil */
+  }
 
-    .ask-question-container {
-        padding-left: 20px;
-    }
+  .ask-question-container {
+    padding-left: 20px;
+  }
 
-    .ask-question {
-        width: 100%;
-    }
+  .ask-question {
+    width: 100%;
+  }
 
-    .side-navbar {
-        left: 0;
-        width: 32%; /* Lebar sidebar lebih kecil */
-        top: 100px; /* Penyesuaian posisi sidebar */
-        height: 330px
-    }
+  .side-navbar {
+    left: 0;
+    width: 32%; /* Lebar sidebar lebih kecil */
+    top: 100px; /* Penyesuaian posisi sidebar */
+    height: 330px;
+  }
 
-    .container {
-        margin-left: 10px; /* Sesuaikan dengan lebar sidebar */
-        width: 80%; /* Lebar kontainer lebih besar */
-    }
+  .container {
+    margin-left: 10px; /* Sesuaikan dengan lebar sidebar */
+    width: 80%; /* Lebar kontainer lebih besar */
+  }
 
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0;
-    }
-
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
 }
-    
-     
 
 /* Media Query untuk layar sangat kecil (misalnya ponsel) */
 @media (max-width: 480px) {
-    .navigation {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .side-navbar ul li {
-        font-size: 16px;
-    }
-    
-    .form-container button {
-        width: 90%;
-    }
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-navbar ul li {
+    font-size: 16px;
+  }
+
+  .form-container button {
+    width: 90%;
+  }
 }
