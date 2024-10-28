@@ -83,7 +83,7 @@ pg_close();
                 <?php if(!is_null($total_pendapatan)){ ?>
                     <p>Rp<?= $total_pendapatan - $gaji_ditarik; ?></p>
                 <?php }else{ ?>
-                    <p>0</p>
+                    <p>Rp0</p>
                 <?php } ?>
                 <form action="tarik_gaji.php" method="post">
                     <input type="hidden" name="nama" value="<?= $nama; ?>">
