@@ -1,3 +1,10 @@
+<?php 
+  require "function.php";
+  session_start();
+  $data_course = pg_query($con, "SELECT * FROM kursus ORDER BY jumlah_siswa DESC LIMIT 3");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -73,33 +80,28 @@
           <img src="./images/business.jpg" alt="gambar vektor bisnis" />
         </div>
       </article>
-      <article id="courses">
+      <article id="courses"> 
         <h2>Most Popular Courses</h2>
         <div class="course-container">
-          <div class="course">
-            <img src="./images/webdev.jpg" alt="gambar kelas pengembangan web" />
-            <h3>Web Development</h3>
-            <p>Endriano Kitswanto</p>
-            <p>120000 registered students</p>
-            <p>Rp500000</p>
-            <a href="">Buy</a>
+          <?php while($row = pg_fetch_assoc($data_course)) { ?>
+          <div class="course"> 
+            <img src="./thumbnail/<?= $row["thumbnail"] ?>" alt="gambar kelas <?= $row["judul"] ?>" />
+            <h3><?= $row["judul"] ?></h3>
+            <p>
+              <?php 
+                $query = pg_fetch_assoc(pg_query($con,"SELECT * FROM pengajar WHERE id = {$row["id_pengajar"]}"));
+              ?>
+              <?= $query["nama"] ?>
+            </p>
+            <p><?= $row["jumlah_siswa"]?> registered students</p>
+            <p>Rp<?= $row["harga"] ?></p>
+            <?php if ($row["harga"] == 0 ) { ?>
+              <a href="home/login.php">Enroll</a>
+            <?php } else { ?>
+              <a href="home/login.php">pay</a>
+            <?php } ?>
           </div>
-          <div class="course">
-            <img src="./images/physics.jpg" alt="gambar kelas fisika" />
-            <h3>Physics</h3>
-            <p>Alya Debora Panggabean</p>
-            <p>100000 registered students</p>
-            <p>Rp0</p>
-            <a href="">Enroll</a>
-          </div>
-          <div class="course">
-            <img src="./images/finance.jpg" alt="gambar kelas keuangan" />
-            <h3>Finance</h3>
-            <p>Felicia Jennifer Febiola Simarmata</p>
-            <p>75000 registered students</p>
-            <p>Rp250000</p>
-            <a href="">Buy</a>
-          </div>
+          <?php }; ?>
         </div>
       </article>
     </main>
@@ -140,3 +142,4 @@
     </script>
   </body>
 </html>
+
