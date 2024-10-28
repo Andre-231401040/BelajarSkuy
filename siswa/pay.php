@@ -24,6 +24,7 @@ pg_close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
+    <link rel="icon" href="../images/logo.png" sizes="32x32" type="image/png" />
     <!-- Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,7 +58,7 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="">Forum</a>
+                    <a href="../forum_siswa.php">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>

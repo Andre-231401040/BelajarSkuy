@@ -2,12 +2,12 @@
 require "function.php";
 session_start();
 
-if(isset($_SESSION["id_siswa"])){
+if($_SESSION["isFound"] === "student"){
     $id_siswa = $_SESSION["id_siswa"];
     $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));
 }
 
-if(isset($_SESSION["id_pengajar"])){
+if($_SESSION["isFound"] === "teacher"){
     $id_pengajar = $_SESSION["id_pengajar"];
     $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
 }
@@ -31,7 +31,11 @@ if (isset($_POST["submit"])) {
     $result = pg_query($con, $query);
     
     if ($result) {
-        header("Location: forum.php");
+        if($_GET["status"] == "siswa"){
+            header("Location: forum_siswa.php");
+        }else{
+            header("Location: forum_pengajar.php");
+        }
     } else {
         echo "Pertanyaan tidak berhasil diupload";
     }
