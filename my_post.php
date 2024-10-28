@@ -136,8 +136,5 @@ pg_close();
                 </div>
             <?php } ?>
         </div>
-
-    <!-- Link to external JavaScript file -->
-    <script src="scripts.js"></script>
 </body>
 </html>
