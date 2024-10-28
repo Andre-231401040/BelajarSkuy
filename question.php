@@ -59,16 +59,19 @@ pg_close();
         <!-- Side Navbar -->
         <div class="side-navbar">
             <ul>
-                
-                <li><img src="images/discussion.png" alt="discussion" class="icon"><span onclick="showAll()">All Discussion</span></li>
-                <li><img src="images/newpost.png" alt="discussion" class="icon"><span onclick="showNewPosts()">New Posts</span></li>
-                <li><img src="images/myposts.png" alt="discussion" class="icon"><span onclick="showMyPosts()">My Posts</span></li>
-                <li><img src="images/save.png" alt="discussion" class="icon"><span onclick="showSavedPosts()">Saved Posts</span></li>
+                <?php if($status === "pengajar"){ ?>
+                    <li><a href="./forum_pengajar.php"><img src="images/discussion.png" alt="discussion" class="icon">All Discussion</a></li>
+                <?php }else{ ?>
+                    <li><a href="./forum_siswa.php"><img src="images/discussion.png" alt="discussion" class="icon">All Discussion</a></li>
+                <?php } ?>
+                <li><a href="./new_post.php"><img src="images/newpost.png" alt="discussion" class="icon">New Posts</a></li>
+                <li><a href="./my_post.php"><img src="images/myposts.png" alt="discussion" class="icon">My Posts</a></li>
+                <li><a href="./saved_post.php"><img src="images/save.png" alt="discussion" class="icon">Saved Posts</a></li>
             </ul>
         </div>
 
         <div class="form-container">
-            <form action="ask_question.php" method="post" autocomplete="off">
+            <form action="ask_question.php?status=<?= $status; ?>" method="post" autocomplete="off">
                 <input type="text" id="topik" name="topik" placeholder="Topic Discussion" required>
                 <textarea id="konten" name="konten" placeholder="Write your question" required></textarea>
                 <button type="submit" name="submit">Post</button>

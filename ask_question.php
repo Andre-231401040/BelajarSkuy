@@ -32,7 +32,7 @@ if (isset($_POST["submit"])) {
     $result = pg_query($con, $query);
     
     if ($result) {
-        if($_GET["status"] == "siswa"){
+        if($_GET["status"] === "siswa"){
             header("Location: forum_siswa.php");
         }else{
             header("Location: forum_pengajar.php");
