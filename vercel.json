@@ -4,5 +4,13 @@
       "runtime": "vercel-php@0.6.2"
     }
   },
-  "routes": [{ "src": "/(.*)", "dest": "/api/index.php" }]
+  "routes": [{ "src": "/(.*)", "dest": "/api/index.php" }],
+  "env": {
+    "PG_HOST": "ep-damp-waterfall-a13tat59-pooler.ap-southeast-1.aws.neon.tech",
+    "PG_PORT": "5432",
+    "PG_DB": "verceldb",
+    "PG_USER": "default",
+    "PG_PASSWORD": "PfrRKpVY73zU",
+    "PG_ENDPOINT": "ep-damp-waterfall-a13tat59-pooler.ap-southeast-1.aws.neon.tech"
+  }
 }
