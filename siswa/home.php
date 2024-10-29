@@ -10,7 +10,7 @@ $gambar = $data_siswa["foto_profil"];
 $data_enrolled_courses = pg_query($con, "SELECT DISTINCT ON (enroll.id_kursus) * FROM kursus INNER JOIN enroll ON kursus.id = enroll.id_kursus WHERE enroll.id_siswa = $id_siswa");
 $courses = pg_fetch_all($data_enrolled_courses);
 
-$data_latest_courses = pg_query($con, "SELECT judul, harga FROM kursus LIMIT 6");
+$data_latest_courses = pg_query($con, "SELECT judul, harga FROM kursus ORDER BY id DESC LIMIT 6");
 $latest_courses = pg_fetch_all($data_latest_courses);
 
 pg_close();
@@ -105,6 +105,11 @@ pg_close();
         </div>
     </div>
 
+    <?php 
+        $max_courses = 6; 
+        $course_count = 0;
+    ?>
+
     <div id="activities">
     <div class="rectangle-2">
         <div class="circle-2">
@@ -118,35 +123,32 @@ pg_close();
                 <p class="text">Judul</p>
             </div>
 
-            <?php if ($latest_courses): ?>
+            <?php if ($latest_courses){ ?>
                 <?php 
-                
-                $max_courses = 6; 
-                $course_count = 0;
-
-                foreach ($latest_courses as $course): 
-                    if ($course_count >= $max_courses) break; 
-                    ?>
+                    foreach ($latest_courses as $course): 
+                        if ($course_count >= $max_courses) break; 
+                ?>
                     <div class="square-6">
                         <p class="text"><?= ($course['harga']); ?></p>
                     </div>
                     <div class="square-5">
                         <p class="text" ><?= ($course['judul']); ?></p>
                     </div>
-                    <?php 
+                <?php 
                     $course_count++;
-                endforeach; 
-            else: ?>
+                    endforeach;
+                ?> 
+            <?php }else{ ?>
                 <div class="square-6">
                     <p class="text">Tidak Ada Kursus Baru</p>
                 </div>
                 <div class="square-5"></div>
-            <?php endif; ?>
+            <?php } ?>
 
             <?php 
-            
-            $empty_squares = $max_courses - $course_count;
-            for ($i = 0; $i < $empty_squares; $i++): ?>
+                $empty_squares = $max_courses - $course_count;
+                for ($i = 0; $i < $empty_squares; $i++): 
+            ?>
                 <div class="square-6"></div>
                 <div class="square-5"></div>
             <?php endfor; ?>
