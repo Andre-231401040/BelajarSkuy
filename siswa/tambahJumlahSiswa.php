@@ -1,6 +1,11 @@
 <?php 
 require "../function.php";
 session_start();
+
+if(!isset($_SESSION["id_siswa"])){
+    header("Location: ../home/login.php");
+}
+
 $id_siswa = $_SESSION["id_siswa"];
 
 $id_course = $_GET["id"];

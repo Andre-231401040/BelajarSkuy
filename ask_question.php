@@ -2,6 +2,10 @@
 require "function.php";
 session_start();
 
+if(!isset($_SESSION["isFound"])){
+    header("Location: home/login.php");
+}
+
 if($_SESSION["isFound"] === "student"){
     $id_siswa = $_SESSION["id_siswa"];
     $data = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_siswa"));

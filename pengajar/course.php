@@ -2,6 +2,10 @@
 require "../function.php";
 session_start();
 
+if(!isset($_SESSION["id_pengajar"])){
+  header("Location: ../home/login.php");
+}
+
 $id_pengajar = $_SESSION["id_pengajar"];
 $data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
 $nama = $data_pengajar["nama"];

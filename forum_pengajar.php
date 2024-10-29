@@ -2,6 +2,10 @@
 require "function.php";
 session_start();
 
+if(!isset($_SESSION["id_pengajar"])){
+    header("Location: home/login.php");
+}
+
 if(isset($_SESSION["id_pengajar"])){
     $_SESSION["isFound"] = "teacher";
     $id_pengajar = $_SESSION["id_pengajar"];

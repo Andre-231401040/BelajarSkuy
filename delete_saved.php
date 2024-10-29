@@ -2,6 +2,10 @@
 require "./function.php";
 session_start();
 
+if(!isset($_SESSION["isFound"])){
+    header("Location: home/login.php");
+}
+
 $id_postingan = $_GET["id"];
 $email_penyimpan = $_GET["email_penyimpan"];
 $jalur = $_GET["jalur"];

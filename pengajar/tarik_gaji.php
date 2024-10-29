@@ -1,6 +1,9 @@
 <?php 
 require "../function.php";
 session_start();
+if(!isset($_SESSION["id_pengajar"])){
+    header("Location: ../home/login.php");
+}
 
 $id_pengajar = $_SESSION["id_pengajar"];
 

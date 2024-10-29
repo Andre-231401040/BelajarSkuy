@@ -2,6 +2,10 @@
 require "function.php";
 session_start();
 
+if(!isset($_SESSION["isFound"])){
+    header("Location: home/login.php");
+}
+
 // Mengambil data pengguna
 if ($_SESSION["isFound"] === "student") {
     $id_siswa = $_SESSION["id_siswa"];
