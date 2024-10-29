@@ -10,6 +10,7 @@ $id_siswa = $_SESSION["id_siswa"];
 
 $id_course = $_GET["id"];
 $_SESSION["id_course"] = $id_course;
+$data_course = pg_fetch_assoc(pg_query($con, "SELECT * FROM kursus WHERE id = $id_course"));
 
 if(pg_affected_rows(pg_query($con, "SELECT * FROM enroll WHERE id_siswa = $id_siswa AND id_kursus = $id_course")) === 0){
     $query1 = "INSERT INTO enroll(id_siswa, id_kursus) VALUES ($id_siswa, $id_course)";
@@ -28,13 +29,11 @@ if(pg_affected_rows(pg_query($con, "SELECT * FROM enroll WHERE id_siswa = $id_si
 if (!$result1) {
     die("Gagal memasukkan data: " . pg_last_error($con));
 } else {
-    echo "berhasil menambahkan data";
+    header("Location: InsideCourse.php");
 }
 
 if (!$result2) {
-    die("Gagal memasukkan data: " . pg_last_error($con));
-} else {
-    echo "berhasil menambahkan data";
+    die("Gagal menambah data: " . pg_last_error($con));
 }
 
 pg_close();
