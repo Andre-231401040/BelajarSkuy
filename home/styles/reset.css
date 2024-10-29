@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(90deg, #60aede -1.42%, #c9f8fc 52.92%, #77e8fa 98.3%);
+  font-family: "Quicksand", sans-serif;
+}
+
+header {
+  padding: 16px 0 0 16px;
+}
+
+header img {
+  width: 48px;
+}
+
+.reset-form {
+  gap: 64px;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-form img {
+  width: 450px;
+  border-radius: 60px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form h1 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: normal;
+  background: linear-gradient(195deg, #0d60be 10.85%, #041223 90.87%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form .input-data {
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+  margin-top: 24px;
+}
+
+.input-data input {
+  background: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.input-data input:focus,
+.input-data input:valid {
+  outline: none;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #3498db;
+}
+
+.input-data label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-data .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+
+.input-data .underline:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #3498db;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before {
+  transform: scale(1);
+}
+
+form button {
+  font-size: 20px;
+  margin-top: 24px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 45px;
+  background: linear-gradient(180deg, #8bd0f6 26.67%, #2e7ca8 92.9%);
+  font-weight: 700;
+}
+
+p {
+  margin-top: 20px;
+}
+
+.failed {
+  width: 180px;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  margin: 12px 0 0 -160px;
+  border: 1px solid red;
+  background-color: rgba(255, 153, 153, 0.5);
+}

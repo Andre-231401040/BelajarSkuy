@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BelajarSkuy</title>
+    <link rel="icon" href="../images/logo.png" sizes="32x32" type="image/png" />
+    <!-- Fonts -->
+    <!-- Racing Sans One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet" />
+    <!-- Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <!-- Style -->
+    <link rel="stylesheet" href="../styles.css" />
+
+    <style>
+      header {
+        display: initial;
+      }
+      nav {
+        position: sticky;
+      }
+      main {
+        height: 100vh;
+      }
+      main a {
+        gap: 16px;
+        width: 180px;
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 60px;
+        background-color: #12ae44;
+        color: white;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      main a img {
+        width: 36px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>BelajarSkuy</h1>
+        <div class="navigation">
+          <a href="../index.php#about">About</a>
+          <a href="../index.php#courses">Courses</a>
+          <a href="#social-media">Contact</a>
+        </div>
+        <div class="login_register">
+          <a href="login.php" class="login">Login</a>
+          <div class="register">
+            <button class="register-button">Register</button>
+            <div class="register-option">
+              <a href="register_student.php">as student</a>
+              <a href="register_teacher.php">as teacher</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <div class="question">
+          <h2>What is BelajarSkuy?</h2>
+          <p>> We are an online course platform dedicated to helping you develop skills and knowledge in various fields, from technology to creativity.</p>
+        </div>
+        <div class="question">
+          <h2>How to buy a course BelajarSkuy?</h2>
+          <p>
+            > To purchase a premium course, first select the course you want and click the "Buy" or "Enroll" button. You will be directed to a simple form where the course name, teacher, and price are displayed. Confirm these details, then
+            proceed by entering your payment information (such as credit card or PayPal). After reviewing the total price, click "Pay". Once the payment is completed, you can start learning immediately.
+          </p>
+        </div>
+        <div class="question">
+          <h2>What're in the premium BelajarSkuy?</h2>
+          <p>
+            > A premium class offers an enhanced learning experience with the most up-to-date materials, ensuring that the content you’re learning reflects the latest industry trends and technologies. These courses are designed to give you
+            deeper insights and practical skills that are relevant today. Additionally, premium classes are taught by top-tier mentors who are experts in their fields, providing you with personalized guidance, valuable feedback, and insider
+            knowledge to help you master the subject more effectively.
+          </p>
+        </div>
+        <h2>You have another question to ask?</h2>
+        <a href="https://wa.me/6281361926580" target="_blank"><img src="../images/whatsapp.png" alt="logo whatsapp" />Click This</a>
+      </article>
+    </main>
+    <footer>
+      <div class="nama-website">
+        <img src="../images/logo.png" alt="logo belajarskuy" />
+        <h2>BelajarSkuy</h2>
+      </div>
+      <div id="social-media">
+        <h2>Contact Us</h2>
+        <div class="gambar">
+          <a href="mailto:andrelim806@gmail.com" target="_blank"><img src="../images/gmail.png" alt="logo gmail" /></a>
+          <a href="https://www.instagram.com/dree_lim" target="_blank"><img src="../images/instagram.png" alt="logo instagram" /></a>
+          <a href="https://wa.me/6281361926580" target="_blank"><img src="../images/whatsapp.png" alt="logo whatsapp" /></a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const registerButton = document.querySelector(".register-button");
+      const registerOption = document.querySelector(".register-option");
+      registerButton.addEventListener("click", () => {
+        if (registerOption.style.opacity == 0) {
+          registerOption.style.opacity = 1;
+        } else {
+          registerOption.style.opacity = 0;
+        }
+      });
+    </script>
+  </body>
+</html>
