@@ -1,10 +1,9 @@
 <?php 
-$host = "ep-damp-waterfall-a13tat59-pooler.ap-southeast-1.aws.neon.tech";
-$user = "default";
-$port = "5432";
-$password = "PfrRKpVY73zU";
-$dbname = "verceldb";
-$con = pg_connect("host=$host port=$port user=$user password=$password dbname=$dbname");
+$host = $_ENV["POSTGRES_HOST"];
+$user = $_ENV["POSTGRES_USER"];
+$password = $_ENV["POSTGRES_PASSWORD"];
+$dbname = $_ENV["POSTGRES_DATABASE"];
+$con = pg_connect("host=$host user=$user password=$password dbname=$dbname");
 if(!$con){
     die("Koneksi ke Database Gagal.");
 }
