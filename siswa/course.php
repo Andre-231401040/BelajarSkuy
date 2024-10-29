@@ -13,12 +13,6 @@ $profil = $data_siswa["foto_profil"];
 
 $data_course = pg_query($con, "SELECT * FROM kursus");
 
-$data_success = pg_fetch_assoc(pg_query($con, "SELECT * FROM success_payment WHERE id_siswa = $id_siswa"));
-if($data_success != null){
-  $id_course_success = $data_success["id"];
-} else{
-  $id_course_success = null;
-}
 pg_close();
 ?>
 
@@ -73,7 +67,9 @@ pg_close();
         <h2>Most Popular Course</h2>
       </div>
       <div class="container-main">
-        <?php while($row = pg_fetch_assoc($data_course)) { ?>
+        <?php while($row = pg_fetch_assoc($data_course)) { 
+          $id_kursus = $row["id"];  
+        ?>
         <div class="container-course">
           <div class="container-circle">
           <div class="circle-2"></div>
@@ -95,12 +91,12 @@ pg_close();
             <p><?= $row["harga"]; ?></p>
           </div>
           <div class="container-linktabel">
-            <?php if (($row["id"] == $id_course_success)) { ?>
+            <?php if (pg_affected_rows(pg_query($con, "SELECT * FROM success_payment WHERE id = $id_kursus AND id_siswa = $id_siswa")) !== 0) { ?>
               <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Start</a>
             <?php } else if ($row["harga"] != 0) { ?>
               <a href="pay.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll">Enroll Me</a>
             <?php } else { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Enroll Me</a>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Start</a>
             <?php } ?>
           </div>
         </div>
