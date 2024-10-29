@@ -40,7 +40,7 @@ pg_close();
     <title>Forum</title>
     <link rel="icon" href="./images/logo.png" sizes="32x32" type="image/png" />
     <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="stylesforum.css">
+    <link rel="stylesheet" href="stylesforum.css" />
 </head>
 <body>
     <header>

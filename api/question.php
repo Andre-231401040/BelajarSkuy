@@ -30,7 +30,7 @@ pg_close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ask a Question</title>
     <link rel="icon" href="./images/logo.png" sizes="32x32" type="image/png" />
-    <link rel="stylesheet" href="stylesQuestions.css">
+    <link rel="stylesheet" href="stylesQuestions.css" />
 </head>
 <body>
     <header>
