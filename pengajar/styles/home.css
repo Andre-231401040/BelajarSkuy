@@ -87,6 +87,7 @@ main {
 }
 
 .container div {
+  gap: 20px;
   display: flex;
   padding: 20px;
   justify-content: space-between;
@@ -94,11 +95,6 @@ main {
   border-radius: 20px;
   border: 2px solid #000;
   height: fit-content;
-}
-
-.jumlah-murid,
-.pendapatan {
-  width: 25%;
 }
 
 .jumlah-murid {
@@ -134,4 +130,34 @@ button:hover {
   border-radius: 24px;
   border: 2px solid #000;
   background-color: #c9f8fc;
+}
+
+@media screen and (max-width: 768px) {
+  nav .profil {
+    width: fit-content;
+    border-radius: 50%;
+  }
+
+  .profil .nama {
+    display: none;
+  }
+
+  .container div {
+    width: 100%;
+  }
+
+  .pendapatan {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .container div {
+    width: 100%;
+  }
+
+  .pendapatan {
+    flex-direction: column;
+  }
 }
