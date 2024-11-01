@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
     <!-- Style -->
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles/faq.css" />
 
     <style>
       header {
@@ -43,6 +43,10 @@
       }
       main a img {
         width: 36px;
+      }
+      article {
+        display: flex;
+        flex-direction: column;
       }
     </style>
   </head>
@@ -110,10 +114,10 @@
       const registerButton = document.querySelector(".register-button");
       const registerOption = document.querySelector(".register-option");
       registerButton.addEventListener("click", () => {
-        if (registerOption.style.opacity == 0) {
-          registerOption.style.opacity = 1;
+        if (registerOption.classList.contains("isHidden")) {
+          registerOption.classList.remove("isHidden");
         } else {
-          registerOption.style.opacity = 0;
+          registerOption.classList.add("isHidden");
         }
       });
     </script>

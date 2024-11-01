@@ -28,18 +28,25 @@
     <header>
       <nav>
         <h1>BelajarSkuy</h1>
-        <div class="navigation">
-          <a href="#about">About</a>
-          <a href="#courses">Courses</a>
-          <a href="#social-media">Contact</a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="login_register">
-          <a href="./home/login.php" class="login">Login</a>
-          <div class="register">
-            <button href="" class="register-button">Register</button>
-            <div class="register-option">
-              <a href="./home/register_student.php">as student</a>
-              <a href="./home/register_teacher.php">as teacher</a>
+        <div class="container">
+          <div class="navigation">
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#social-media">Contact</a>
+          </div>
+          <div class="login_register">
+            <a href="./home/login.php" class="login">Login</a>
+            <div class="register">
+              <button href="" class="register-button">Register</button>
+              <div class="register-option isHidden">
+                <a href="./home/register_student.php">as student</a>
+                <a href="./home/register_teacher.php">as teacher</a>
+              </div>
             </div>
           </div>
         </div>
@@ -55,7 +62,7 @@
           <div class="link">
             <div class="apply">
               <button class="apply-button">Apply Now</button>
-              <div class="apply-option">
+              <div class="apply-option isHidden">
                 <a href="./home/register_student.php">as student</a>
                 <a href="./home/register_teacher.php">as teacher</a>
               </div>
@@ -69,40 +76,44 @@
     <main>
       <a href="./home/faq.html" class="faq"><img src="./images/Main Logo.png" alt="logo faq" /></a>
       <article id="about">
-        <h2>About Us</h2>
-        <p>
-          We are an online course platform dedicated to helping you develop skills and knowledge in various fields, from technology to creativity. With access to up-to-date materials and professional mentors, we believe that everyone has
-          the right to learn without limitations of time and place. Our mission is to create flexible, interactive and quality learning experiences, so you can achieve your career and personal goals with more confidence.
-        </p>
-        <div class="image">
-          <img src="./images/development.jpg" alt="gambar vektor pengembangan aplikasi" />
-          <img src="./images/science.jpg" alt="gambar vektor sains" />
-          <img src="./images/business.jpg" alt="gambar vektor bisnis" />
+        <div class="about-container">
+          <h2>About Us</h2>
+          <p>
+            We are an online course platform dedicated to helping you develop skills and knowledge in various fields, from technology to creativity. With access to up-to-date materials and professional mentors, we believe that everyone has
+            the right to learn without limitations of time and place. Our mission is to create flexible, interactive and quality learning experiences, so you can achieve your career and personal goals with more confidence.
+          </p>
+          <div class="image">
+            <img src="./images/development.jpg" alt="gambar vektor pengembangan aplikasi" />
+            <img src="./images/science.jpg" alt="gambar vektor sains" />
+            <img src="./images/business.jpg" alt="gambar vektor bisnis" />
+          </div>
         </div>
       </article>
-      <article id="courses"> 
-        <h2>Most Popular Courses</h2>
-        <div class="course-container">
-          <?php while($row = pg_fetch_assoc($data_course)) { ?>
-          <div class="course"> 
-            <img src="./thumbnail/<?= $row["thumbnail"] ?>" alt="gambar kelas <?= $row["judul"] ?>" />
-            <h3><?= $row["judul"] ?></h3>
-            <p>
-              <?php 
-                $query = pg_fetch_assoc(pg_query($con,"SELECT * FROM pengajar WHERE id = {$row["id_pengajar"]}"));
-              ?>
-              <?= $query["nama"] ?>
-            </p>
-            <p><?= $row["jumlah_siswa"]?> registered students</p>
-            <p>Rp<?= $row["harga"] ?></p>
-            <?php if ($row["harga"] == 0 ) { ?>
-              <a href="home/login.php">Enroll</a>
-            <?php } else { ?>
-              <a href="home/login.php">pay</a>
-            <?php } ?>
+      <article id="courses">
+        <div class="courses-container">
+          <h2>Most Popular Courses</h2>
+          <div class="course-container">
+            <?php while($row = pg_fetch_assoc($data_course)) { ?>
+            <div class="course"> 
+              <img src="./thumbnail/<?= $row["thumbnail"] ?>" alt="gambar kelas <?= $row["judul"] ?>" />
+              <h3><?= $row["judul"] ?></h3>
+              <p>Mentor : 
+                <?php 
+                  $query = pg_fetch_assoc(pg_query($con,"SELECT * FROM pengajar WHERE id = {$row["id_pengajar"]}"));
+                ?>
+                <?= $query["nama"] ?>
+              </p>
+              <p><?= $row["jumlah_siswa"]?> registered students</p>
+              <p>Rp<?= $row["harga"] ?></p>
+              <?php if ($row["harga"] == 0 ) { ?>
+                <a href="home/login.php">Start</a>
+              <?php } else { ?>
+                <a href="home/login.php">Enroll</a>
+              <?php } ?>
+            </div>
+            <?php }; ?>
           </div>
-          <?php }; ?>
-        </div>
+        </div> 
       </article>
     </main>
     <footer>
@@ -123,20 +134,30 @@
       const registerButton = document.querySelector(".register-button");
       const registerOption = document.querySelector(".register-option");
       registerButton.addEventListener("click", () => {
-        if (registerOption.style.opacity == 0) {
-          registerOption.style.opacity = 1;
+        if (registerOption.classList.contains("isHidden")) {
+          registerOption.classList.remove("isHidden");
         } else {
-          registerOption.style.opacity = 0;
+          registerOption.classList.add("isHidden");
         }
       });
 
       const applyButton = document.querySelector(".apply-button");
       const applyOption = document.querySelector(".apply-option");
       applyButton.addEventListener("click", () => {
-        if (applyOption.style.opacity == 0) {
-          applyOption.style.opacity = 1;
+        if (applyOption.classList.contains("isHidden")) {
+          applyOption.classList.remove("isHidden");
         } else {
-          applyOption.style.opacity = 0;
+          applyOption.classList.add("isHidden");
+        }
+      });
+
+      const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
         }
       });
     </script>

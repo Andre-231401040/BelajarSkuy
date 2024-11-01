@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Quicksand", sans-serif;
+}
+
+header {
+  display: initial;
+}
+
+nav {
+  position: sticky;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-around;
+  background-color: white;
+}
+
+h1 {
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  background: linear-gradient(202deg, #144166 -15.21%, #2577ba 57.53%, #2982cc 147.15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav a,
+button {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.navigation {
+  /* flex: 6; */
+  gap: 36px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.navigation a:hover {
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+.login_register {
+  /* flex: 2; */
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  color: #2982cc;
+  padding: 12px;
+  font-weight: bolder;
+  transition: 0.2s;
+}
+
+.register-button {
+  color: white;
+  padding: 12px;
+  width: 108px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #2577ba;
+  font-weight: bolder;
+  border: none;
+}
+
+.login:hover,
+.register-button:hover {
+  opacity: 0.8;
+}
+
+.register-option,
+.apply-option {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  transition: 0.2s;
+}
+
+.isHidden {
+  display: none;
+}
+
+.register-option a,
+.apply-option a {
+  padding: 8px;
+  background-color: #d9d9d9;
+}
+
+.register-option a:hover,
+.apply-option a:hover {
+  background-color: darkgray;
+}
+
+main {
+  height: 100vh;
+  padding: 40px 60px;
+}
+
+main a {
+  gap: 16px;
+  width: 180px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 60px;
+  background-color: #12ae44;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+main a img {
+  width: 36px;
+}
+
+article {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+article h2 {
+  color: #2982cc;
+}
+
+footer {
+  width: 100vw;
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  background-color: #2e7dbf;
+  justify-content: space-evenly;
+}
+
+footer h2 {
+  color: white;
+}
+
+.nama-website {
+  display: flex;
+  align-items: center;
+}
+
+.nama-website img {
+  width: 140px;
+}
+
+#social-media .gambar {
+  margin-top: 5px;
+}
+
+#social-media img {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+}
