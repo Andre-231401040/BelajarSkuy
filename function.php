@@ -1,7 +1,7 @@
 <?php 
 $host = "localhost";
 $user = "postgres";
-$password = "Andre2525";
+$password = "";
 $dbname = "BelajarSkuy";
 $con = pg_connect("host=$host user=$user password=$password dbname=$dbname");
 if(!$con){
