@@ -88,6 +88,23 @@ pg_close();
         </div>
     </div>
 
+    <div class="container">
+        <div class="rectangle">
+            <p class="title">Kursus Terbaru </p>
+        </div>
+
+        <div class="course">
+            <div class="courserectangle">
+
+            </div>
+            <div class="courserectangle">
+
+            </div>
+            <div class="courserectangle">
+
+            </div>
+        </div>
+    </div>
     
     
    
