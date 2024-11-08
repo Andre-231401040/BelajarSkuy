@@ -106,12 +106,20 @@ pg_close($con);
 </head>
 <body>
     <main>
+        <div class="atas">
         <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
             <?php if($foto_profil != null){ ?>
                 <img src="../images/foto_profil/<?= $foto_profil; ?>" alt="foto profil <?= $nama; ?>">
             <?php }else{ ?>
                 <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
             <?php } ?>
+            <div class="nama">
+                    <h2><?= $nama; ?></h2>
+            </div>
+        </form>
+        </div>
+
+        <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
             <label for="nama">Nama
                 <input type="text" id="nama" name="nama" value="<?= $nama; ?>" required>
             </label>

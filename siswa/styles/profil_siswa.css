@@ -5,24 +5,41 @@
   }
   
   body {
-    background-color: #eeeed0;
+    background-color: #79CAF5;
     font-family: "Quicksand", sans-serif;
   }
   
-  form {
+  /* form {
     gap: 12px;
     padding: 12px 32px;
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
+  } */
   
+  .atas{
+    display: flex;
+    flex-direction: column;
+    margin-left: 65px;
+    margin-top: 50px;
+    width: 1140px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+  }
+  .nama{
+    display: flex;
+  }
+
   img {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    margin-top: 30px;
+    margin-left: 50px;
   }
   
   label {
