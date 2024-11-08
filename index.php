@@ -35,17 +35,17 @@
         </div>
         <div class="container">
           <div class="navigation">
-            <a href="#about">About</a>
-            <a href="#courses">Courses</a>
-            <a href="#social-media">Contact</a>
+            <a href="#about">Tentang</a>
+            <a href="#courses">Kursus</a>
+            <a href="#social-media">Kontak</a>
           </div>
           <div class="login_register">
-            <a href="./home/login.php" class="login">Login</a>
+            <a href="./home/login.php" class="login">Masuk</a>
             <div class="register">
-              <button href="" class="register-button">Register</button>
+              <button href="" class="register-button">Daftar</button>
               <div class="register-option isHidden">
-                <a href="./home/register_student.php">as student</a>
-                <a href="./home/register_teacher.php">as teacher</a>
+                <a href="./home/register_student.php">Sebagai Murid</a>
+                <a href="./home/register_teacher.php">Sebagai Pengajar</a>
               </div>
             </div>
           </div>
@@ -54,20 +54,20 @@
       <div class="jumbotron">
         <div class="text">
           <header>
-            <h2>Lets</h2>
+            <h2>Ayo</h2>
             <h2 class="highlight">E-Learning</h2>
-            <h2>At Your Home</h2>
+            <h2>di Rumah Anda</h2>
           </header>
-          <p>Improve your skills with interactive online courses. Access quality materials, experienced mentors, and a learning community ready to support your journey. Start learning today and achieve your dreams!</p>
+          <p>Tingkatkan keterampilan Anda dengan kursus online interaktif. Akses materi berkualitas, mentor berpengalaman, dan komunitas belajar yang siap mendukung perjalanan Anda. Mulailah belajar hari ini dan raih impian Anda!</p>
           <div class="link">
             <div class="apply">
-              <button class="apply-button">Apply Now</button>
+              <button class="apply-button">Daftar Sekarang</button>
               <div class="apply-option isHidden">
-                <a href="./home/register_student.php">as student</a>
-                <a href="./home/register_teacher.php">as teacher</a>
+                <a href="./home/register_student.php">Sebagai Murid</a>
+                <a href="./home/register_teacher.php">Sebagai Pengajar</a>
               </div>
             </div>
-            <a href="#about" class="readmore">Read More</a>
+            <a href="#about" class="readmore">Baca Selengkapnya</a>
           </div>
         </div>
         <img src="./images/vektor.png" alt="gambar vektor dua orang sedang berbicara" />
@@ -77,10 +77,9 @@
       <a href="./home/faq.html" class="faq"><img src="./images/Main Logo.png" alt="logo faq" /></a>
       <article id="about">
         <div class="about-container">
-          <h2>About Us</h2>
+          <h2>Tentang Kami</h2>
           <p>
-            We are an online course platform dedicated to helping you develop skills and knowledge in various fields, from technology to creativity. With access to up-to-date materials and professional mentors, we believe that everyone has
-            the right to learn without limitations of time and place. Our mission is to create flexible, interactive and quality learning experiences, so you can achieve your career and personal goals with more confidence.
+          Kami adalah platform kursus online yang berdedikasi untuk membantu Anda mengembangkan keterampilan dan pengetahuan di berbagai bidang, mulai dari teknologi hingga kreativitas. Dengan akses ke materi terbaru dan mentor profesional, kami percaya bahwa setiap orang berhak untuk belajar tanpa batasan waktu dan tempat. Misi kami adalah menciptakan pengalaman belajar yang fleksibel, interaktif, dan berkualitas, sehingga Anda dapat meraih tujuan karier dan pribadi dengan lebih percaya diri.
           </p>
           <div class="image">
             <img src="./images/development.jpg" alt="gambar vektor pengembangan aplikasi" />
@@ -91,7 +90,7 @@
       </article>
       <article id="courses">
         <div class="courses-container">
-          <h2>Most Popular Courses</h2>
+          <h2>Kursus Paling Populer</h2>
           <div class="course-container">
             <?php while($row = pg_fetch_assoc($data_course)) { ?>
             <div class="course"> 
@@ -103,12 +102,12 @@
                 ?>
                 <?= $query["nama"] ?>
               </p>
-              <p><?= $row["jumlah_siswa"]?> registered students</p>
+              <p><?= $row["jumlah_siswa"]?> murid terdaftar</p>
               <p>Rp<?= $row["harga"] ?></p>
               <?php if ($row["harga"] == 0 ) { ?>
-                <a href="home/login.php">Start</a>
+                <a href="home/login.php">Mulai</a>
               <?php } else { ?>
-                <a href="home/login.php">Enroll</a>
+                <a href="home/login.php">Daftar</a>
               <?php } ?>
             </div>
             <?php }; ?>
@@ -122,7 +121,7 @@
         <h2>BelajarSkuy</h2>
       </div>
       <div id="social-media">
-        <h2>Contact Us</h2>
+        <h2>Hubungi Kami</h2>
         <div class="gambar">
           <a href="mailto:andrelim806@gmail.com" target="_blank"><img src="./images/gmail.png" alt="logo gmail" /></a>
           <a href="https://www.instagram.com/dree_lim" target="_blank"><img src="./images/instagram.png" alt="logo instagram" /></a>

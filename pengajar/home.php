@@ -42,47 +42,46 @@ pg_close();
     <link rel="stylesheet" href="./styles/home.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="./edit_profil.php" class="profil">
-                <?php if($gambar != null){ ?>
-                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
-                <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
-                <?php } ?>
-                <div class="nama">
-                    <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
-                </div>
-            </a>
-            <ul>
-                <li>
-                    <a href="./home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_pengajar.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
-        </nav>
+<header>
+    <nav>
+        <a href="./edit_profil.php" class="profil">
+            <?php if($gambar != null){ ?>
+                <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+            <?php }else{ ?>
+                <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+            <?php } ?>
+            <div class="nama">
+                <h2><?= $nama; ?></h2>
+            </div>
+        </a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container">
+            <div class="navigation">
+                <a href="./home.php">Beranda</a>
+                <a href="./course.php">Kursus</a>
+                <a href="../forum_pengajar.php">Forum</a>
+            </div>
+        </div>
+    </nav>
     </header>
+
     <main>
         <h1>Hi, <?= $nama; ?></h1>
+
         <div class="container">
             <div class="jumlah-murid">
                 <h2>Jumlah Murid</h2>
                 <?php if(!is_null($jumlah_siswa)){ ?>
                     <p><?= $jumlah_siswa; ?></p>
                 <?php }else{ ?>
-                    <p>0</p>
+                    <p>0 siswa</p>
                 <?php } ?>
             </div>
-            <div class="pendapatan">
+            <!-- <div class="pendapatan">
                 <h2>Pendapatan</h2>
                 <?php if(!is_null($total_pendapatan)){ ?>
                     <p>Rp<?= $total_pendapatan - $gaji_ditarik; ?></p>
@@ -105,10 +104,21 @@ pg_close();
                 <?php }else{ ?>
                     <p>Anda belum memiliki kursus.</p>
                 <?php } ?>
-            </div>
+            </div> -->
         </div>     
     </main>
+    
     <script>
+        const hamburgerBtn = document.querySelector(".hamburger");
+        const navList = document.querySelector(".container");
+        hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+            navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+        });
+
         const form = document.querySelector("form");
         const checkOutButton = document.querySelector("#tarik");
         checkOutButton.addEventListener("click", function(e){
@@ -123,11 +133,11 @@ pg_close();
         const formatMessage = (obj) => {
             return `
             Data Pengajar
-Nama: ${obj.nama}
-Email: ${obj.email}
-Pendapatan: ${obj.pendapatan}
-Metode Pembayaran: (Gopay, OVO, BCA, dll)
-Nomor Rekening atau VA: (Isi dengan nomor anda)
+            Nama: ${obj.nama}
+            Email: ${obj.email}
+            Pendapatan: ${obj.pendapatan}
+            Metode Pembayaran: (Gopay, OVO, BCA, dll)
+            Nomor Rekening atau VA: (Isi dengan nomor anda)
             `;
         };
     </script>

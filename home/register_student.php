@@ -41,52 +41,32 @@ if(isset($_POST["submit"])){
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
     <!-- Style -->
     <link rel="stylesheet" href="styles/register.css" />
-
-    <style>
-        .success, .failed{
-            width: 160px;
-            padding: 8px;
-            position: absolute;
-            left: 50%;
-            margin: 12px 0 0 -160px;  
-            border: 1px solid green;
-            background-color: rgba(153, 255, 51, 0.5);
-        }
-
-        .failed{
-            border: 1px solid red;
-            background-color: rgba(255, 153, 153, 0.5);
-        }
-    </style>
   </head>
   <body>
-    <header>
-      <a href="../index.php"><img src="../images/home (1).png" alt="logo menu home" /></a>
-    </header>
     <main>
         <div class="image">
-            <h2>Your Learning Journey Starts Here!</h2>
+            <h2>Perjalanan Belajar Anda Dimulai di Sini!</h2>
             <img src="../images/logo.png" alt="logo belajarskuy">
         </div>
         <form method="post" action="register_student.php" autocomplete="off">
-            <h1>Create Student Account</h1>
+            <h1>Buat Akun Murid</h1>
             <div class="form-row">
                 <div class="input-data">
-                    <label for="first-name">First Name</label>
+                    <label for="first-name">Nama Depan</label>
                     <input type="text" id="first-name" name="first-name" required>
                 </div>
                 <div class="input-data">
-                    <label for="last-name">Last Name</label>
+                    <label for="last-name">Nama Belakang</label>
                     <input type="text" id="last-name" name="last-name">
                 </div>
             </div>
             <div class="form-row">
                 <div class="input-data">
-                    <label for="birth-date">Birth</label>
+                    <label for="birth-date">Tanggal Lahir</label>
                     <input type="date" id="birth-date" name="birth-date" required>
                 </div>
                 <div class="input-data">
-                    <label for="school">School</label>
+                    <label for="school">Sekolah / Instansi</label>
                     <input type="text" id="school" name="school" required>
                 </div>
             </div>
@@ -98,20 +78,20 @@ if(isset($_POST["submit"])){
             </div>
             <div class="form-row">
                 <div class="input-data">
-                    <label for="password">Password</label>
+                    <label for="password">Kata Sandi</label>
                     <input type="password" id="password" name="password" autocomplete="new-password" required>
                 </div>
                 <div class="input-data">
-                    <label for="confirmation-password">Confirmation Password</label>
+                    <label for="confirmation-password">Konfirmasi Kata Sandi</label>
                     <input type="password" id="confirmation-password" name="confirmation-password" autocomplete="new-password" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="create-btn">
-                    <button type="submit" name="submit">Create Account</button>
+                    <button type="submit" name="submit">Daftar</button>
                 </div>
             </div>
-            <div class="links">Already have an account? <a href="login.php">Login</a></div>
+            <div class="links">Sudah memiliki akun? <a href="login.php">Masuk</a></div>
         </form>
     </main>
   </body>
