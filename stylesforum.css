@@ -6,7 +6,7 @@
 
 body {
   font-family: "Quicksand", sans-serif;
-  background-color: #eeeed0;
+  background-color: #79caf5;
 }
 
 .container-header {
@@ -18,61 +18,76 @@ body {
 header {
   display: flex;
   width: 100%;
-  height: 80px; /* Fixed header height */
+  height: 90px; /* Fixed header height */
   position: fixed;
-  top: 10px;
   left: 0;
   z-index: 1000; /* Ensures it stays on top */
   padding-left: 20px; /* Adding space for sidebar */
   align-items: flex-start;
-  background-color: #eeeed0;
+  background-color: #ffffff;
 }
 
-.rectangle {
+nav .profil {
+  gap: 12px;
+  width: 25%;
+  padding: 4px;
+  color: black;
   display: flex;
   align-items: center;
-  background-color: #77e8fa;
-  border-radius: 50px;
-  padding: 10px 30px;
-  width: 400px; /* Sesuaikan dengan lebar maksimum yang diinginkan */
-  margin-right: 20px; /* Jarak dengan navigasi */
-  border: 2px solid #000;
-}
-
-.nama {
-  font-weight: bold;
-  left: 80px;
-  top: 15px;
-}
-
-nav a,
-button {
-  color: black;
-  font-size: 20px;
+  border-radius: 25px;
   text-decoration: none;
+  background-color: #ffffff;
 }
 
-.navigation {
-  flex: 6; /* Biarkan navigasi mengisi ruang yang tersisa */
+.profil img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center;
+}
+
+.profil .nama {
+  gap: 2px;
+  width: 60%;
   display: flex;
-  justify-content: space-between; /* Jarak antar item navigasi */
+  margin-top: -5px;
+  flex-direction: column;
 }
 
-.navigation a {
+.profil .underline {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+nav {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  width: 75%;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li a {
+  padding: 12px;
   color: black;
   font-size: 20px;
   text-decoration: none;
-  margin: 0 15px; /* Menambahkan margin kiri dan kanan untuk jarak */
 }
 
-.navigation a:hover {
-  transition: 0.2s;
-  opacity: 0.5;
-}
-
-.underline {
-  text-decoration: underline;
-  text-decoration-color: #069cb4;
+nav ul li a:hover {
+  background-color: rgba(91, 206, 224, 0.29);
 }
 
 .content {
@@ -109,7 +124,7 @@ button {
 
 .side-navbar {
   width: 210px;
-  background-color: #d9d9c4;
+  background-color: #ffffff;
   position: relative;
   top: 100px;
   left: 50px;
@@ -155,7 +170,7 @@ button {
 }
 
 .tweet {
-  background-color: #d9d9d9;
+  background-color: #ffffff;
   border: 1px solid #e1e8ed;
   border-radius: 10px;
   padding: 20px;
