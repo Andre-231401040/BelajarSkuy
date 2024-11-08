@@ -119,6 +119,10 @@ h1 {
   transition: 0.2s;
 }
 
+.register-option {
+  right: 20px;
+}
+
 .isHidden {
   display: none;
 }
@@ -126,12 +130,15 @@ h1 {
 .register-option a,
 .apply-option a {
   padding: 8px;
-  background-color: #d9d9d9;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #2577ba;
 }
 
 .register-option a:hover,
 .apply-option a:hover {
-  background-color: darkgray;
+  background-color: #4e9ee0;
 }
 
 .jumbotron {
@@ -194,6 +201,7 @@ h1 {
   align-items: center;
   justify-content: center;
   border-radius: 15px;
+  text-align: center;
   background-color: #2577ba;
   font-family: "Quicksand", sans-serif;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
@@ -232,7 +240,7 @@ article {
   width: 90vw;
   padding: 24px;
   display: flex;
-  border-radius: 24px;
+  border-radius: 16px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -440,7 +448,17 @@ footer h2 {
   }
 }
 
+@media screen and (max-width: 630px) {
+  .faq img {
+    bottom: 120px;
+  }
+}
+
 @media screen and (max-width: 468px) {
+  .jumbotron {
+    padding: 16px;
+  }
+
   .faq img {
     right: -5px;
     bottom: -5px;

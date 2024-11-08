@@ -47,12 +47,9 @@ pg_close($con);
     <link rel="stylesheet" href="styles/reset.css" />
   </head>
   <body>
-    <header>
-      <a href="../index.php"><img src="../images/home (1).png" alt="logo menu home" /></a>
-    </header>
     <main>
       <article class="reset-form">
-        <img src="../images/Belajar skuy (2).png" alt="logo belajarskuy" />
+        <img src="../images/logo.png" alt="logo belajarskuy" />
         <form method="post" action="reset_password.php">
           <h1>Reset Password</h1>
           <div class="input-data">
@@ -64,7 +61,7 @@ pg_close($con);
             <p>Password baru anda : <?= $newPassword; ?></p>
             <a href="login.php">Login</a>
           <?php endif; ?>
-          <button type="submit" name="reset">Submit</button>
+          <button type="submit" name="reset">Reset</button>
         </form>
       </article>
     </main>

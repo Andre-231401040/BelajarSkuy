@@ -41,10 +41,6 @@ pg_close($con);
     <title>BelajarSkuy</title>
     <link rel="icon" href="../images/logo.png" sizes="32x32" type="image/png" />
     <!-- Fonts -->
-    <!-- Racing Sans One -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet" />
     <!-- Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,28 +49,23 @@ pg_close($con);
     <link rel="stylesheet" href="styles/login.css" />
   </head>
   <body>
-    <header>
-      <a href="../index.php"><img src="../images/home (1).png" alt="logo menu home" /></a>
-    </header>
     <main>
       <article class="login-form">
-        <img src="../images/Belajar skuy (2).png" alt="logo belajarskuy" />
+        <img src="../images/logo.png" alt="logo belajarskuy" />
         <form method="post" action="login.php" autocomplete="off">
-          <h1>Login</h1>
+          <h1>Masuk</h1>
           <div class="input-data">
             <input type="text" name="email" id="email" required />
-            <div class="underline"></div>
             <label for="email">Email</label>
           </div>
           <div class="input-data">
             <input type="password" name="password" id="password" autocomplete="new-password" required />
-            <div class="underline"></div>
-            <label for="password">Password</label>
+            <label for="password">Kata Sandi</label>
           </div>
-          <button type="submit" name="login">Login</button>
+          <button type="submit" name="login">Masuk</button>
           <div class="links">    
-            <a href="register_student.php">Create an account</a>  
-            <a href="reset_password.php">Forget Password?</a>
+            <a href="register_student.php">Buat Akun Baru</a>  
+            <a href="reset_password.php">Lupa Kata Sandi?</a>
           </div>
         </form>
       </article>

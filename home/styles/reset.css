@@ -5,55 +5,58 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(90deg, #60aede -1.42%, #c9f8fc 52.92%, #77e8fa 98.3%);
+  background: url(../../images/bg2.png);
   font-family: "Quicksand", sans-serif;
 }
 
-header {
-  padding: 16px 0 0 16px;
-}
-
-header img {
-  width: 48px;
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reset-form {
-  gap: 64px;
+  padding: 60px;
+  width: 90vw;
+  height: 90vh;
   display: flex;
-  margin-top: 20px;
-  justify-content: center;
+  flex-direction: row-reverse;
+  border-radius: 12px;
+  justify-content: space-between;
   align-items: center;
+  background-color: white;
+  box-shadow: 0px 2px 8px rgba(99, 99, 99, 0.2);
 }
 
 .reset-form img {
-  width: 450px;
+  width: 420px;
   border-radius: 60px;
 }
 
 form {
+  gap: 24px;
+  width: 45%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 form h1 {
-  font-size: 36px;
-  font-weight: 800;
-  line-height: normal;
-  background: linear-gradient(195deg, #0d60be 10.85%, #041223 90.87%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  width: 100%;
+  font-size: 32px;
+  text-align: left;
+  margin-bottom: 16px;
 }
 
 form .input-data {
   width: 100%;
-  height: 40px;
-  margin: 0 20px;
+  height: 48px;
   position: relative;
-  margin-top: 24px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #7f7f7f;
 }
 
 .input-data input {
@@ -62,65 +65,32 @@ form .input-data {
   width: 100%;
   height: 100%;
   border: none;
-  font-size: 17px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
-}
-
-.input-data input:focus,
-.input-data input:valid {
   outline: none;
-}
-
-.input-data input:focus ~ label,
-.input-data input:valid ~ label {
-  transform: translateY(-20px);
-  font-size: 14px;
-  color: #3498db;
+  font-size: 17px;
 }
 
 .input-data label {
   position: absolute;
-  pointer-events: none;
-  bottom: 10px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.input-data .underline {
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  width: 100%;
-}
-
-.input-data .underline:before {
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 100%;
-  background: #3498db;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-}
-.input-data input:focus ~ .underline:before,
-.input-data input:valid ~ .underline:before {
-  transform: scale(1);
+  top: -12px;
+  left: 12px;
+  background-color: white;
+  color: #7f7f7f;
 }
 
 form button {
-  font-size: 20px;
-  margin-top: 24px;
   width: 100%;
-  height: 40px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 20px;
   border: none;
-  border-radius: 45px;
-  background: linear-gradient(180deg, #8bd0f6 26.67%, #2e7ca8 92.9%);
-  font-weight: 700;
+  color: white;
+  background-color: #2577ba;
 }
 
 p {
-  margin-top: 20px;
+  align-self: flex-start;
 }
 
 .failed {
@@ -129,7 +99,85 @@ p {
   position: absolute;
   text-align: center;
   left: 50%;
-  margin: 12px 0 0 -160px;
+  top: 48px;
+  margin-left: -90px;
   border: 1px solid red;
   background-color: rgba(255, 153, 153, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .reset-form {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .reset-form img {
+    width: 320px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  form h1 {
+    font-size: 52px;
+    text-align: center;
+  }
+
+  form .input-data {
+    height: 60px;
+  }
+
+  .input-data label {
+    top: -16px;
+    left: 16px;
+    font-size: 24px;
+  }
+
+  form button {
+    height: 60px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .reset-form {
+    padding: 32px;
+  }
+
+  .reset-form img {
+    width: 200px;
+  }
+
+  form h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  form .input-data {
+    height: 40px;
+  }
+
+  .input-data label {
+    top: -12px;
+    left: 12px;
+    font-size: 16px;
+  }
+
+  form button {
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-height: 768px) {
+  .failed {
+    top: 60px;
+  }
+}
+
+@media screen and (min-height: 1024px) {
+  .failed {
+    top: 80px;
+  }
 }
