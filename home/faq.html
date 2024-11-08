@@ -15,53 +15,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
     <!-- Style -->
-    <link rel="stylesheet" href="../styles.css" />
-
-    <style>
-      header {
-        display: initial;
-      }
-      nav {
-        position: sticky;
-      }
-      main {
-        height: 100vh;
-      }
-      main a {
-        gap: 16px;
-        width: 180px;
-        padding: 12px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        border-radius: 60px;
-        background-color: #12ae44;
-        color: white;
-        font-size: 20px;
-        font-weight: bolder;
-      }
-      main a img {
-        width: 36px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/faq.css" />
   </head>
   <body>
     <header>
       <nav>
         <h1>BelajarSkuy</h1>
-        <div class="navigation">
-          <a href="../index.php#about">About</a>
-          <a href="../index.php#courses">Courses</a>
-          <a href="#social-media">Contact</a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="login_register">
-          <a href="login.php" class="login">Login</a>
-          <div class="register">
-            <button class="register-button">Register</button>
-            <div class="register-option">
-              <a href="register_student.php">as student</a>
-              <a href="register_teacher.php">as teacher</a>
+        <div class="container">
+          <div class="navigation">
+            <a href="../index.php#about">Tentang</a>
+            <a href="../index.php#courses">Kursus</a>
+            <a href="../index.php#social-media">Kontak</a>
+          </div>
+          <div class="login_register">
+            <a href="login.php" class="login">Masuk</a>
+            <div class="register">
+              <button href="" class="register-button">Daftar</button>
+              <div class="register-option isHidden">
+                <a href="register_student.php">Sebagai Murid</a>
+                <a href="register_teacher.php">Sebagai Pengajar</a>
+              </div>
             </div>
           </div>
         </div>
@@ -70,26 +48,32 @@
     <main>
       <article>
         <div class="question">
-          <h2>What is BelajarSkuy?</h2>
-          <p>> We are an online course platform dedicated to helping you develop skills and knowledge in various fields, from technology to creativity.</p>
+          <h2>
+            Apa itu BelajarSkuy? <span><img src="../images/down.svg" alt="gambar panah ke bawah" /></span>
+          </h2>
+          <p>BelajarSkuy adalah platform kursus online yang berdedikasi untuk membantu Anda mengembangkan keterampilan dan pengetahuan di berbagai bidang, mulai dari teknologi hingga kreativitas.</p>
         </div>
         <div class="question">
-          <h2>How to buy a course BelajarSkuy?</h2>
+          <h2>
+            Bagaimana cara membeli kursus di BelajarSkuy? <span><img src="../images/down.svg" alt="gambar panah ke bawah" /></span>
+          </h2>
           <p>
-            > To purchase a premium course, first select the course you want and click the "Buy" or "Enroll" button. You will be directed to a simple form where the course name, teacher, and price are displayed. Confirm these details, then
-            proceed by entering your payment information (such as credit card or PayPal). After reviewing the total price, click "Pay". Once the payment is completed, you can start learning immediately.
+            Untuk membeli kursus premium, pertama-tama pilih kursus yang Anda inginkan dan klik tombol "Daftar". Anda akan diarahkan ke formulir sederhana yang menampilkan nama dan harga kursus. Konfirmasikan detail ini, lalu lanjutkan
+            dengan memasukkan informasi pembayaran Anda (seperti kartu kredit atau PayPal). Setelah meninjau total harga, klik "Bayar". Setelah pembayaran selesai, Anda dapat langsung mulai belajar.
           </p>
         </div>
         <div class="question">
-          <h2>What're in the premium BelajarSkuy?</h2>
+          <h2>
+            Apa yang ada di dalam kursus premium? <span><img src="../images/down.svg" alt="gambar panah ke bawah" /></span>
+          </h2>
           <p>
-            > A premium class offers an enhanced learning experience with the most up-to-date materials, ensuring that the content you’re learning reflects the latest industry trends and technologies. These courses are designed to give you
-            deeper insights and practical skills that are relevant today. Additionally, premium classes are taught by top-tier mentors who are experts in their fields, providing you with personalized guidance, valuable feedback, and insider
-            knowledge to help you master the subject more effectively.
+            Kursus premium menawarkan pengalaman belajar yang lebih mendalam dengan materi terbaru, memastikan bahwa konten yang Anda pelajari mencerminkan tren dan teknologi industri terkini. Kursus ini dirancang untuk memberikan wawasan
+            lebih dalam dan keterampilan praktis yang relevan saat ini. Selain itu, kursus premium diajarkan oleh mentor terbaik yang ahli di bidangnya, menyediakan bimbingan personal, umpan balik berharga, dan pengetahuan mendalam untuk
+            membantu Anda menguasai subjek dengan lebih efektif.
           </p>
         </div>
-        <h2>You have another question to ask?</h2>
-        <a href="https://wa.me/6281361926580" target="_blank"><img src="../images/whatsapp.png" alt="logo whatsapp" />Click This</a>
+        <h2>Punya pertanyaan lain?</h2>
+        <a href="https://wa.me/6281361926580" target="_blank"><img src="../images/whatsapp.png" alt="logo whatsapp" />Klik ini</a>
       </article>
     </main>
     <footer>
@@ -110,11 +94,34 @@
       const registerButton = document.querySelector(".register-button");
       const registerOption = document.querySelector(".register-option");
       registerButton.addEventListener("click", () => {
-        if (registerOption.style.opacity == 0) {
-          registerOption.style.opacity = 1;
+        if (registerOption.classList.contains("isHidden")) {
+          registerOption.classList.remove("isHidden");
         } else {
-          registerOption.style.opacity = 0;
+          registerOption.classList.add("isHidden");
         }
+      });
+
+      const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if (navList.classList.contains("display")) {
+          navList.classList.remove("display");
+        } else {
+          navList.classList.add("display");
+        }
+      });
+
+      const dropDownButtons = Array.from(document.getElementsByTagName("span"));
+      dropDownButtons.forEach((dropDownButton) => {
+        dropDownButton.addEventListener("click", function () {
+          if (this.style.transform === "rotateX(180deg)") {
+            this.style.transform = "rotateX(0)";
+            this.parentElement.parentElement.classList.toggle("expanded");
+          } else {
+            this.style.transform = "rotateX(180deg)";
+            this.parentElement.parentElement.classList.toggle("expanded");
+          }
+        });
       });
     </script>
   </body>

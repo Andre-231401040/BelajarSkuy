@@ -9,31 +9,23 @@ html {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background-color: #79caf5;
   font-family: "Quicksand", sans-serif;
 }
 
+header {
+  background-color: #79caf5;
+}
+
 nav {
-  width: 100vw;
-  padding: 12px;
+  padding: 12px 40px;
   display: flex;
   align-items: center;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
   background-color: white;
-}
-
-h1 {
-  flex: 2;
-  font-family: "Racing Sans One", sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  background: linear-gradient(202deg, #144166 -15.21%, #2577ba 57.53%, #2982cc 147.15%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 nav a,
@@ -43,11 +35,45 @@ button {
   text-decoration: none;
 }
 
+h1 {
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  background: linear-gradient(202deg, #144166 -15.21%, #2577ba 57.53%, #2982cc 147.15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hamburger {
+  cursor: pointer;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #2577ba;
+}
+
+.container {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .navigation {
-  flex: 6;
+  gap: 36px;
   display: flex;
   font-weight: bold;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .navigation a:hover {
@@ -56,16 +82,17 @@ button {
 }
 
 .login_register {
-  flex: 2;
+  gap: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .login {
   color: #2982cc;
   padding: 12px;
   font-weight: bolder;
+  transition: 0.2s;
 }
 
 .register-button {
@@ -79,24 +106,39 @@ button {
   border: none;
 }
 
+.login:hover,
+.register-button:hover {
+  opacity: 0.8;
+}
+
 .register-option,
 .apply-option {
-  opacity: 0;
   display: flex;
   flex-direction: column;
   position: absolute;
   transition: 0.2s;
 }
 
+.register-option {
+  right: 20px;
+}
+
+.isHidden {
+  display: none;
+}
+
 .register-option a,
 .apply-option a {
   padding: 8px;
-  background-color: #d9d9d9;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #2577ba;
 }
 
 .register-option a:hover,
 .apply-option a:hover {
-  background-color: darkgray;
+  background-color: #4e9ee0;
 }
 
 .jumbotron {
@@ -125,7 +167,6 @@ button {
 
 .text .highlight {
   font-size: 40px;
-  font-family: "Kaisei HarunoUmi";
   background: linear-gradient(186deg, #0a6ddf 31.73%, #01131f 93.82%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -137,47 +178,46 @@ button {
 }
 
 .link {
+  gap: 20px;
   display: flex;
-}
-
-.link a,
-button {
-  font-size: 20px;
-  text-decoration: none;
-  text-align: center;
-  color: black;
-}
-
-.apply-button {
-  color: white;
-  width: 160px;
-  font-weight: bolder;
-  padding: 12px;
-  margin-right: 36px;
-  border-radius: 30px;
-  border: none;
-  background: linear-gradient(90deg, #60aede 42.3%, #345e78 89.99%);
-}
-
-.apply-option a {
-  width: 160px;
+  margin-top: 8px;
 }
 
 .readmore {
-  display: inline-block;
-  width: 160px;
-  font-weight: bolder;
-  padding: 12px;
-  border-radius: 30px;
-  border: 1px solid #2577ba;
-  background-color: #a6d3ee;
+  text-decoration: none;
+}
+
+.apply-button,
+.readmore {
+  width: 150px;
+  height: 60px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 16px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #2577ba;
+  font-family: "Quicksand", sans-serif;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.apply-button:hover,
+.readmore:hover {
+  color: #2982cc;
+  background-color: transparent;
+  border: 2px solid #2577ba;
 }
 
 main {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
+  align-items: center;
 }
 
 .faq img {
@@ -188,19 +228,35 @@ main {
 }
 
 article {
-  gap: 20px;
-  padding: 32px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  padding-top: 56px;
+  min-height: 100vh;
+  align-items: center;
 }
 
-#about p {
-  width: 50%;
+.about-container,
+.courses-container {
+  gap: 20px;
+  width: 90vw;
+  padding: 24px;
+  display: flex;
+  border-radius: 16px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+.about-container h2 {
+  color: #2982cc;
+}
+
+.about-container p {
+  text-align: center;
 }
 
 .image {
-  gap: 20px;
+  gap: 32px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -212,47 +268,67 @@ article {
   object-position: center;
 }
 
+.courses-container {
+  background-color: #2982cc;
+}
+
+.courses-container h2 {
+  color: white;
+}
+
 .course-container {
+  gap: 20px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
 .course {
-  gap: 4px;
+  gap: 8px;
   padding: 16px;
   display: flex;
+  border-radius: 12px;
   flex-direction: column;
-  border: 2px solid black;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
 .course img {
-  width: 300px;
-  height: 180px;
+  width: 320px;
+  height: 160px;
+  border-radius: 8px 8px 0 0;
   object-fit: cover;
-  margin-bottom: 12px;
   object-position: center;
 }
 
 .course a {
-  width: 150px;
-  padding: 5px;
-  color: black;
-  margin-top: 20px;
+  width: 120px;
+  color: white;
+  margin-top: 16px;
+  font-weight: bolder;
   text-align: center;
-  border-radius: 40px;
   text-decoration: none;
-  border: 2px solid #000;
-  background-color: #d9d9d9;
   align-self: center;
+  background-color: #2577ba;
+  border-radius: 8px;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  cursor: pointer;
+  padding: 10px 21px;
+  transition: 0.2s;
+}
+
+.course a:hover {
+  background-color: #1c84ff;
 }
 
 footer {
   width: 100vw;
-  background-color: #2e7dbf;
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 80px;
   align-items: center;
+  background-color: #2e7dbf;
+  justify-content: space-evenly;
 }
 
 footer h2 {
@@ -265,19 +341,131 @@ footer h2 {
 }
 
 .nama-website img {
-  width: 200px;
+  width: 140px;
 }
 
-.nama-website h2 {
-  margin-left: -36px;
+#social-media {
+  text-align: center;
 }
 
 #social-media .gambar {
   margin-top: 5px;
+  gap: 12px;
+  display: flex;
+  justify-content: center;
 }
 
 #social-media img {
-  width: 50px;
-  height: 50px;
-  margin-right: 12px;
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 856px) {
+  .navigation {
+    gap: 16px;
+  }
+
+  .login_register {
+    gap: 12px;
+  }
+
+  .jumbotron img {
+    height: 350px;
+  }
+
+  .link {
+    gap: 12px;
+  }
+
+  .image img {
+    width: 300px;
+    height: 210px;
+  }
+
+  .course img {
+    width: 272px;
+    height: 128px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .container {
+    opacity: 0;
+    top: -252px;
+    gap: 20px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    transition: 0.7s;
+  }
+
+  .display {
+    opacity: 1;
+    transform: translateY(320px);
+  }
+
+  .navigation {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .jumbotron img {
+    display: none;
+  }
+
+  .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .image img {
+    width: 100%;
+    height: 210px;
+  }
+
+  .course {
+    width: 100%;
+  }
+
+  .course img {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .faq img {
+    bottom: 120px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .jumbotron {
+    padding: 16px;
+  }
+
+  .faq img {
+    right: -5px;
+    bottom: -5px;
+  }
+
+  footer {
+    gap: 24px;
+    padding: 20px;
+  }
 }

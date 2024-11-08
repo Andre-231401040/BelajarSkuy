@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+header {
+  display: inline;
+}
+
+nav {
+  position: sticky;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  justify-content: space-between;
+  z-index: 48;
+}
+
+nav a,
+button {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  background: linear-gradient(202deg, #144166 -15.21%, #2577ba 57.53%, #2982cc 147.15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hamburger {
+  cursor: pointer;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #2577ba;
+}
+
+.container {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation {
+  gap: 36px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.navigation a:hover {
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+.login_register {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  color: #2982cc;
+  padding: 12px;
+  font-weight: bolder;
+  transition: 0.2s;
+}
+
+.register-button {
+  color: white;
+  padding: 12px;
+  width: 108px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #2577ba;
+  font-weight: bolder;
+  border: none;
+}
+
+.login:hover,
+.register-button:hover {
+  opacity: 0.8;
+}
+
+.register-option {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  transition: 0.2s;
+}
+
+.register-option {
+  right: 20px;
+}
+
+.isHidden {
+  display: none;
+}
+
+.register-option a {
+  padding: 8px;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #2577ba;
+}
+
+.register-option a:hover {
+  background-color: #4e9ee0;
+}
+
+main {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+main a {
+  gap: 16px;
+  width: 180px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 60px;
+  background-color: #12ae44;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+main a img {
+  width: 36px;
+}
+
+article {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  max-height: 54px;
+  padding: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+  transition: max-height 0.4s ease-in-out;
+}
+
+.expanded {
+  max-height: 300px;
+}
+
+.question h2 {
+  color: #2982cc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.question p {
+  margin-top: 16px;
+  text-align: justify;
+}
+
+span {
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+span img {
+  width: 24px;
+  filter: invert(48%) sepia(39%) saturate(2774%) hue-rotate(185deg) brightness(85%) contrast(87%);
+}
+
+footer {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  align-items: center;
+  background-color: #2e7dbf;
+  justify-content: space-evenly;
+}
+
+footer h2 {
+  color: white;
+}
+
+.nama-website {
+  display: flex;
+  align-items: center;
+}
+
+.nama-website img {
+  width: 140px;
+}
+
+#social-media {
+  text-align: center;
+}
+
+#social-media .gambar {
+  margin-top: 5px;
+  gap: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+#social-media img {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 856px) {
+  .navigation {
+    gap: 16px;
+  }
+
+  .login_register {
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .container {
+    opacity: 0;
+    top: -252px;
+    gap: 20px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    transition: 0.7s;
+  }
+
+  .display {
+    opacity: 1;
+    transform: translateY(320px);
+  }
+
+  .navigation {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .register-option {
+    right: 200px;
+  }
+
+  .question {
+    max-height: 84px;
+  }
+
+  .question h2 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .register-option {
+    right: 150px;
+  }
+
+  .expanded {
+    max-height: 400px;
+  }
+
+  .question h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .register-option {
+    right: 80px;
+  }
+
+  footer {
+    gap: 24px;
+    padding: 20px;
+  }
+}
