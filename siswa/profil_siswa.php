@@ -107,7 +107,6 @@ pg_close($con);
 <body>
     <main>
         <div class="atas">
-        <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
             <?php if($foto_profil != null){ ?>
                 <img src="../images/foto_profil/<?= $foto_profil; ?>" alt="foto profil <?= $nama; ?>">
             <?php }else{ ?>
@@ -115,44 +114,81 @@ pg_close($con);
             <?php } ?>
             <div class="nama">
                     <h2><?= $nama; ?></h2>
+                    <h3>siswa</h3>
             </div>
-        </form>
+            <!-- <div class = "button">
+                <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
+                    <label for="foto-profil">
+                        <input type="file" id="foto-profil" name="foto-profil">
+                    </label>
+                    <button> ubah foto profil</button>
+                </form>
+            </div> -->
         </div>
 
+
+        <div class="bawah">
         <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
-            <label for="nama">Nama
-                <input type="text" id="nama" name="nama" value="<?= $nama; ?>" required>
-            </label>
-            <label for="tanggal_lahir">Tanggal Lahir
-                <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>" required>
-            </label>
-            <label for="asal_sekolah">Asal Sekolah
-                <input type="text" id="asal_sekolah" name="asal_sekolah" value="<?= $asal_sekolah; ?>">
-            </label>
-            <label for="email">Email
-                <input type="text" id="email" name="email" required value="<?= $email; ?>">
-            </label>
-            <label for="nomor_handphone">No Handphone
-                <input type="text" id="nomor_handphone" name="nomor_handphone" value="<?= $nomor_handphone; ?>">
-            </label>
-            <label for="minat">Bidang Diminati
-                <input type="text" id="minat" name="minat" value="<?= $minat; ?>">
-            </label>
-            <label for="password">Password
-                <input type="password" id="password" name="password" value="<?= $password; ?>" required>
-            </label>
-            <label for="confirmation_password">Confirmation Password
-                <input type="password" id="confirmation_password" name="confirmation_password" value="<?= $confirmation_password; ?>" required>
-            </label>
-            <label for="deskripsi_diri">Deskripsi Diri
-                <textarea id="deskripsi_diri" name="deskripsi_diri"><?= $deskripsi_diri; ?></textarea>
-            </label>
-            <label for="foto-profil">
-                Foto Profil
-                <input type="file" id="foto-profil" name="foto-profil">
-            </label>
+
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="nama">Nama</label>
+                        <input type="text" id="nama" name="nama" value="<?= $nama; ?>" required>
+                </div>
+                        <div class= input-data>
+                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                        <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>" required>
+                </div>
+               
+            </div>
+            
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="asal_sekolah">Asal Sekolah</label>
+                        <input type="text" id="asal_sekolah" name="asal_sekolah" value="<?= $asal_sekolah; ?>">
+                </div>
+                        <div class= input-data>
+                    <label for="email">Email</label>
+                        <input type="text" id="email" name="email" required value="<?= $email; ?>">
+                </div>
+                
+            </div>
+
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="nomor_handphone">No Handphone</label>
+                        <input type="text" id="nomor_handphone" name="nomor_handphone" value="<?= $nomor_handphone; ?>">
+                </div>
+                        <div class= input-data>
+                    <label for="minat">Bidang Diminati</label>
+                        <input type="text" id="minat" name="minat" value="<?= $minat; ?>">
+                </div>
+               
+            </div>
+
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="password">Password</label>
+                        <input type="password" id="password" name="password" value="<?= $password; ?>" required>
+                </div>
+                        <div class= input-data>
+                    <label for="confirmation_password">Confirmation Password</label>
+                        <input type="password" id="confirmation_password" name="confirmation_password" value="<?= $confirmation_password; ?>" required>
+                </div>
+               
+            </div>
+
+            <div class= form-section>
+                <div class= deskripsi>
+                    <label for="deskripsi_diri">Deskripsi Diri</label>
+                        <textarea id="deskripsi_diri" name="deskripsi_diri"><?= $deskripsi_diri; ?></textarea>
+            </div>
+            
+            </div>
             <button type="submit" name="submit">Simpan</button>
         </form>
+        </div>
+        
     </main>
 </body>
 </html>
