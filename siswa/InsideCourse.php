@@ -18,6 +18,7 @@ $data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id 
 $nama_pengajar = $data_pengajar["nama"];
 $judul = $data_course["judul"];
 $thumbnail = $data_course["thumbnail"];
+$kategori = $data_course["kategori"];
 $deskripsi = $data_course["deskripsi"];
 $pdf = $data_course["materi_pdf"];
 $video = $data_course["materi_video"];
@@ -43,7 +44,7 @@ pg_close();
   </head>
   <body>
     <header>
-    <nav>
+      <nav>
             <a href="./profil_siswa.php" class="profil">
                 <?php if($profil != null){ ?>
                     <img src="../images/foto_profil/<?= $profil; ?>" alt="foto profil <?= $nama; ?>">
@@ -52,7 +53,6 @@ pg_close();
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
                 </div>
             </a>
             <ul>
@@ -72,10 +72,8 @@ pg_close();
         </nav>
     </header>
     <main>
-      <h1 style="margin: 20px"><?= $judul ?></h1>
-      <div class="container-namapengajar">
-        <div class="circle"></div>
-        <h2><?= $nama_pengajar?></h2>
+      <div class="container-judul">
+        <h1><?= $judul ?></h1>
       </div>
       <div class="container-main">
         <div class="container-gambar">
@@ -84,38 +82,46 @@ pg_close();
       </div>
       <div class="container-main2">
         <div class="container-materi">
-          <h1 class="judul">Deskripsi: </h1>
-          <p  class="deskripsi"><?= $deskripsi ?></p>
+          <span class="judul">Nama Pengajar </span>
+            <span class="deskripsi"><?= $nama_pengajar?></span>
         </div>
         <div class="container-materi">
-          <h1 class="judul">PDF: </h1>
-          <?php if ($pdf != null) { ?>
-            <a href="InsideCourse.php?id=<?= $row['id']?>" class="rectangle-3" id="download-pdf" style="margin: 20px">Download</a>
-          <?php } ?>
+          <span class="judul">kategori </span>
+            <span class="deskripsi"><?= $kategori ?></span>
         </div>
         <div class="container-materi">
-          <h1 class="judul">Video: </h1>
-          <?php if ($video != null) { ?>
-          <video controls src="../materi/video/<?= $video ?>" class="video" style="margin: 20px"></video>
-          <?php } else {?>
-            <p style="margin: 30px">Tidak ada Video</p>
-          <?php } ?>
+          <span class="judul">Deskripsi </span>
+            <p  class="deskripsi"><?= $deskripsi ?></p>
+          </div>
+        <div class="container-materi">
+          <span class="judul">PDF </span>
+            <?php if ($pdf != null) { ?>
+              <a href="InsideCourse.php?id=<?= $row['id']?>" id="download-pdf" style="margin: 20px">Download</a>
+            <?php } ?>
         </div>
         <div class="container-materi">
-          <h1 class="judul">Tugas: </h1>
-          <?php if ($tugas != null) { ?>
-            <a href="<?= $tugas ?>" id="tugas" style="margin: 30px">Buka Link ini</a>
-          <?php } else {?>
-            <p style="margin: 30px">Tidak ada Tugas</p>
-          <?php } ?>
+          <span class="judul">Video </span>
+            <?php if ($video != null) { ?>
+            <video controls src="../materi/video/<?= $video ?>" class="video" style="margin: 20px"></video>
+            <?php } else {?>
+              <p style="margin: 30px">Tidak ada Video</p>
+            <?php } ?>
+          </div>
+        <div class="container-materi">
+          <span class="judul">Tugas </span>
+            <?php if ($tugas != null) { ?>
+              <a href="<?= $tugas ?>" id="tugas" style="margin: 30px">Buka Link ini</a>
+            <?php } else {?>
+              <p style="margin: 30px">Tidak ada Tugas</p>
+            <?php } ?>
         </div>
         <div class="container-materi">
-          <h1 class="judul">Quiz: </h1>
-          <?php if ($quiz != null) { ?>
-            <a href="<?= $quiz ?>" id="kuis" style="margin: 30px">Buka Link ini</a>
-          <?php } else {?>
-            <p style="margin: 30px">Tidak ada kuis</p>
-          <?php } ?>
+          <span class="judul">Quiz </span>
+            <?php if ($quiz != null) { ?>
+              <a href="<?= $quiz ?>" id="kuis" style="margin: 30px">Buka Link ini</a>
+            <?php } else {?>
+              <p style="margin: 30px">Tidak ada kuis</p>
+            <?php } ?>
         </div>
       </div>
     </main>

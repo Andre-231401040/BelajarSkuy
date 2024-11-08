@@ -5,29 +5,8 @@
 }
 
 body{
-    background-color: #EEEED0;
+    background-color: #79caf5;
     font-family: "Quicksand", sans-serif;
-}
-
-.container{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.rectangle{
-    display: flex;
-    align-items: left;
-    background-color: #77E8FA;
-    border-radius: 50px;
-    padding: 10px 20px;
-    width: 50%;
-    max-width: 400px;
-    margin: 20px;
-    margin-bottom : -20px;
-    border: 2px solid #000; 
 }
 
 .circle img{
@@ -37,26 +16,6 @@ body{
     object-fit: cover;
     border-radius: 50%;
     object-position: center;
-}
-
-.nama{
-    gap: 2px;
-    width: 60%;
-    display: flex;
-    margin-top: -5px;
-    flex-direction: column;
-}
-
-.underline{
-    text-decoration: underline;
-    text-decoration-color: #069CB4;
-}
-
-.container-sebelummain{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
 }
 
 .container-search{
@@ -84,173 +43,117 @@ body{
     margin-right: 10px;
     border: 2px solid #000;  
 }
-
-@media (min-width: 789px){
-    nav {
-        width: 100%;
-        padding: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
     
-    nav .profil {
-        gap: 12px;
-        width: 25%;
-        padding: 4px;
-        color: black;
-        display: flex;
-        align-items: center;
-        border-radius: 25px;
-        text-decoration: none;
-        background-color: #77e8fa;
-    }
-
-    .profil img {
-        width: 56px;
-        height: 56px;
-        object-fit: cover;
-        border-radius: 50%;
-        object-position: center;
-    }
-    
-    .profil .nama {
-        gap: 2px;
-        width: 60%;
-        display: flex;
-        margin-top: -5px;
-        flex-direction: column;
-    }
-    
-    .profil .underline {
-        width: 100%;
-        height: 2px;
-        background-color: black;
-    }
-    
-    nav ul {
-        display: flex;
-        width: 75%;
-        justify-content: space-evenly;
-    }
-    
-    nav ul li {
-        list-style-type: none;
-    }
-    
-    nav ul li a {
-        padding: 12px;
-        color: black;
-        font-size: 20px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    
-    nav ul li a:hover {
-        background-color: rgba(91, 206, 224, 0.29);
-    }
+nav .profil {
+    gap: 12px;
+    width: 25%;
+    padding: 4px;
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
-@media (max-width : 788px){
-    nav {
-        width: 100%;
-        padding: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: row;
-      }
-      
-      nav .profil {
-        gap: 12px;
-        width: 70%;
-        padding: 4px;
-        color: black;
-        display: flex;
-        align-items: center;
-        border-radius: 25px;
-        text-decoration: none;
-        background-color: #77e8fa;
-      }
-      
-      .profil img {
-        width: 56px;
-        height: 56px;
-        object-fit: cover;
-        border-radius: 50%;
-        object-position: center;
-      }
-      
-      .profil .nama {
-        gap: 2px;
-        width: 60%;
-        display: flex;
-        margin-top: -5px;
-        flex-direction: column;
-      }
-      
-      .profil .underline {
-        width: 100%;
-        height: 2px;
-        background-color: black;
-      }
-      
-      nav ul {
-        display: flex;
-        width: auto;
-        justify-content: space-evenly;
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      nav ul li {
-        list-style-type: none;
-        width: 100%;
-        margin: 5px 0;
-      }
-      
-      nav ul li a {
-        width: 100%;
-        padding: 12px;
-        color: black;
-        font-size: 20px;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      
-      nav ul li a:hover {
-        background-color: rgba(91, 206, 224, 0.29);
-      }
+.profil img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center;
 }
+    
+.profil .nama {
+    gap: 2px;
+    width: 60%;
+    display: flex;
+    margin-top: -5px;
+    align-items : center;
+    color : #2E7DBF;
+}
+    
+nav {
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    background-color: white;
+}
+      
+.hamburger {
+    cursor: pointer;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+      
+.hamburger span {
+    display: block;
+    width: 40px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #2577ba;
+}
+      
+.container {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+      
+.navigation {
+    gap: 36px;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.navigation a{
+    text-decoration : none;
+    color : black;
+}
+
 .container-main{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
-.container-course{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border : 1px solid black;
-    width : 100%;
-    max-width : 411px;
-    height : 100%;
-    max-height : 576px;
-    margin : 20px;
+.container-course {
+    display : grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 100%;
+    max-width: 411px;
+    height: 540px;
+    background-color: white;
+    padding: 20px;
+}
+
+.judul{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 .gambarKurs{
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
     width : 100%;
-    max-width : 360px;
-    height : 100%;
-    max-height : 221px;
-    border : 1px solid black;
+    height : 200px;
+    object-fit: cover;
+    object-position: center;
+    justify-self: center;
 }
 
 .container-circle{
@@ -269,31 +172,20 @@ body{
 }
 
 .rectangle-3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #D9D9D9;
+    background-color: #2E7DBF;
     border-radius: 50px;
     padding: 10px 20px;
     width: 100%;
     max-width: 200px;
-    margin-top : 20px;
-    margin-bottom: 20px;
     text-align: center;
     text-decoration: none;
     border: 2px solid #000;
     cursor : pointer; 
 }
 
-.judul{
-    padding: 10px 20px;
-}
-
-
 .container-circle2{
     display: flex;
     justify-content: flex-start;
-    padding : 10px 20px;
 }
 
 .circle-3{
@@ -305,24 +197,76 @@ body{
     border: 2px solid #000; 
 }
 
-@media (max-width: 900px){
-    .container-main{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.bold{
+    font-weight: 600;
+    gap: 10px;
 }
 
-@media (max-width: 400px){
-    .gambarKurs{
-        display: flex;
-        margin-right: auto;
-        margin-left: auto;
-        width : 90%;
-        max-width : 360px;
-        height : 90%;
-        max-height : 221px;
-        border : 1px solid black;
-    }
+#Enroll-free{
+    color : white;
 }
+
+#jenjang{
+    display : flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin : 40px;
+    border-radius : 50px;
+    width : 120px;
+    height : 50px;
+    text-align: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    font-family: "Quicksand", sans-serif;
+}
+
+#jenjang option{
+    font-family: "Quicksand", sans-serif;
+}
+
+#jenjang:focus{
+    outline: none;
+}
+@media screen and (max-width: 768px) {
+    nav .profil {
+      width: fit-content;
+      border-radius: 50%;
+    }
+  
+    .profil .nama {
+      display: none;
+    }
+
+    nav {
+        justify-content: space-between;
+      }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .container {
+        opacity: 0;
+        top: -252px;
+        gap: 20px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        transition: 0.7s;
+    }
+    
+    .display {
+        opacity: 1;
+        transform: translateY(320px);
+    }
+    
+    .navigation {
+        text-align: center;
+        flex-direction: column;
+    }    
+}
+
+
