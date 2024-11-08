@@ -32,25 +32,41 @@ pg_close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
     <link rel="icon" href="./images/logo.png" sizes="32x32" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="stylesforum.css" />
 </head>
 <body>
-    <header>
-        <div class="container-header">
-            <div class="rectangle">
+<header>
+    <nav>
+            <a href="./edit_profil.php" class="profil">
                 <?php if($gambar != null){ ?>
-                    <img src="images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>" class="profile-pic">
+                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>
-                    <img src="images/foto_profil/foto-1.jpg" alt="foto profil default" class="profile-pic">
+                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
                 <?php } ?>
-                <p class="nama"><?= $nama; ?></p>
-            </div>
-            <nav class="navigation">
-                <a href="./pengajar/home.php">home</a>
-                <a href="./pengajar/course.php">course</a>
-                <a href="./forum_pengajar.php">forum</a>
-            </nav>
+                <div class="nama">
+                    <h2><?= $nama; ?></h2>
+                    <div class="underline"></div>
+                </div>
+            </a>
+            <ul>
+                <li>
+                    <a href="./pengajar/home.php">Home</a>
+                    <div class="underline"></div>
+                </li>
+                <li>
+                    <a href="./pengajar/course.php">Course</a>
+                    <div class="underline"></div>
+                </li>
+                <li>
+                    <a href="../forum_pengajar.php">Forum</a>
+                    <div class="underline"></div>
+                </li>
+            </ul>
+        </nav>
     </header>
     
     <div class="main-container">
