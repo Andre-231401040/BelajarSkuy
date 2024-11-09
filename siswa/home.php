@@ -52,114 +52,61 @@ pg_close();
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
                 </div>
             </a>
             <ul>
                 <li>
-                    <a href="./home.php">Home</a>
-                    <div class="underline"></div>
+                    <a href="./home.php">Beranda</a>
                 </li>
                 <li>
-                    <a href="./course.php">Course</a>
-                    <div class="underline"></div>
+                    <a href="./course.php">Kursus</a>
                 </li>
                 <li>
                     <a href="../forum_siswa.php">Forum</a>
-                    <div class="underline"></div>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <h1 style="margin-left: 30px;">Hi, <?= $nama; ?> </h1>
+    <h1 style="margin-left: 55px;margin-top:45px; color: white">Hi, <?= $nama; ?> </h1>
+
+    <div class="container">
+        <div class="rectangle">
+            <p class="title">Kursus Anda</p>
+        </div>
+
+        <div class="course">
+            <div class="courserectangle">
+
+            </div>
+            <div class="courserectangle">
+
+            </div>
+            <div class="courserectangle">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="rectangle">
+            <p class="title">Kursus Terbaru </p>
+        </div>
+
+        <div class="course">
+            <div class="courserectangle">
+
+            </div>
+            <div class="courserectangle">
+
+            </div>
+            <div class="courserectangle">
+
+            </div>
+        </div>
+    </div>
     
-    <div id="activities">
-        <div class="rectangle-2">
-            <div class="circle-2">
-                <p class="title">Kursus</p>
-            </div>
-            <div class="square-container">
-                <div class="square-6">
-                    <p class="text">Kategori</p>
-                </div>
-                <div class="square-5">
-                    <p class="text">Judul</p>
-                </div>
-                <?php
-                    $min_courses = 6; 
-                    $total_courses = count($courses);
-                    $course_count = max($total_courses, $min_courses); 
-
-                    for ($i = 0; $i < $course_count; $i++): 
-                        if ($i < $total_courses): 
-                ?>
-                            <div class="square-6">
-                                <p class="text"><?= $courses[$i]['kategori']; ?></p>
-                            </div>
-                            <div class="square-5">
-                                <p class="text"><?= $courses[$i]['judul']; ?></p>
-                            </div>
-                        <?php else: ?>
-                            <div class="square-6"></div>
-                            <div class="square-5"></div>
-                        <?php endif; ?>
-                    <?php endfor; ?>
-            </div>
-        </div>
-    </div>
-
-    <?php 
-        $max_courses = 6; 
-        $course_count = 0;
-    ?>
-
-    <div id="activities">
-    <div class="rectangle-2">
-        <div class="circle-2">
-            <p class="title">Kursus Terbaru</p>
-        </div>
-        <div class="square-container">
-            <div class="square-6">
-                <p class="text">Harga</p>
-            </div>
-            <div class="square-5">
-                <p class="text">Judul</p>
-            </div>
-
-            <?php if ($latest_courses){ ?>
-                <?php 
-                    foreach ($latest_courses as $course): 
-                        if ($course_count >= $max_courses) break; 
-                ?>
-                    <div class="square-6">
-                        <p class="text"><?= ($course['harga']); ?></p>
-                    </div>
-                    <div class="square-5">
-                        <p class="text" ><?= ($course['judul']); ?></p>
-                    </div>
-                <?php 
-                    $course_count++;
-                    endforeach;
-                ?> 
-            <?php }else{ ?>
-                <div class="square-6">
-                    <p class="text">Tidak Ada Kursus Baru</p>
-                </div>
-                <div class="square-5"></div>
-            <?php } ?>
-
-            <?php 
-                $empty_squares = $max_courses - $course_count;
-                for ($i = 0; $i < $empty_squares; $i++): 
-            ?>
-                <div class="square-6"></div>
-                <div class="square-5"></div>
-            <?php endfor; ?>
-        </div>
-    </div>
-</div>
-
+    
    
 </body>
 </html>
