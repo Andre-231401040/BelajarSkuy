@@ -1,78 +1,155 @@
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
   
   body {
-    background-color: #eeeed0;
+    background-color: #79CAF5;
     font-family: "Quicksand", sans-serif;
   }
   
-  form {
-    gap: 12px;
-    padding: 12px 32px;
+
+  .bawah{
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    margin-left: 65px;
+    margin-top: 50px;
+    width: 1140px;
+    height: 700px;
+    background-color: white;
+    box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4) ;
+    border-radius: 30px;
   }
   
+  .atas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 65px;
+    margin-top: 50px;
+    width: 1140px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+  }
+
+  h3{
+    color: gray;
+  }
+  .nama{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    font-size: 23px;
+  }
+
+ 
+
   img {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    margin-left: 50px;
   }
   
-  label {
+  form {
+    gap: 28px;
+    width: 100%;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 35px;
+    margin-top: 35px;
+  }
+  
+  .form-section {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+  }
+
+  
+  .input-data{
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    width: 48%;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #7f7f7f;
+    margin-bottom: 35px;
+  }
+
+  
+  .input-data label {
+    position: absolute;
+    top: -29px;
+    left: 12px;
+    color: #7f7f7f;
   }
   
-  input,
-  textarea {
-    border: none;
-    padding: 12px;
-    border-radius: 24px;
-    background-color: #d9d9d9;
-  }
-  
-  input {
-    width: 80%;
-    height: 24px;
-    font-family: "Quicksand", sans-serif;
-  }
-  
-  textarea {
-    width: 80%;
-    height: 60px;
-    font-family: "Quicksand", sans-serif;
-  }
-  
-  textarea::-webkit-scrollbar {
-    display: none;
-  }
-  
-  #foto-profil {
-    height: fit-content;
-  }
-  
-  button {
-    padding: 12px;
+  .input-data input {
     font-size: 20px;
     border: none;
-    color: white;
+    outline: none;
+    width: 100%;
+  }
+
+
+
+
+ 
+  
+  .deskripsi{
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    height: 130px;
+    border-radius: 8px;
+    border: 1px solid #7f7f7f;
+    margin-bottom: 35px;
+  }
+
+  
+  .deskripsi label {
+    position: absolute;
+    top: -29px;
+    left: 12px;
+    color: #7f7f7f;
+  }
+  
+  .deskripsi input {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+
+
+  textarea{
+    border: 0;
+    min-width: 100%;
+    height: 110px;
+
+  }
+
+
+  button{
+    margin-left: 85%;
+    margin-top: 30px;
+    width: 20%;
+    height: 48px;
+    cursor: pointer;
+    font-size: 20px;
     font-weight: bolder;
-    transition: 0.2s;
-    font-family: "Quicksand", sans-serif;
+    border-radius: 20px;
+    border: none;
+    color: white;
     background-color: #2577ba;
   }
-  
-  button:hover {
-    opacity: 0.8;
-  }
-  
