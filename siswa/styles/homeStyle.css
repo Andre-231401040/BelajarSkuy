@@ -67,7 +67,7 @@ nav ul li {
 nav ul li a {
   padding: 12px;
   color: black;
-  font-size: 25px;
+  font-size: 15px;
   text-decoration: none;
   font-weight: bolder;
 }
@@ -76,17 +76,16 @@ nav ul li a:hover {
   color: #2E7DBF;
 }
 
-
 .container{
   display: flex;
+  padding: 24px;
   flex-direction: column;
-  margin-top: 45px;
 }
 .rectangle{
   width: 1175px;
   height: 70px;
   background-color: white;
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   text-align: center;
   padding: 20px;
@@ -111,3 +110,72 @@ nav ul li a:hover {
   background-color: white;
   border-radius: 30px;
 }
+
+
+
+.container-main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.container-course {
+  display : grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 100%;
+  max-width: 375px;
+  height: 540px;
+  background-color: white;
+  padding: 20px;
+}
+.container-circle{
+  display : flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+  margin-top : 20px;
+  margin-bottom: 20px;
+}
+
+.container-linktabel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gambarKurs{
+  width : 100%;
+  height : 200px;
+  object-fit: cover;
+  object-position: center;
+  justify-self: center;
+}
+.judul{
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+.container-circle2{
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+

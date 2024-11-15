@@ -107,49 +107,97 @@ pg_close($con);
     
 </head>
 <body>
-    <main>
-        <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
+<main>
+        <div class="atas">
             <?php if($foto_profil != null){ ?>
                 <img src="../images/foto_profil/<?= $foto_profil; ?>" alt="foto profil <?= $nama; ?>">
             <?php }else{ ?>
                 <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
             <?php } ?>
-            <label for="nama">Nama
-                <input type="text" id="nama" name="nama" value="<?= $nama; ?>" required>
-            </label>
-            <label for="tanggal_lahir">Tanggal Lahir
-                <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>" required>
-            </label>
-            <label for="pendidikan_terakhir">Pendidikan Terakhir
-                <input type="text" id="pendidikan_terakhir" name="pendidikan_terakhir" value="<?= $pendidikan_terakhir; ?>">
-            </label>
-            <label for="pekerjaan">Pekerjaan
-                <input type="text" id="pekerjaan" name="pekerjaan" value="<?= $pekerjaan; ?>">
-            </label>
-            <label for="email">Email
-                <input type="text" id="email" name="email" required value="<?= $email; ?>">
-            </label>
-            <label for="nomor_handphone">No Handphone
-                <input type="text" id="nomor_handphone" name="nomor_handphone" value="<?= $nomor_handphone; ?>">
-            </label>
-            <label for="bidang_keahlian">Bidang Keahlian
-                <input type="text" id="bidang_keahlian" name="bidang_keahlian" value="<?= $bidang_keahlian; ?>">
-            </label>
-            <label for="password">Password
-                <input type="password" id="password" name="password" value="<?= $password; ?>" required>
-            </label>
-            <label for="confirmation_password">Confirmation Password
-                <input type="password" id="confirmation_password" name="confirmation_password" value="<?= $confirmation_password; ?>" required>
-            </label>
-            <label for="deskripsi_diri">Deskripsi Diri
-                <textarea id="deskripsi_diri" name="deskripsi_diri"><?= $deskripsi_diri; ?></textarea>
-            </label>
-            <label for="foto-profil">
-                Foto Profil
-                <input type="file" id="foto-profil" name="foto-profil">
-            </label>
+            <div class="nama">
+                    <h2><?= $nama; ?></h2>
+                    <h5>pengajar</h5>
+            </div>
+        </div>
+
+
+        <div class="bawah">
+        <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
+            <div class = "button-profile">
+                <label for="foto-profil" class= "custom-profile">
+                    ubah foto
+                    <input type="file" id="foto-profil" name="foto-profil" style="display : none">
+                </labe>
+            </div>
+            
+        <div class="data">
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="nama">Nama</label>
+                        <input type="text" id="nama" name="nama" value="<?= $nama; ?>" required>
+                </div>
+                        <div class= input-data>
+                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                        <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>" required>
+                </div>
+               
+            </div>
+            
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="pekerjaan">Pekerjaan</label>
+                        <input type="text" id="pekerjaan" name="pekerjaan" value="<?= $pekerjaan; ?>">
+                </div>
+                        <div class= input-data>
+                    <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
+                        <input type="text" id="pendidikan_terakhir" name="pendidikan_terakhir"  value="<?= $pendidikan_terakhir; ?>">
+                </div>
+                
+            </div>
+
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="email">Email</label>
+                        <input type="text" id="email" name="email" value="<?= $email; ?>">
+                </div>
+                        <div class= input-data>
+                    <label for="nomor_handphone">Nomor Handphone</label>
+                        <input type="text" id="nomor_handphone" name="nomor_handphone" value="<?= $nomor_handphone; ?>">
+                </div>
+               
+            </div>
+
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="password">Kata Sandi</label>
+                        <input type="password" id="password" name="password" value="<?= $password; ?>" required>
+                </div>
+                        <div class= input-data>
+                    <label for="confirmation_password">Konfirmasi Kata Sandi</label>
+                        <input type="password" id="confirmation_password" name="confirmation_password" value="<?= $confirmation_password; ?>" required>
+                </div>
+               
+            </div>
+
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="bidang_keahlian">Bidang Keahlian</label>
+                        <input type="bidang_keahlian" id="bidang_keahlian" name="bidang_keahlian" value="<?= $bidang_keahlian; ?>" >
+                </div>
+            </div>
+
+            <div class= form-section>
+                <div class= deskripsi>
+                    <label for="deskripsi_diri">Deskripsi Diri</label>
+                        <textarea id="deskripsi_diri" name="deskripsi_diri"><?= $deskripsi_diri; ?></textarea>
+            </div>
+            
+            </div>
             <button type="submit" name="submit">Simpan</button>
         </form>
+        </div>
+     </div>
+        
     </main>
 </body>
 </html>

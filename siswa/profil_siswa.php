@@ -116,20 +116,19 @@ pg_close($con);
                     <h2><?= $nama; ?></h2>
                     <h3>siswa</h3>
             </div>
-            <!-- <div class = "button">
-                <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
-                    <label for="foto-profil">
-                        <input type="file" id="foto-profil" name="foto-profil">
-                    </label>
-                    <button> ubah foto profil</button>
-                </form>
-            </div> -->
         </div>
 
 
         <div class="bawah">
-        <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
-
+        <form action="./profil_siswa.php" method="post" enctype="multipart/form-data">
+            <div class = "button-profile">
+                <label for="foto-profil" class= "custom-profile">
+                    ubah foto
+                    <input type="file" id="foto-profil" name="foto-profil" style="display : none">
+                </labe>
+            </div>
+            
+        <div class="data">
             <div class= form-section>
                 <div class= input-data>
                     <label for="nama">Nama</label>
@@ -148,34 +147,41 @@ pg_close($con);
                         <input type="text" id="asal_sekolah" name="asal_sekolah" value="<?= $asal_sekolah; ?>">
                 </div>
                         <div class= input-data>
-                    <label for="email">Email</label>
-                        <input type="text" id="email" name="email" required value="<?= $email; ?>">
+                    <label for="jenjang">Jenjang</label>
+                        <input type="text" id="jenjang" name="jenjang" required value="<?= $email; ?>">
                 </div>
                 
             </div>
 
             <div class= form-section>
                 <div class= input-data>
-                    <label for="nomor_handphone">No Handphone</label>
-                        <input type="text" id="nomor_handphone" name="nomor_handphone" value="<?= $nomor_handphone; ?>">
+                    <label for="email">Email</label>
+                        <input type="text" id="email" name="email" value="<?= $email; ?>">
                 </div>
                         <div class= input-data>
-                    <label for="minat">Bidang Diminati</label>
-                        <input type="text" id="minat" name="minat" value="<?= $minat; ?>">
+                    <label for="nomor_handphone">Nomor Handphone</label>
+                        <input type="text" id="nomor_handphone" name="nomor_handphone" value="<?= $nomor_handphone; ?>">
                 </div>
                
             </div>
 
             <div class= form-section>
                 <div class= input-data>
-                    <label for="password">Password</label>
+                    <label for="password">Kata Sandi</label>
                         <input type="password" id="password" name="password" value="<?= $password; ?>" required>
                 </div>
                         <div class= input-data>
-                    <label for="confirmation_password">Confirmation Password</label>
+                    <label for="confirmation_password">Konfirmasi Kata Sandi</label>
                         <input type="password" id="confirmation_password" name="confirmation_password" value="<?= $confirmation_password; ?>" required>
                 </div>
                
+            </div>
+
+            <div class= form-section>
+                <div class= input-data>
+                    <label for="minat">Bidang Diminati</label>
+                        <input type="minat" id="minat" name="minat" value="<?= $minat; ?>" required>
+                </div>
             </div>
 
             <div class= form-section>
@@ -188,6 +194,7 @@ pg_close($con);
             <button type="submit" name="submit">Simpan</button>
         </form>
         </div>
+     </div>
         
     </main>
 </body>
