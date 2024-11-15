@@ -9,24 +9,6 @@ body {
   background-color: #79caf5;
 }
 
-.container-header {
-  display: flex;
-  align-items: center;
-  width: 90%;
-}
-
-header {
-  display: flex;
-  width: 100%;
-  height: 90px; /* Fixed header height */
-  position: fixed;
-  left: 0;
-  z-index: 1000; /* Ensures it stays on top */
-  padding-left: 20px; /* Adding space for sidebar */
-  align-items: flex-start;
-  background-color: #ffffff;
-}
-
 nav .profil {
   gap: 12px;
   width: 25%;
@@ -34,9 +16,7 @@ nav .profil {
   color: black;
   display: flex;
   align-items: center;
-  border-radius: 25px;
   text-decoration: none;
-  background-color: #ffffff;
 }
 
 .profil img {
@@ -46,48 +26,104 @@ nav .profil {
   border-radius: 50%;
   object-position: center;
 }
-
+  
 .profil .nama {
   gap: 2px;
   width: 60%;
   display: flex;
   margin-top: -5px;
-  flex-direction: column;
+  align-items : center;
+  color : #2E7DBF;
 }
-
-.profil .underline {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-}
-
+  
 nav {
-  width: 100%;
-  padding: 16px;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  background-color: white;
+}
+    
+.hamburger {
+  cursor: pointer;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+    
+.hamburger span {
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #2577ba;
+}
+    
+.container-navbar {
+  gap: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-nav ul {
+    
+.navigation {
+  gap: 36px;
   display: flex;
-  width: 75%;
-  justify-content: space-evenly;
+  font-weight: bold;
+  justify-content: center;
 }
 
-nav ul li {
-  list-style-type: none;
+.navigation a{
+  text-decoration : none;
+  color : black;
 }
 
-nav ul li a {
-  padding: 12px;
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
-}
+@media screen and (max-width: 768px) {
+  nav .profil {
+    width: fit-content;
+    border-radius: 50%;
+  }
 
-nav ul li a:hover {
-  background-color: rgba(91, 206, 224, 0.29);
+  .profil .nama {
+    display: none;
+  }
+
+  nav {
+      justify-content: space-between;
+    }
+  
+  .hamburger {
+      display: flex;
+  }
+  
+  .container-navbar {
+      opacity: 0;
+      top: -252px;
+      gap: 20px;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      transition: 0.7s;
+  }
+  
+  .display {
+      opacity: 1;
+      transform: translateY(320px);
+  }
+  
+  .navigation {
+      text-align: center;
+      flex-direction: column;
+  }    
 }
 
 .content {
@@ -357,25 +393,5 @@ nav ul li a:hover {
     width: 80%; /* Lebar kontainer lebih besar */
   }
 
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-  }
 }
 
-/* Media Query untuk layar sangat kecil (misalnya ponsel) */
-@media (max-width: 480px) {
-  .navigation {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .side-navbar ul li {
-    font-size: 16px;
-  }
-
-  .form-container button {
-    width: 90%;
-  }
-}

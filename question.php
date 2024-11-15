@@ -59,7 +59,7 @@ pg_close();
                     <div class="underline"></div>
                 </li>
                 <li>
-                    <a href="../forum_siswa.php">Forum</a>
+                    <a href="./forum_siswa.php">Forum</a>
                     <div class="underline"></div>
                 </li>
             </ul>

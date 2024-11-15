@@ -40,7 +40,7 @@ pg_close();
 </head>
 <body>
 <header>
-    <nav>
+        <nav>
             <a href="./edit_profil.php" class="profil">
                 <?php if($gambar != null){ ?>
                     <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
@@ -49,23 +49,20 @@ pg_close();
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
                 </div>
             </a>
-            <ul>
-                <li>
-                    <a href="./pengajar/home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./pengajar/course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_pengajar.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
+            <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div class="container-navbar">
+            <div class="navigation">
+                <a href="./pengajar/home.php">Beranda</a>
+                <a href="./pengajar/course.php">Kursus</a>
+                <a href="../forum_pengajar.php">Forum</a>
+            </div>
+            </div>
         </nav>
     </header>
     

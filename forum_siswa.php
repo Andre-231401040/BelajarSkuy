@@ -39,9 +39,9 @@ pg_close();
     <link rel="stylesheet" href="stylesforum.css" />
 </head>
 <body>
-<header>
-    <nav>
-            <a href="./pengajar/edit_profil.php" class="profil">
+    <header>
+        <nav>
+            <a href="./profil_siswa.php" class="profil">
                 <?php if($gambar != null){ ?>
                     <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>
@@ -49,23 +49,20 @@ pg_close();
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
                 </div>
             </a>
-            <ul>
-                <li>
-                    <a href="./siswa/home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./siswa/course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_siswa.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
+            <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div class="container-navbar">
+            <div class="navigation">
+                <a href="./siswa/home.php">Beranda</a>
+                <a href="./siswa/course.php">Kursus</a>
+                <a href="./forum_siswa.php">Forum</a>
+            </div>
+            </div>
         </nav>
     </header>
     
@@ -140,4 +137,15 @@ pg_close();
             <?php } ?>
         </div>
 </body>
+<script> 
+    const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
+  </script>
 </html>
