@@ -15,8 +15,13 @@ $email = $data_siswa["email"];
 $id = $_GET["id"];
 $_SESSION["id"] = $id;
 $data_course = pg_fetch_assoc(pg_query($con, "SELECT * FROM kursus WHERE id = $id"));
+$thumbnail = $data_course["thumbnail"];
 $nama_course = $data_course["judul"];
 $harga_course = $data_course["harga"];
+$jumlah_murid = $data_course["jumlah_siswa"];
+$id_pengajar = $data_course["id_pengajar"];
+$data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
+$nama_pengajar = $data_pengajar["nama"];
 pg_close();
 ?>
 
@@ -40,40 +45,40 @@ pg_close();
 </head>
 <body>
 <header>
-    <nav>
-            <a href="./profil_siswa.php" class="profil">
-                <?php if($profil != null){ ?>
-                    <img src="../images/foto_profil/<?= $profil; ?>" alt="foto profil <?= $nama; ?>">
-                <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
-                <?php } ?>
-                <div class="nama">
-                    <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
-                </div>
-            </a>
-            <ul>
-                <li>
-                    <a href="./home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_siswa.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
+      <nav>
+        <a href="./profil_siswa.php" class="profil">
+          <?php if($profil != null){ ?>
+              <img src="../images/foto_profil/<?= $profil; ?>" alt="foto profil <?= $nama; ?>">
+          <?php }else{ ?>
+              <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+          <?php } ?>
+          <div class="nama">
+            <h2><?= $nama; ?></h2>
+          </div>
+        </a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container">
+          <div class="navigation">
+            <a href="home.php">Beranda</a>
+            <a href="course.php">Kursus</a>
+            <a href="../forum_siswa.php">Forum</a>
+          </div>
         </nav>
     </header>
     <main>
         <div class="container-payment">
-            <div class="rectangle-4"><span class = "Text"><strong><?= $nama_course; ?></strong><span></div>
-            <div class="rectangle-5"><span class = "Text"><strong>TOTAL : <?= $harga_course; ?></strong><span></div>           
-            <div class="container-linktabel">
-            <form> <button class="rectangle-3" type="submit" id="pay" value="checkout"> Pay </button></form>
+            <h1 class="judul"> Pembayaran </h1> 
+            <img class = "thumbnail" src = "../thumbnail/<?= $thumbnail ?>" alt = "<?= $nama_course ?>">
+            <div class = "rectangle"> <?= $nama_course ?> </div>
+            <div class = "rectangle"> <?= $nama_pengajar ?> </div> 
+            <div class = "rectangle"> <?= $jumlah_murid?> terdaftar </div>
+            <div class = "rectangle"> Rp<?= $harga_course ?> </div>         
+            <div class="container-linktabel"> 
+            <form> <button class="rectangle-3" type="submit" id="pay" value="checkout"> Bayar </button></form>
             </div>
         </div>
     </main>

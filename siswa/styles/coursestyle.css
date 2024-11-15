@@ -202,7 +202,7 @@ nav {
     gap: 10px;
 }
 
-#Enroll-free{
+#Enroll-free, #Enroll{
     color : white;
 }
 
@@ -226,6 +226,7 @@ nav {
 #jenjang:focus{
     outline: none;
 }
+
 @media screen and (max-width: 768px) {
     nav .profil {
       width: fit-content;
