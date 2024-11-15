@@ -32,36 +32,33 @@ pg_close();
   </head>
   <body>
     <header>
-    <nav>
-            <a href="./edit_profil.php" class="profil">
-                <?php if($gambar != null){ ?>
-                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
-                <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
-                <?php } ?>
-                <div class="nama">
-                    <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
-                </div>
-            </a>
-            <ul>
-                <li>
-                    <a href="./home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_pengajar.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
-        </nav>
-    </header>
+      <nav>
+          <a href="./edit_profil.php" class="profil">
+              <?php if($gambar != null){ ?>
+                  <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+              <?php }else{ ?>
+                  <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+              <?php } ?>
+              <div class="nama">
+                  <h2><?= $nama; ?></h2>
+              </div>
+          </a>
+          <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <div class="container">
+              <div class="navigation">
+                  <a href="./home.php">Beranda</a>
+                  <a href="./course.php">Kursus</a>
+                  <a href="../forum_pengajar.php">Forum</a>
+              </div>
+          </div>
+      </nav>
+    </header> 
 
-    <a href="./edit_course.php" class="add-course"> + Kursus</a>
+    <a href="./edit_course.php" class="add-course"> + </a>
 
     <div class="course-container">
       <?php while($row = pg_fetch_assoc($data)){ ?>
@@ -89,27 +86,18 @@ pg_close();
         </div>
       <?php } ?>
     </div>
-    
-    <script>
-      // Menambahkan event listener ke semua elemen .menu-trigger
-      document.querySelectorAll('.menu-trigger').forEach(trigger => {
-        trigger.addEventListener('click', function () {
-          // Ambil parent dari .menu-trigger, yaitu .menu-container
-          const menuContainer = this.closest('.menu-container');
-          // Toggle (aktifkan atau nonaktifkan) kelas "active" pada menu-container
-          menuContainer.classList.toggle('active');
-        });
-      });
 
-      // Jika ingin menutup dropdown saat mengklik di luar dropdown
-      document.addEventListener('click', function (event) {
-        // Jika elemen yang di-klik bukan bagian dari menu-container, maka tutup dropdown
-        document.querySelectorAll('.menu-container').forEach(container => {
-          if (!container.contains(event.target)) {
-            container.classList.remove('active');
-          }
+
+    <script>
+        const hamburgerBtn = document.querySelector(".hamburger");
+        const navList = document.querySelector(".container");
+        hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+            navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
         });
-      });
     </script>
   </body>
 </html>

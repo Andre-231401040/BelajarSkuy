@@ -70,41 +70,45 @@ pg_close();
     </header>
 
     <main>
-        <h1>Hi, <?= $nama; ?></h1>
-
-        <div class="container">
-            <div class="jumlah-murid">
-                <h2>Jumlah Murid</h2>
-                <?php if(!is_null($jumlah_siswa)){ ?>
-                    <p><?= $jumlah_siswa; ?></p>
-                <?php }else{ ?>
-                    <p>0 siswa</p>
-                <?php } ?>
-            </div>
-            <!-- <div class="pendapatan">
-                <h2>Pendapatan</h2>
-                <?php if(!is_null($total_pendapatan)){ ?>
-                    <p>Rp<?= $total_pendapatan - $gaji_ditarik; ?></p>
-                <?php }else{ ?>
-                    <p>Rp0</p>
-                <?php } ?>
-                <form action="tarik_gaji.php" method="post">
-                    <input type="hidden" name="nama" value="<?= $nama; ?>">
-                    <input type="hidden" name="email" value="<?= $email; ?>">
-                    <input type="hidden" name="pendapatan" value="<?= $total_pendapatan - $gaji_ditarik; ?>">
-                    <button id="tarik" type="submit" name="tarik">Tarik</button>
-                </form>
+        <h1 style="color: white">Hi, <?= $nama; ?></h1>
+        <div class="content">
+            <div class="container-rectangle">
+                <div class="rectangle">
+                    <h2 class="label">Jumlah Murid</h2>
+                    <?php if(!is_null($jumlah_siswa)){ ?>
+                        <p class="value"><?= $jumlah_siswa; ?></p>
+                    <?php }else{ ?>
+                        <p class="value">0 siswa</p>
+                    <?php } ?>
+                </div>
+                <div class="rectangle">
+                    <h2 class="label">Pendapatan</h2>
+                    <?php if(!is_null($total_pendapatan)){ ?>
+                        <p>Rp<?= $total_pendapatan - $gaji_ditarik; ?></p>
+                    <?php }else{ ?>
+                        <p>Rp0</p>
+                    <?php } ?>
+                    <form action="tarik_gaji.php" method="post">
+                        <input type="hidden" name="nama" value="<?= $nama; ?>">
+                        <input type="hidden" name="email" value="<?= $email; ?>">
+                        <input type="hidden" name="pendapatan" value="<?= $total_pendapatan - $gaji_ditarik; ?>">
+                        <button id="tarik" type="submit" name="tarik">Tarik</button>
+                    </form>
+                </div>
             </div>
             <div class="kursus">
-                <h2>Kursus</h2>
                 <?php if(pg_affected_rows($kursus) !== 0){ ?>
-                    <?php while($row = pg_fetch_assoc($kursus)){ ?>
-                        <p><?= $row["judul"]; ?></p>
-                    <?php } ?>
+                    <h2>Kursus terpopuler anda</h2>
+                    <div class="card-container">
+                        <?php while($row = pg_fetch_assoc($kursus)){ ?>
+                            <!-- masukkan div dengan class card -->
+                            <p><?= $row["judul"]; ?></p>
+                        <?php } ?>
+                    </div>
                 <?php }else{ ?>
-                    <p>Anda belum memiliki kursus.</p>
+                    <h2 class="label">anda belum memiliki kursus</h2>
                 <?php } ?>
-            </div> -->
+            </div>
         </div>     
     </main>
     

@@ -122,55 +122,81 @@ pg_close();
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
                 </div>
             </a>
-            <ul>
-                <li>
-                    <a href="./home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="container">
+                <div class="navigation">
+                    <a href="./home.php">Beranda</a>
+                    <a href="./course.php">Kursus</a>
                     <a href="../forum_pengajar.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
         <?php if(isset($id_kursus)) { ?>
             <form action="update_course.php?id_kursus=<?= $id_kursus; ?>" method="post" enctype="multipart/form-data" autocomplete="off">
+                <div class="rectangle">
                 <label for="judul">Judul
                     <input type="text" id="judul" name="judul" required value="<?= $data["judul"]; ?>">
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="deskripsi">Deskripsi
                     <textarea name="deskripsi" id="deskripsi" required><?= $data["deskripsi"]; ?></textarea>
                 </label>
-                <label for="kategori">Kategori
-                    <input type="text" id="kategori" name="kategori" required value="<?= $data["kategori"]; ?>">
+                </div>
+                <div class="rectangle">
+                    <label for="kategori">Kategori
+                        <input type="text" id="kategori" name="kategori">
+                    </label>
+                </div>
+                <div class="rectangle">
+                <label for="jenjang">Jenjang
+                    <!-- <input type="text" id="kategori" name="kategori" required value="<?= $data["kategori"]; ?>"> -->
+                    <select id="jenjang" name="jenjang">
+                        <option value="sd">SD</option>
+                        <option value="smp">SMP</option>
+                        <option value="sma">SMA</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="harga">Harga
                     <input type="number" id="harga" name="harga" required value="<?= $data["harga"]; ?>">
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="materi_pdf">Materi (PDF)
                     <input type="file" id="materi_pdf" name="materi_pdf" required>
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="materi_video">Materi (Video)
                     <input type="file" id="materi_video" name="materi_video">
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="tugas">Tugas
                     <input type="text" id="tugas" name="tugas" value="<?= $data["tugas"]; ?>">
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="kuis">Kuis
                     <input type="text" id="kuis" name="kuis" value="<?= $data["kuis"]; ?>">
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="thumbnail">Foto Thumbnail
                     <input type="file" id="thumbnail" name="thumbnail" required>
                 </label>
+                </div>
                 <?php if(isset($successEdit)) : ?>
                     <p class="berhasil-tambah">Kursus berhasil diperbarui</p>
                 <?php endif; ?>
@@ -178,33 +204,62 @@ pg_close();
             </form>
         <?php } else { ?>
             <form action="edit_course.php" method="post" enctype="multipart/form-data" autocomplete="off">
+                <div class="rectangle">
                 <label for="judul">Judul
                     <input type="text" id="judul" name="judul" required>
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="deskripsi">Deskripsi
                     <textarea name="deskripsi" id="deskripsi" required></textarea>
                 </label>
-                <label for="kategori">Kategori
-                    <input type="text" id="kategori" name="kategori" required>
+                </div>
+                <div class="rectangle">
+                    <label for="kategori">Kategori
+                        <input type="text" id="kategori" name="kategori">
+                    </label>
+                </div>
+                <div class="rectangle">
+                <label for="jenjang">Jenjang
+                    <!-- <input type="text" id="kategori" name="kategori" required> -->
+                    <select id="jenjang" name="jenjang">
+                        <option value="sd">SD</option>
+                        <option value="smp">SMP</option>
+                        <option value="sma">SMA</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="harga">Harga
                     <input type="number" id="harga" name="harga" required>
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="materi_pdf">Materi (PDF)
                     <input type="file" id="materi_pdf" name="materi_pdf" required>
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="materi_video">Materi (Video / MP4)
                     <input type="file" id="materi_video" name="materi_video">
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="tugas">Tugas
                     <input type="text" id="tugas" name="tugas">
                 </label>
+                </div>
+                <div class="rectangle">
                 <label for="kuis">Kuis
                     <input type="text" id="kuis" name="kuis">
                 </label>
-                <label for="thumbnail">Thumbnail (jpg, png, jpeg)
+                </div>
+                <div class="rectangle">
+                <label for="thumbnail">Gambar Mini (jpg, png, jpeg)
                     <input type="file" id="thumbnail" name="thumbnail" required>
                 </label>
+                </div>
                 <?php if(isset($successEdit)) : ?>
                     <p class="berhasil-tambah">Kursus berhasil ditambahkan</p>
                 <?php endif; ?>
@@ -213,4 +268,17 @@ pg_close();
         <?php } ?>
     </main>
 </body>
+
+    <script> 
+        const hamburgerBtn = document.querySelector(".hamburger");
+        const navList = document.querySelector(".container");
+        hamburgerBtn.addEventListener("click", () => {
+            if(navList.classList.contains("display")){
+            navList.classList.remove("display");
+            }else{
+            navList.classList.add("display");
+            }
+        });
+    </script>
+
 </html>

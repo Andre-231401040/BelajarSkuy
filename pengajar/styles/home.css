@@ -13,21 +13,12 @@ header {
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  display: inline;
 }
-
-
-h1 {
-  color: white;
-  padding: 30px 50px;
-  display: flex;
-  gap: 2px;
-}
-
-
 
 nav .profil {
   gap: 12px;
-  width: 25%;
+  width: 60%;
   padding: 4px;
   color: black;
   display: flex;
@@ -45,7 +36,7 @@ nav .profil {
   
 .profil .nama {
   gap: 2px;
-  width: 60%;
+  width: 100%;
   display: flex;
   margin-top: -5px;
   align-items : center;
@@ -56,12 +47,14 @@ nav {
   padding: 12px 40px;
   display: flex;
   align-items: center;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   justify-content: space-between;
   background-color: white;
 }
+
     
 .hamburger {
   cursor: pointer;
@@ -80,35 +73,92 @@ nav {
   background-color: #2577ba;
 }
     
- 
+.navigation a {
+  font-size: larger;
+  color : black;
+  text-decoration : none;
+  display: flex;
+}
+
+.navigation a:hover {
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
 .navigation {
-  gap: 36px;
+  gap: 50px;
   display: flex;
   font-weight: bold;
   justify-content: center;
 }
 
-.navigation a{
-  text-decoration : none;
-  color : black;
+main{
+  padding: 24px;
+  margin-top: 118px;
 }
 
-
-.jumlah-murid {
-  display: inline-block;
-  padding: 5px 10px;
-  border: none; 
+.content {
+  gap: 30px;
+  display: flex;
+  margin-top: 24px;
+  flex-direction: column;
 }
 
-.container {
+.container-rectangle{
+  gap: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rectangle{
+  width: 49%;
   background-color: white;
-  border-radius: 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  text-align: justify;
   padding: 20px;
-  text-align: center;
-  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+#tarik {
+  background-color: #2E7DBF; 
+  color: white; 
+  border: none; 
+  padding: 8px 16px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 14px; 
+}
+
+#tarik:hover {
+  background-color: #0056b3; 
+}
+
+
+.label, .value {
+  margin: 0; 
+  font-size: larger;
+}
+
+.label {
+  font-weight: normal;
+}
+
+.kursus {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  justify-content: center;
+}
 
 @media screen and (max-width: 768px) {
   nav .profil {
@@ -126,6 +176,10 @@ nav {
   
   .hamburger {
       display: flex;
+  }
+
+  h1 {
+    font-size: 28px;
   }
 
   .container {
@@ -148,7 +202,32 @@ nav {
 }
 
 .navigation {
-    text-align: center;
     flex-direction: column;
-    }
+}
+
+.navigation a{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rectangle {
+  flex-direction: column; /* Atur rectangle agar tampil vertikal di layar kecil */
+  gap: 10px;
+  padding: 15px;
+  width: 100%;
+}
+
+.kursus {
+  flex-direction: column; 
+  gap: 10px;
+  padding: 15px;
+  width: 100%;
+}
+
+.container-rectangle {
+  flex-direction: column;
+  align-items: center;
+}
+
 }  
