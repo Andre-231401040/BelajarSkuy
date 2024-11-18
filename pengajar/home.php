@@ -70,7 +70,7 @@ pg_close();
     </header>
 
     <main>
-        <h1 style="color: white">Hi, <?= $nama; ?></h1>
+        <h1 style="color: #2E7DBF;">Selamat Datang, <?= $nama; ?></h1>
         <div class="content">
             <div class="container-rectangle">
                 <div class="rectangle">

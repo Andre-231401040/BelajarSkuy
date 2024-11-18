@@ -62,6 +62,7 @@ if(isset($_GET["id_kursus"])){
                     echo "<script>alert('Kursus gagal ditambah')</script>";
                 }else{
                     $successAdd = true;
+                    header("Location: course.php");
                 }
             }
         }else{
@@ -87,6 +88,7 @@ if(isset($_GET["id_kursus"])){
                     echo "<script>alert('Kursus gagal ditambah')</script>";
                 }else{
                     $successAdd = true;
+                    header("Location: course.php");
                 }
             }
         }
@@ -263,7 +265,7 @@ pg_close();
                 <?php if(isset($successEdit)) : ?>
                     <p class="berhasil-tambah">Kursus berhasil ditambahkan</p>
                 <?php endif; ?>
-                <button type="submit" name="submit">Selesai</button>
+                <button type="submit" name="submit">Simpan</button>
             </form>
         <?php } ?>
     </main>

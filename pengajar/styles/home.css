@@ -97,6 +97,10 @@ main{
   margin-top: 118px;
 }
 
+h1{
+  text-shadow: 1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white;
+}
+
 .content {
   gap: 30px;
   display: flex;
@@ -114,7 +118,7 @@ main{
   width: 49%;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   text-align: justify;
   padding: 20px;
   display: flex;
@@ -123,13 +127,14 @@ main{
 }
 
 #tarik {
-  background-color: #2E7DBF; 
+  background-color: #2577ba; 
   color: white; 
   border: none; 
   padding: 8px 16px; 
   border-radius: 5px; 
   cursor: pointer; 
-  font-size: 14px; 
+  font-size: 14px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 #tarik:hover {
@@ -142,16 +147,16 @@ main{
   font-size: larger;
 }
 
-.label {
+/* .label {
   font-weight: normal;
-}
+} */
 
 .kursus {
   width: 100%;
   height: auto;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   text-align: center;
   padding: 20px;
   display: flex;

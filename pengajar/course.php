@@ -63,26 +63,19 @@ pg_close();
     <div class="course-container">
       <?php while($row = pg_fetch_assoc($data)){ ?>
         <div class="course-card">
-          <div class="menu-container">
-            <div class="menu-trigger">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            <div class="dropdown-menu">
-              <a href="edit_course.php?id_kursus=<?= $row["id"]; ?>">Edit</a>
-              <a href="hapus_course.php?id_kursus=<?= $row["id"]; ?>">Hapus</a>
-            </div>
-          </div>
           <img src="../thumbnail/<?= $row["thumbnail"]; ?>" alt="thumbnail kursus <?= $row["judul"]; ?>">
           <h2><?= $row["judul"]; ?></h2>
           <?php if(is_null($row["jumlah_siswa"])){ ?>
             <p>0 siswa terdaftar</p>
           <?php }else{ ?>
-            <p><?= $row["jumlah_siswa"]; ?> siswa terdaftar</p>
+            <p><?= $row["jumlah_siswa"]; ?> murid terdaftar</p>
           <?php } ?>
-          <p><?= $row["kategori"]; ?></p>
-          <p>Rp<?= $row["harga"]; ?></p>
+          <p>Jenjang: <?= $row["kategori"]; ?></p>
+          <p>Harga: Rp<?= $row["harga"]; ?></p>
+          <div class="button-container">
+            <a href="edit_course.php?id_kursus=<?= $row["id"]; ?>">Edit</a>
+            <a href="hapus_course.php?id_kursus=<?= $row["id"]; ?>">Hapus</a>
+          </div>
         </div>
       <?php } ?>
     </div>
