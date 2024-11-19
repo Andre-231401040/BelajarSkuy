@@ -84,10 +84,10 @@ pg_close();
            <div class="bold">Jenjang</div>: Kuliah  <!--mumpung belum ada backendnya -->
           </div>
           <div class="container-circle2">
-            <div class="bold">Jumlah Siswa</div>: <?= $row["jumlah_siswa"]; ?>
+            <div class="bold">Jumlah Murid</div>: <?= $row["jumlah_siswa"]; ?>
           </div>
           <div class="container-circle2">
-            <div class="bold">Harga</div>: <?= $row["harga"]; ?>
+            <div class="bold">Harga</div>: Rp<?= $row["harga"]; ?>
           </div>
           <div class="container-linktabel">
             <?php if (pg_affected_rows(pg_query($con, "SELECT * FROM success_payment WHERE id = $id_kursus AND id_siswa = $id_siswa")) != 0) { ?>

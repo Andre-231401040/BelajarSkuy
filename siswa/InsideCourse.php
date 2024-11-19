@@ -69,15 +69,16 @@ pg_close();
         </nav>
     </header>
     <main>
-      <div class="container-judul">
-        <h1><?= $judul ?></h1>
-      </div>
       <div class="container-main">
         <div class="container-gambar">
           <img src="../thumbnail/<?= $thumbnail ?>" class="gambarkurs">
         </div>
       </div>
       <div class="container-main2">
+        <div class="container-materi">
+          <span class = "judul">Judul </span>
+          <span class="deskripsi"> <?= $judul?></span>
+        </div>
         <div class="container-materi">
           <span class="judul">Pengajar </span>
             <span class="deskripsi"><?= $nama_pengajar?></span>
@@ -96,7 +97,7 @@ pg_close();
               <a href="InsideCourse.php?id=<?= $row['id']?>" id="download-pdf">Download</a>
             <?php } ?>
         </div>
-        <div class="container-materi">
+        <div class="container-materi video">
           <span class="judul">Video </span>
             <?php if ($video != null) { ?>
             <video controls src="../materi/video/<?= $video ?>" class="video"></video>
@@ -123,6 +124,15 @@ pg_close();
       </div>
     </main>
     <script>
+      const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
       document.getElementById('download-pdf').addEventListener('click', function(){
         const downloadLink = document.createElement('a');
         downloadLink.href = '../materi/pdf/<?= $pdf ?>'; 

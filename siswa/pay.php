@@ -73,9 +73,9 @@ pg_close();
         <div class="container-payment">
             <h1 class="judul"> Pembayaran </h1> 
             <img class = "thumbnail" src = "../thumbnail/<?= $thumbnail ?>" alt = "<?= $nama_course ?>">
-            <div class = "rectangle"> <?= $nama_course ?> </div>
+            <div class = "rectangle judulcourse"> <?= $nama_course ?> </div>
             <div class = "rectangle"> <?= $nama_pengajar ?> </div> 
-            <div class = "rectangle"> <?= $jumlah_murid?> terdaftar </div>
+            <div class = "rectangle"> <?= $jumlah_murid?> murid terdaftar </div>
             <div class = "rectangle"> Rp<?= $harga_course ?> </div>         
             <div class="container-linktabel"> 
             <form> <button class="rectangle-3" type="submit" id="pay" value="checkout"> Bayar </button></form>
@@ -83,6 +83,15 @@ pg_close();
         </div>
     </main>
     <script>
+      const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
         var payButton = document.getElementById('pay');
         payButton.addEventListener('click', async function (e) {
             e.preventDefault();

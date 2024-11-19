@@ -39,11 +39,7 @@ nav .profil {
 }
   
 .profil .nama {
-  gap: 2px;
   width: 60%;
-  display: flex;
-  margin-top: -5px;
-  align-items : center;
   color : #2E7DBF;
 }
   
@@ -51,6 +47,7 @@ nav {
   padding: 12px 40px;
   display: flex;
   align-items: center;
+  position : fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -94,39 +91,45 @@ nav {
   color : black;
 }
 
+.navigation a:hover{
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+main{
+  padding : 20px;
+}
+
 .container-linktabel{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.rectangle-3{
-  display: flex;
-  background-color: #2E7DBF;
-  border-radius: 50px;
-  padding: 10px 20px;
-  width: 50vh;
-  justify-content: center;
-  text-decoration: none;
-  border: 2px solid #000;
-  cursor : pointer; 
-  color : white;
+form{
+  width: 100%;
 }
 
-.container-payment{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow-y: auto;
+.rectangle-3{
+  border: none;
+  background-color: #2E7DBF;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  cursor : pointer; 
+  color : white;
+  margin : auto;
+  font-size: 16px;
+  font-weight: bolder;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
 }
 
 .thumbnail{
     width : 100%;
-    height : 200px;
     object-fit: cover;
     object-position: center;
-    justify-self: center;
 }
 
 .container-payment{
@@ -134,19 +137,23 @@ nav {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   border-radius: 10px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   width: 100%;
-  max-width: 411px;
-  height: 540px;
+  max-width: 400px;
+  min-height: 540px;
   background-color: white;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 138px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .judul{
   text-align: center;
+}
+
+.rectangle.judulcourse{
+  font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {
