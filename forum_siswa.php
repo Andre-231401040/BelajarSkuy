@@ -52,31 +52,31 @@ pg_close();
                 </div>
             </a>
             <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <div class="container-navbar">
-            <div class="navigation">
-                <a href="./siswa/home.php">Beranda</a>
-                <a href="./siswa/course.php">Kursus</a>
-                <a href="./forum_siswa.php">Forum</a>
-            </div>
+                <div class="navigation">
+                    <a href="./siswa/home.php">Beranda</a>
+                    <a href="./siswa/course.php">Kursus</a>
+                    <a href="./forum_siswa.php">Forum</a>
+                </div>
             </div>
         </nav>
     </header>
     
     <div class="main-container">
         <div class="ask-question-container">
-            <a href="question.php?email=<?= $email; ?>"><button class="ask-question">Ask Question</button></a>
+            <a href="question.php?email=<?= $email; ?>"><button class="ask-question"><img src="images/tambah.png" alt="tambah pertanyaan" class="icon-pertanyaan"><span>Tambah Pertanyaan</span></button></a>
         </div>
         <!-- Side Navbar -->
         <div class="side-navbar">
             <ul>
-                <li><a href="./forum_siswa.php"><img src="images/discussion.png" alt="discussion" class="icon">All Discussion</a></li>
-                <li><a href="./new_post.php"><img src="images/newpost.png" alt="discussion" class="icon">New Posts</a></li>
-                <li><a href="./my_post.php"><img src="images/myposts.png" alt="discussion" class="icon">My Posts</a></li>
-                <li><a href="./saved_post.php"><img src="images/save.png" alt="discussion" class="icon">Saved Posts</a></li>
+                <li><a href="./forum_siswa.php"><img src="images/semuadiskusi.png" alt="discussion" class="icon"><span>Semua Diskusi</span></a></li>
+                <li><a href="./new_post.php"><img src="images/diskusibaru.png" alt="discussion" class="icon"><span>Diskusi Baru</span></a></li>
+                <li><a href="./my_post.php"><img src="images/pertanyaanku.png" alt="discussion" class="icon"><span>Pertanyaan Saya</span></a></li>
+                <li><a href="./saved_post.php"><img src="images/tersimpan.png" alt="discussion" class="icon"><span>Tersimpan</span></a></li>
             </ul>
         </div>
 
@@ -105,11 +105,11 @@ pg_close();
                                 if ($isNewMinute) {
                                     echo "new"; // Jika kurang dari 1 menit
                                 } else if ($diff->h < 1) {
-                                    echo $diff->i . "m ago"; // Jika kurang dari 1 jam
+                                    echo $diff->i . "m yang lalu"; // Jika kurang dari 1 jam
                                 } else if ($diff->d < 1) {
-                                    echo $diff->h . "h ago"; // Jika kurang dari 1 hari
+                                    echo $diff->h . "j yang lalu"; // Jika kurang dari 1 hari
                                 } else {
-                                    echo $diff->d . "d ago"; // Jika lebih dari 1 hari
+                                    echo $diff->d . "h yang lalu"; // Jika lebih dari 1 hari
                                 }
                                 ?>
                             </span>
@@ -139,7 +139,7 @@ pg_close();
 </body>
 <script> 
     const hamburgerBtn = document.querySelector(".hamburger");
-      const navList = document.querySelector(".container");
+      const navList = document.querySelector(".container-navbar");
       hamburgerBtn.addEventListener("click", () => {
         if(navList.classList.contains("display")){
           navList.classList.remove("display");

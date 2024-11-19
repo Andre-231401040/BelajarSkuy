@@ -36,9 +36,10 @@ pg_close();
     <link rel="stylesheet" href="stylesQuestions.css" />
 </head>
 <body>
-<header>
-    <nav>
-            <a href="./pengajar/edit_profil.php" class="profil">
+<?php if($status === "pengajar"){ ?>
+        <header>
+        <nav>
+            <a href="./edit_profil.php" class="profil">
                 <?php if($gambar != null){ ?>
                     <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>
@@ -46,51 +47,85 @@ pg_close();
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
                 </div>
             </a>
-            <ul>
-                <li>
-                    <a href="./siswa/home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./siswa/course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./forum_siswa.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
+            <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div class="container-navbar">
+            <div class="navigation">
+                <a href="./pengajar/home.php">Beranda</a>
+                <a href="./pengajar/course.php">Kursus</a>
+                <a href="./forum_pengajar.php">Forum</a>
+            </div>
+            </div>
         </nav>
     </header>
     
+            <?php }else{ ?>
+                <header>
+        <nav>
+            <a href="./siswa/profil_siswa.php" class="profil">
+                <?php if($gambar != null){ ?>
+                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                <?php }else{ ?>
+                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+                <?php } ?>
+                <div class="nama">
+                    <h2><?= $nama; ?></h2>
+                </div>
+            </a>
+            <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div class="container-navbar">
+            <div class="navigation">
+                <a href="./siswa/home.php">Beranda</a>
+                <a href="./siswa/course.php">Kursus</a>
+                <a href="./forum_siswa.php">Forum</a>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <?php } ?>
+    
     <div class="main-container">
-        <div class="ask-question-container">
-            <button class="ask-question">Ask Question</button>
-        </div>
         <!-- Side Navbar -->
         <div class="side-navbar">
-            <ul>
+        <ul>
                 <?php if($status === "pengajar"){ ?>
-                    <li><a href="./forum_pengajar.php"><img src="images/discussion.png" alt="discussion" class="icon">All Discussion</a></li>
+                    <li><a href="./forum_pengajar.php"><img src="images/semuadiskusi.png" alt="discussion" class="icon"><span>Semua Diskusi</span></a></li>
                 <?php }else{ ?>
-                    <li><a href="./forum_siswa.php"><img src="images/discussion.png" alt="discussion" class="icon">All Discussion</a></li>
+                    <li><a href="./forum_siswa.php"><img src="images/semuadiskusi.png" alt="discussion" class="icon"><span>Semua Diskusi</span></a></li>
                 <?php } ?>
-                <li><a href="./new_post.php"><img src="images/newpost.png" alt="discussion" class="icon">New Posts</a></li>
-                <li><a href="./my_post.php"><img src="images/myposts.png" alt="discussion" class="icon">My Posts</a></li>
-                <li><a href="./saved_post.php"><img src="images/save.png" alt="discussion" class="icon">Saved Posts</a></li>
+                <li><a href="./new_post.php"><img src="images/diskusibaru.png" alt="discussion" class="icon"><span>Diskusi Baru</span></a></li>
+                <li><a href="./my_post.php"><img src="images/pertanyaanku.png" alt="discussion" class="icon"><span>Pertanyaan Saya</span></a></li>
+                <li><a href="./saved_post.php"><img src="images/tersimpan.png" alt="discussion" class="icon"><span>Tersimpan</span></a></li>
             </ul>
         </div>
 
         <div class="form-container">
             <form action="ask_question.php?status=<?= $status; ?>" method="post" autocomplete="off">
-                <input type="text" id="topik" name="topik" placeholder="Topic Discussion" required>
-                <textarea id="konten" name="konten" placeholder="Write your question" required></textarea>
-                <button type="submit" name="submit">Post</button>
+                <input type="text" id="topik" name="topik" placeholder="Topik Diskusi" required>
+                <textarea id="konten" name="konten" placeholder="Tulis pertanyaanmu disini" required></textarea>
+                <button type="submit" name="submit">Kirim Pertanyaan</button>
             </form>
         </div>
     
     </body>
+    <script> 
+    const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container-navbar");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
+  </script>
     </html>
