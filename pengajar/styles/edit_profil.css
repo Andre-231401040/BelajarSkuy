@@ -8,6 +8,11 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
+main{
+  padding-bottom: 30px;
+  min-height: 172vh;
+}
+
 
 .bawah{
   display: flex;
@@ -15,12 +20,13 @@ body {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
-  width: 1000px;
+  margin-top: 25px;
+  width: 80%;
   height: 650px;
   background-color: white;
   box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4) ;
   border-radius: 10px;
+  position: relative;
 }
 
 .atas{
@@ -30,24 +36,24 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  width: 1000px;
+  width: 80%;
   height: 180px;
   background-color: white;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
+  position: relative;
 }
 
-h5{
+h3{
   color: gray;
 }
+
 .nama{
   display: flex;
   flex-direction: column;
   margin-left: 24px;
   font-size: 15px;
 }
-
-
 
 img {
   width: 120px;
@@ -102,9 +108,6 @@ form {
 
 
 
-
-
-
 .deskripsi{
   font-size: 13px;
   padding: 10px;
@@ -137,14 +140,15 @@ textarea{
   min-width: 100%;
   height: 110px;
   background: none;
-
 }
 
 
 button{
-  margin-left: 89%;
-  margin-top: 30px;
-  width: 15%;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: -78px;
+  width: 145px;
   height: 48px;
   cursor: pointer;
   font-size: 15px;
@@ -152,16 +156,19 @@ button{
   border-radius: 10px;
   border: none;
   color: white;
+  box-sizing:initial;
   background-color: #2577ba;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .button-profile{
   margin-left: auto;
-  margin-top: -15%;
+  margin-top: -120px;
 }
 
 .data{
-  margin-top: 10%;
+  margin-top: 90px;
+  position: relative;
 }
 
 
@@ -173,9 +180,76 @@ button{
   border-radius: 4px;
   cursor: pointer;
   font-size: 15px;
+  font-weight: bolder;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-/* .custom-file-upload:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-} */
+
+@media (max-width: 768px) {
+  
+  .bawah {
+    width: 90%; 
+    height: 830px; 
+  }
+
+  .atas {
+    width: 90%;
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .atas img {
+    margin: 20px 0;
+  }
+
+  .nama {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .form-section {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .input-data {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .deskripsi {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  textarea {
+    max-width: 100%;
+    height: 100px;
+  }
+
+  button {
+    
+    margin-top: 10px;
+    margin-left: 390px;
+    display: block;
+  }
+
+  .button-profile {
+    margin-top: -110px;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .data {
+    margin-top: 60px;
+  }
+  .input-data label{
+    margin-top: 10px;
+  }
+  .deskripsi label{
+    top: -20px;
+  }
+}

@@ -44,35 +44,37 @@ pg_close();
 
 </head>
 <body>
+    
     <header>
-        <nav>
-            <a href="./profil_siswa.php" class="profil">
-                <?php if($gambar != null){ ?>
-                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
-                <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
-                <?php } ?>
-                <div class="nama">
-                    <h2><?= $nama; ?></h2>
-                </div>
-            </a>
-            <ul>
-                <li>
-                    <a href="./home.php">Beranda</a>
-                </li>
-                <li>
-                    <a href="./course.php">Kursus</a>
-                </li>
-                <li>
-                    <a href="../forum_siswa.php">Forum</a>
-                </li>
-            </ul>
-        </nav>
+      <nav>
+          <a href="./profil_siswa.php" class="profil">
+              <?php if($gambar != null){ ?>
+                  <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+              <?php }else{ ?>
+                  <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+              <?php } ?>
+              <div class="nama">
+                  <h2><?= $nama; ?></h2>
+              </div>
+          </a>
+          <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <div class="container">
+              <div class="navigation">
+                  <a href="./home.php">Beranda</a>
+                  <a href="./course.php">Kursus</a>
+                  <a href="../forum_pengajar.php">Forum</a>
+              </div>
+          </div>
+      </nav>
     </header>
 
     <h1 style="margin-left: 55px;margin-top:45px; color: white">Hi, <?= $nama; ?> </h1>
 
-    <div class="container">
+    <div class="container2">
         <div class="rectangle">
             <p class="title">Kursus Anda</p>
         </div>
@@ -117,7 +119,7 @@ pg_close();
       </div>
     </div>
 
-    <div class="container">
+    <div class="container2">
         <div class="rectangle">
             <p class="title">Kursus Terbaru </p>
         </div>
@@ -155,10 +157,19 @@ pg_close();
         </div>
         <?php  endforeach;  ?>
       </div>
-    </div>
-
-    
-    
-   
+    </div>  
 </body>
+
+<script> 
+    const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
+  </script>
+
 </html>

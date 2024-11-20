@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Siswa</title>
+    <link rel="stylesheet" href="./styles/tabelstyle.css">
+
+    <!-- Fonts -->
+    <!-- Racing Sans One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet" />
+    <!-- Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="./profil_siswa.php" class="profil">
+                <!-- <?php if($gambar != null){ ?>
+                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>"> -->
+                <?php }else{ ?>
+                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+                <?php } ?>
+                <div class="nama">
+                    <!-- <h2><?= $nama; ?></h2> -->
+                     <h2>budi adi</h2>
+                </div>
+            </a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="container">
+                <div class="navigation">
+                    <a href="./home.php">Beranda</a>
+                    <a href="./course.php">Kursus</a>
+                    <a href="../forum_pengajar.php">Forum</a>
+                </div>
+            </div>
+        </nav>
+      </header>
+
+    <div class="container-tabel">
+        <h1>Daftar Siswa</h1>
+        <div class="tabel-siswa">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jenjang Sekolah</th>
+                    <th>Asal Sekolah</th>
+                    <th>Kursus</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="profile">
+                        <img src="profile.jpg" alt="Foto Profil" class="profile-pic">
+                        <span>Felicia Jennifer</span>
+                    </td>
+                    <td>SMA</td>
+                    <td>SMAS Mutiara Harapan</td>
+                    <td>Kimia</td>
+                    <td><a href="mailto:feliciajennifer@gmail.com">feliciajennifer@gmail.com</a></td>
+                </tr>
+                <tr>
+                    <td class="profile">
+                        <img src="profile2.jpg" alt="Foto Profil" class="profile-pic">
+                        <span>Hana Katharine</span>
+                    </td>
+                    <td>S1</td>
+                    <td>Universitas Sumatera Utara</td>
+                    <td>Basis Data</td>
+                    <td><a href="mailto:hana@gmail.com">hana@gmail.com</a></td>
+                </tr>
+                <tr>
+                    <td class="profile">
+                        <img src="profile2.jpg" alt="Foto Profil" class="profile-pic">
+                        <span>Hana Katharine</span>
+                    </td>
+                    <td>S1</td>
+                    <td>Universitas Sumatera Utara</td>
+                    <td>Basis Data</td>
+                    <td><a href="mailto:hana@gmail.com">hana@gmail.com</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</body>
+
+<script> 
+    const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
+  </script>
+  
+</html>

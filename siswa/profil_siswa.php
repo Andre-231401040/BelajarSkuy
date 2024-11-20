@@ -120,82 +120,72 @@ pg_close($con);
 
 
         <div class="bawah">
-        <form action="./profil_siswa.php" method="post" enctype="multipart/form-data">
-            <div class = "button-profile">
-                <label for="foto-profil" class= "custom-profile">
-                    ubah foto
-                    <input type="file" id="foto-profil" name="foto-profil" style="display : none">
-                </labe>
-            </div>
+            <form action="./profil_siswa.php" method="post" enctype="multipart/form-data">
+                <div class = "button-profile">
+                    <label for="foto-profil" class= "custom-profile">
+                        ubah foto
+                        <input type="file" id="foto-profil" name="foto-profil" style="display : none">
+                    </labe>
+                </div>
             
-        <div class="data">
-            <div class= form-section>
-                <div class= input-data>
-                    <label for="nama">Nama</label>
-                        <input type="text" id="nama" name="nama" value="<?= $nama; ?>" required>
-                </div>
+                <div class="data">
+                    <div class= form-section>
                         <div class= input-data>
-                    <label for="tanggal_lahir">Tanggal Lahir</label>
-                        <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>" required>
-                </div>
-               
-            </div>
-            
-            <div class= form-section>
-                <div class= input-data>
-                    <label for="asal_sekolah">Asal Sekolah</label>
-                        <input type="text" id="asal_sekolah" name="asal_sekolah" value="<?= $asal_sekolah; ?>">
-                </div>
+                            <label for="nama">Nama</label>
+                            <input type="text" id="nama" name="nama" value="<?= $nama; ?>" required>
+                        </div>
                         <div class= input-data>
-                    <label for="jenjang">Jenjang</label>
-                        <input type="text" id="jenjang" name="jenjang" required value="<?= $email; ?>">
-                </div>
-                
-            </div>
-
-            <div class= form-section>
-                <div class= input-data>
-                    <label for="email">Email</label>
-                        <input type="text" id="email" name="email" value="<?= $email; ?>">
-                </div>
+                            <label for="tanggal_lahir">Tanggal Lahir</label>
+                            <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>" required>
+                        </div>
+                    </div>
+                    <div class= form-section>
                         <div class= input-data>
-                    <label for="nomor_handphone">Nomor Handphone</label>
-                        <input type="text" id="nomor_handphone" name="nomor_handphone" value="<?= $nomor_handphone; ?>">
-                </div>
-               
-            </div>
-
-            <div class= form-section>
-                <div class= input-data>
-                    <label for="password">Kata Sandi</label>
-                        <input type="password" id="password" name="password" value="<?= $password; ?>" required>
-                </div>
+                            <label for="asal_sekolah">Asal Sekolah</label>
+                            <input type="text" id="asal_sekolah" name="asal_sekolah" value="<?= $asal_sekolah; ?>">
+                        </div>
                         <div class= input-data>
-                    <label for="confirmation_password">Konfirmasi Kata Sandi</label>
-                        <input type="password" id="confirmation_password" name="confirmation_password" value="<?= $confirmation_password; ?>" required>
-                </div>
-               
-            </div>
+                            <label for="jenjang">Jenjang</label>
+                            <input type="text" id="jenjang" name="jenjang" required value="<?= $email; ?>">
+                        </div>
+                    </div>
+                    <div class= form-section>
+                        <div class= input-data>
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" value="<?= $email; ?>">
+                        </div>
+                        <div class= input-data>
+                            <label for="nomor_handphone">Nomor Handphone</label>
+                            <input type="text" id="nomor_handphone" name="nomor_handphone" value="<?= $nomor_handphone; ?>">
+                        </div>
+                    </div>
+                    <div class= form-section>
+                        <div class= input-data>
+                            <label for="password">Kata Sandi</label>
+                            <input type="password" id="password" name="password" value="<?= $password; ?>" required>
+                        </div>
+                        <div class= input-data>
+                            <label for="confirmation_password">Konfirmasi Kata Sandi</label>
+                            <input type="password" id="confirmation_password" name="confirmation_password" value="<?= $confirmation_password; ?>" required>
+                        </div>
+                    </div>
+                    <div class= form-section>
+                        <div class= input-data>
+                            <label for="minat">Bidang Diminati</label>
+                            <input type="minat" id="minat" name="minat" value="<?= $minat; ?>" required>
+                        </div>
+                    </div>
 
-            <div class= form-section>
-                <div class= input-data>
-                    <label for="minat">Bidang Diminati</label>
-                        <input type="minat" id="minat" name="minat" value="<?= $minat; ?>" required>
+                    <div class= form-section>
+                        <div class= deskripsi>
+                            <label for="deskripsi_diri">Deskripsi Diri</label>
+                            <textarea id="deskripsi_diri" name="deskripsi_diri"><?= $deskripsi_diri; ?></textarea>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class= form-section>
-                <div class= deskripsi>
-                    <label for="deskripsi_diri">Deskripsi Diri</label>
-                        <textarea id="deskripsi_diri" name="deskripsi_diri"><?= $deskripsi_diri; ?></textarea>
-            </div>
-            
-            </div>
-            <button type="submit" name="submit">Simpan</button>
-        </form>
-        </div>
-     </div>
-        
+                <button type="submit" name="submit">Simpan</button>
+            </form>
+        </div>   
     </main>
 </body>
 </html>
