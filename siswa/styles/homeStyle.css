@@ -7,6 +7,7 @@
 body {
   background-color: #79CAF5;
   font-family: "Quicksand", sans-serif;
+  margin-top: 110px;
 }
 
 img {
@@ -55,7 +56,7 @@ nav ul li a:hover {
   height: 70px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   text-align: center;
   padding: 20px;
   align-self: center;
@@ -66,20 +67,6 @@ nav ul li a:hover {
  font-weight: bold;
 }
 
-/* .course{
-  display: grid;
-  margin-top: 25px;
-  margin-left: 55px;
-  margin-right: 25px;
-  grid-template-columns: repeat(3, 1fr);
-} */
-
-/* .courserectangle{
-  width: 370px;
-  height: 450px;
-  background-color: white;
-  border-radius: 30px;
-} */
 
 .container-main{
   display: flex;

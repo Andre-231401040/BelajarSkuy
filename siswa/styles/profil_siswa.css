@@ -24,7 +24,7 @@ main{
   width: 80%;
   height: 650px;
   background-color: white;
-  box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4) ;
+  box-shadow:3px 3px 4px rgba(0, 0, 0, 0.4) ;
   border-radius: 10px;
   position: relative;
 }
@@ -39,7 +39,7 @@ main{
   width: 80%;
   height: 180px;
   background-color: white;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   position: relative;
 }
