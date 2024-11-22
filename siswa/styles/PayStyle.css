@@ -1,23 +1,23 @@
-*{
-    margin : 0;
-    padding : 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #79caf5;
-    font-family: "Quicksand", sans-serif;
+body {
+  background-color: #79caf5;
+  font-family: "Quicksand", sans-serif;
 }
 
-.nama{
-    font-weight: bold;
-    left: 80px;
-    top: 15px;
+.nama {
+  font-weight: bold;
+  left: 80px;
+  top: 15px;
 }
 
-.underline{
-    text-decoration: underline;
-    text-decoration-color: #069CB4;
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #069cb4;
 }
 
 nav .profil {
@@ -37,24 +37,24 @@ nav .profil {
   border-radius: 50%;
   object-position: center;
 }
-  
+
 .profil .nama {
   width: 60%;
-  color : #2E7DBF;
+  color: #2e7dbf;
 }
-  
+
 nav {
   padding: 12px 40px;
   display: flex;
   align-items: center;
-  position : fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   justify-content: space-between;
   background-color: white;
 }
-    
+
 .hamburger {
   cursor: pointer;
   height: 24px;
@@ -63,7 +63,7 @@ nav {
   justify-content: space-between;
   display: none;
 }
-    
+
 .hamburger span {
   display: block;
   width: 40px;
@@ -71,14 +71,14 @@ nav {
   border-radius: 3px;
   background-color: #2577ba;
 }
-    
+
 .container {
   gap: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-    
+
 .navigation {
   gap: 36px;
   display: flex;
@@ -86,117 +86,115 @@ nav {
   justify-content: center;
 }
 
-.navigation a{
-  text-decoration : none;
-  color : black;
+.navigation a {
+  text-decoration: none;
+  color: black;
 }
 
-.navigation a:hover{
+.navigation a:hover {
   transition: 0.2s;
   opacity: 0.5;
 }
 
-main{
-  padding : 20px;
+main {
+  padding: 20px;
 }
 
-.container-linktabel{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-linktabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-form{
+form {
   width: 100%;
 }
 
-.rectangle-3{
+.rectangle-3 {
   border: none;
-  background-color: #2E7DBF;
+  background-color: #2577ba;
   border-radius: 5px;
   padding: 10px 20px;
   width: 100%;
   text-align: center;
   text-decoration: none;
-  cursor : pointer; 
-  color : white;
-  margin : auto;
+  cursor: pointer;
+  color: white;
+  margin: auto;
   font-size: 16px;
   font-weight: bolder;
-  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.thumbnail{
-    width : 100%;
-    object-fit: cover;
-    object-position: center;
+.thumbnail {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.container-payment{
-  display : grid;
+.container-payment {
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   width: 100%;
   max-width: 400px;
   min-height: 540px;
   background-color: white;
   padding: 20px;
-  margin-top: 138px;
+  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.judul{
+.judul {
   text-align: center;
 }
 
-.rectangle.judulcourse{
+.rectangle.judulcourse {
   font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {
-    nav .profil {
-      width: fit-content;
-      border-radius: 50%;
-    }
-  
-    .profil .nama {
-      display: none;
-    }
+  nav .profil {
+    width: fit-content;
+    border-radius: 50%;
+  }
 
-    nav {
-        justify-content: space-between;
-      }
-    
-    .hamburger {
-        display: flex;
-    }
-    
-    .container {
-        opacity: 0;
-        top: -252px;
-        gap: 20px;
-        left: 0;
-        width: 100%;
-        padding: 20px 0;
-        position: absolute;
-        flex-direction: column;
-        align-items: center;
-        background-color: white;
-        transition: 0.7s;
-    }
-    
-    .display {
-        opacity: 1;
-        transform: translateY(320px);
-    }
-    
-    .navigation {
-        text-align: center;
-        flex-direction: column;
-    }    
+  .profil .nama {
+    display: none;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .container {
+    opacity: 0;
+    top: -252px;
+    gap: 20px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    transition: 0.7s;
+  }
+
+  .display {
+    opacity: 1;
+    transform: translateY(320px);
+  }
+
+  .navigation {
+    text-align: center;
+    flex-direction: column;
+  }
 }
-
-
