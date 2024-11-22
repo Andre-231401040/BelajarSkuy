@@ -24,7 +24,7 @@ if($_SESSION["isFound"] === "student"){
     header("Location: home/login.php");
 }
 
-$data_pertanyaan = pg_query($con, "SELECT * FROM pertanyaan ORDER BY waktu_dibuat DESC");
+$data_pertanyaan = pg_query($con, "SELECT * FROM pertanyaan WHERE (AGE(NOW(), waktu_dibuat) < INTERVAL '1 day') ORDER BY waktu_dibuat DESC");
 
 date_default_timezone_set("Asia/Jakarta");
 $dateNow = new DateTime();
@@ -49,11 +49,11 @@ pg_close();
     <?php if($status === "pengajar"){ ?>
             <header>
             <nav>
-                <a href="./edit_profil.php" class="profil">
+                <a href="./pengajar/edit_profil.php" class="profil">
                     <?php if($gambar != null){ ?>
-                        <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                        <img src="./images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                     <?php }else{ ?>
-                        <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+                        <img src="./images/foto_profil/foto-1.jpg" alt="foto profil default">
                     <?php } ?>
                     <div class="nama">
                         <h2><?= $nama; ?></h2>
@@ -79,9 +79,9 @@ pg_close();
             <nav>
                 <a href="./siswa/profil_siswa.php" class="profil">
                     <?php if($gambar != null){ ?>
-                        <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                        <img src="./images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                     <?php }else{ ?>
-                        <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+                        <img src="./images/foto_profil/foto-1.jpg" alt="foto profil default">
                     <?php } ?>
                     <div class="nama">
                         <h2><?= $nama; ?></h2>
@@ -148,8 +148,6 @@ pg_close();
                                     echo $diff->i . "m yang lalu"; // Jika kurang dari 1 jam
                                 } else if ($diff->d < 1) {
                                     echo $diff->h . "j yang lalu"; // Jika kurang dari 1 hari
-                                } else {
-                                    echo $diff->d . "h yang lalu"; // Jika lebih dari 1 hari
                                 }
                                 ?>
                             </span>

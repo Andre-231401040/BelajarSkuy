@@ -41,11 +41,11 @@ pg_close();
 <body>
     <header>
         <nav>
-            <a href="./profil_siswa.php" class="profil">
+            <a href="./siswa/profil_siswa.php" class="profil">
                 <?php if($gambar != null){ ?>
-                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                    <img src="./images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
                 <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+                    <img src="./images/foto_profil/foto-1.jpg" alt="foto profil default">
                 <?php } ?>
                 <div class="nama">
                     <h2><?= $nama; ?></h2>

@@ -26,16 +26,16 @@ nav .profil {
   border-radius: 50%;
   object-position: center;
 }
-  
+
 .profil .nama {
   gap: 2px;
   width: 60%;
   display: flex;
   margin-top: -5px;
-  align-items : center;
-  color : #2E7DBF;
+  align-items: center;
+  color: #2e7dbf;
 }
-  
+
 nav {
   padding: 12px 40px;
   display: flex;
@@ -46,7 +46,7 @@ nav {
   justify-content: space-between;
   background-color: white;
 }
-    
+
 .hamburger {
   cursor: pointer;
   height: 24px;
@@ -55,7 +55,7 @@ nav {
   justify-content: space-between;
   display: none;
 }
-    
+
 .hamburger span {
   display: block;
   width: 40px;
@@ -63,14 +63,14 @@ nav {
   border-radius: 3px;
   background-color: #2577ba;
 }
-    
+
 .container-navbar {
   gap: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-    
+
 .navigation {
   gap: 36px;
   display: flex;
@@ -78,10 +78,9 @@ nav {
   justify-content: center;
 }
 
-.navigation a{
-  text-decoration : none;
-  color : black;
-  font-size: 20px;
+.navigation a {
+  text-decoration: none;
+  color: black;
 }
 
 .navigation a:hover {
@@ -114,12 +113,12 @@ nav {
   border-radius: 10px; /* Membuat sudut tombol melengkung */
   padding: 10px 20px; /* Padding untuk tombol */
   font-size: 16px; /* Ukuran font */
-  cursor: pointer; 
+  cursor: pointer;
   align-items: center;
   display: inline-flex;
   position: relative;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 .ask-question:hover {
@@ -130,7 +129,7 @@ nav {
   width: 30px; /* Ukuran ikon */
   height: 30px; /* Ukuran ikon */
   margin-right: 10px; /* Jarak antara ikon dan teks */
-} 
+}
 
 .side-navbar {
   width: 250px;
@@ -221,7 +220,7 @@ nav {
   display: flex;
   flex-direction: column; /* Stack items vertically */
   margin-left: 10px;
-  color: #2E7DBF;
+  color: #2e7dbf;
 }
 
 .topic {
@@ -341,8 +340,8 @@ nav {
   }
 
   nav {
-      justify-content: space-between;
-    }
+    justify-content: space-between;
+  }
 
   /* Navbar hamburger */
   .hamburger {
@@ -362,37 +361,37 @@ nav {
     background-color: white;
     transition: 0.7s;
     z-index: 9999;
-}
-
-.display {
-  opacity: 1;
-  transform: translateY(320px);
-}
-
-.navigation {
-  text-align: center;
-  flex-direction: column;
   }
 
-.container {
-  top: 100px;
-  margin-left: 70px; /* Sesuaikan dengan lebar sidebar */
-  width: calc(100% - 70px);
-}
+  .display {
+    opacity: 1;
+    transform: translateY(320px);
+  }
 
-.ask-question {
-  width: 80px;
-  justify-content: center;
-}
+  .navigation {
+    text-align: center;
+    flex-direction: column;
+  }
 
-.ask-question span {
-  display: none;
-}
+  .container {
+    top: 100px;
+    margin-left: 70px; /* Sesuaikan dengan lebar sidebar */
+    width: calc(100% - 70px);
+  }
 
-.icon-pertanyaan{
-  margin-right: 0;
-}
-  
+  .ask-question {
+    width: 80px;
+    justify-content: center;
+  }
+
+  .ask-question span {
+    display: none;
+  }
+
+  .icon-pertanyaan {
+    margin-right: 0;
+  }
+
   /* Side navbar responsif */
   .side-navbar {
     width: 80px; /* Sesuaikan dengan ikon */
@@ -416,7 +415,7 @@ nav {
     text-decoration: none;
     color: inherit;
   }
-  
+
   .side-navbar ul li a span {
     display: none; /* Sembunyikan teks saja */
   }
