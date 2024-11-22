@@ -90,7 +90,7 @@ pg_close();
             <div class="bold">Pendidikan Terakhir</div>: <?= $row['pendidikan_terakhir']; ?>
           </div>
           <div class="container-circle2">
-           <div class="bold">Jenjang</div>: <span class="jenjang-card"><?= $row["jenjang"]; ?></span>
+           <div class="bold">Jenjang</div>:&nbsp;<span class="jenjang-card"><?= $row["jenjang"]; ?></span>
           </div>
           <div class="container-circle2">
             <div class="bold">Jumlah Murid</div>: <?= $row["jumlah_siswa"]; ?>
