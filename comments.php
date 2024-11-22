@@ -51,63 +51,87 @@ pg_close();
     <link rel="stylesheet" href="stylesQuestions.css" />
 </head>
 <body>
-<header>
-    <nav>
-            <a href="./pengajar/edit_profil.php" class="profil">
-                <?php if($gambar != null){ ?>
-                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
-                <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
-                <?php } ?>
-                <div class="nama">
-                    <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
+<?php if($status === "pengajar"){ ?>
+            <header>
+            <nav>
+                <a href="./edit_profil.php" class="profil">
+                    <?php if($gambar != null){ ?>
+                        <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                    <?php }else{ ?>
+                        <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+                    <?php } ?>
+                    <div class="nama">
+                        <h2><?= $nama; ?></h2>
+                    </div>
+                </a>
+                <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
                 </div>
-            </a>
-
-            <ul>  
-            <?php if($status === "pengajar"){ ?> 
-                <li>
-                    <a href="./pengajar/home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./pengajar/course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_pengajar.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-
-            <?php }else{ ?>
-                <li>
-                    <a href="./siswa/home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./siswa/course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_siswa.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            <?php } ?>
-            </ul>
-        </nav>
-    </header>
+                <div class="container-navbar">
+                <div class="navigation">
+                    <a href="./pengajar/home.php">Beranda</a>
+                    <a href="./pengajar/course.php">Kursus</a>
+                    <a href="./forum_pengajar.php">Forum</a>
+                </div>
+                </div>
+            </nav>
+        </header>
+        
+                <?php }else{ ?>
+                    <header>
+            <nav>
+                <a href="./siswa/profil_siswa.php" class="profil">
+                    <?php if($gambar != null){ ?>
+                        <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+                    <?php }else{ ?>
+                        <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+                    <?php } ?>
+                    <div class="nama">
+                        <h2><?= $nama; ?></h2>
+                    </div>
+                </a>
+                <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                </div>
+                <div class="container-navbar">
+                <div class="navigation">
+                    <a href="./siswa/home.php">Beranda</a>
+                    <a href="./siswa/course.php">Kursus</a>
+                    <a href="./forum_siswa.php">Forum</a>
+                </div>
+                </div>
+            </nav>
+        </header>
+        <?php } ?>
     
     <div class="main-container">
+        <!-- Side Navbar -->
+        <div class="side-navbar">
+            <ul>
+                <?php if($status === "pengajar"){ ?>
+                    <li><a href="./forum_pengajar.php"><img src="images/semuadiskusi.png" alt="discussion" class="icon"><span>Semua Diskusi</span></a></li>
+                <?php }else{ ?>
+                    <li><a href="./forum_siswa.php"><img src="images/semuadiskusi.png" alt="discussion" class="icon"><span>Semua Diskusi</span></a></li>
+                <?php } ?>
+                <li><a href="./new_post.php"><img src="images/diskusibaru.png" alt="discussion" class="icon"><span>Diskusi Baru</span></a></li>
+                <li><a href="./my_post.php"><img src="images/pertanyaanku.png" alt="discussion" class="icon"><span>Pertanyaan Saya</span></a></li>
+                <li><a href="./saved_post.php"><img src="images/tersimpan.png" alt="discussion" class="icon"><span>Tersimpan</span></a></li>
+            </ul>
+        </div>
+
         <div class="form-container">
-            <h3>Add a Comment</h3>
             <form action="add_comment.php" method="post" autocomplete="off">
                 <input type="hidden" name="id_postingan" value="<?= $id_postingan; ?>"> <!-- Menyimpan ID postingan -->
-                <textarea id="konten" name="konten" placeholder="Write your comment" required></textarea>
-                <button type="submit" name="submit">Post</button>
+                <textarea id="konten" name="konten" placeholder="Tuliskan komentar disini" required></textarea>
+                <button type="submit" name="submit">Kirim Komentar</button>
             </form>
         </div>
     </div>
+
     <div class="second-container" style="border: 1px solid #ccc; padding: 20px; margin-left: 10px; margin-right: 50px; margin-top: 20px; border-radius: 10px; background-color: #f9f9f9;">
         <div class="comments-container">
             <h3>Comments</h3>
@@ -120,4 +144,15 @@ pg_close();
         </div>
     </div>
 </body>
+<script> 
+    const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container-navbar");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
+  </script>
 </html>
