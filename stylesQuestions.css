@@ -6,26 +6,7 @@
 
 body {
   font-family: "Quicksand", sans-serif;
-  background-color: #eeeed0;
-}
-
-.container-header {
-  display: flex;
-  align-items: center;
-  width: 90%;
-}
-
-header {
-  display: flex;
-  width: 100%;
-  height: 80px;
-  position: fixed;
-  top: 10px;
-  left: 0;
-  z-index: 1000;
-  padding-left: 20px;
-  align-items: flex-start;
-  background-color: #eeeed0;
+  background-color: #79caf5;
 }
 
 nav .profil {
@@ -35,9 +16,7 @@ nav .profil {
   color: black;
   display: flex;
   align-items: center;
-  border-radius: 25px;
   text-decoration: none;
-  background-color: #77e8fa;
 }
 
 .profil img {
@@ -47,48 +26,67 @@ nav .profil {
   border-radius: 50%;
   object-position: center;
 }
-
+  
 .profil .nama {
   gap: 2px;
   width: 60%;
   display: flex;
   margin-top: -5px;
-  flex-direction: column;
+  align-items : center;
+  color : #2E7DBF;
 }
-
-.profil .underline {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-}
-
+  
 nav {
-  width: 100%;
-  padding: 16px;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  background-color: white;
+}
+    
+.hamburger {
+  cursor: pointer;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+    
+.hamburger span {
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #2577ba;
+}
+    
+.container-navbar {
+  gap: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-nav ul {
+    
+.navigation {
+  gap: 36px;
   display: flex;
-  width: 75%;
-  justify-content: space-evenly;
+  font-weight: bold;
+  justify-content: center;
 }
 
-nav ul li {
-  list-style-type: none;
-}
-
-nav ul li a {
-  padding: 12px;
-  color: black;
+.navigation a{
+  text-decoration : none;
+  color : black;
   font-size: 20px;
-  text-decoration: none;
 }
 
-nav ul li a:hover {
-  background-color: rgba(91, 206, 224, 0.29);
+.navigation a:hover {
+  transition: 0.2s;
+  opacity: 0.5;
 }
 
 .content {
@@ -101,34 +99,36 @@ nav ul li a:hover {
   align-items: flex-start;
 }
 
-.ask-question-container {
-  position: absolute;
-  top: 110px;
-  padding-left: 50px;
-  margin-right: 20px;
+.teks-pertanyaan {
+  display: flex;
+  flex-direction: column;
+  top: 200px;
 }
 
-.ask-question {
-  background-color: #069cb4;
-  color: white;
-  width: 210px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.rectangle{
+  width: 1000px;
+  height: 50px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  top: 200px;
 }
-
-.ask-question:hover {
-  background-color: #069db486;
-}
+.title{
+ font-size: 25px;
+ font-weight: bold;
+}  
 
 .side-navbar {
-  width: 210px;
-  background-color: #d9d9c4;
+  width: 250px;
+  background-color: #ffffff;
   position: relative;
-  top: 100px;
   left: 50px;
+  margin-top: 80px;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .side-navbar ul {
@@ -165,21 +165,21 @@ nav ul li a:hover {
 
 .container {
   margin-left: 180px;
-  width: 60%;
+  width: 80%;
   margin-top: 100px;
 }
 
 .form-container {
   padding: 20px;
   margin-left: 100px;
-  width: calc(85% - 250px);
-  height: 375px; /* Menambah tinggi form */
+  width: 60%;
+  height: 375px;
   box-sizing: border-box;
-  background-color: #d9d9d9;
-  border: 2px solid #ccc;
+  background-color: #ffffff;
+  border: 2px solid #2577ba;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  margin-top: 80px;
   position: relative;
 }
 
@@ -206,72 +206,109 @@ nav ul li a:hover {
 
 .form-container button {
   padding: 10px;
-  background-color: #069cb4;
+  background-color: #2577ba;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 20%;
+  min-width: 20%;
   position: absolute;
   bottom: 20px;
   right: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .form-container button:hover {
-  background-color: #069db486;
+  background-color: #0d95e8;
 }
 
 /* Media Query untuk layar lebih kecil */
-@media (max-width: 768px) {
-  .container {
-    width: 100%; /* Lebar penuh untuk layar lebih kecil */
-    margin-left: 0;
+  @media screen and (max-width: 768px) {
+    nav .profil {
+      width: fit-content;
+      border-radius: 50%;
+    }
+  
+    .profil .nama {
+      display: none;
+    }
+  
+    nav {
+        justify-content: space-between;
+      }
+  
+    /* Navbar hamburger */
+    .hamburger {
+      display: flex; /* Menampilkan hamburger menu */
+    }
+  
+    .container-navbar {
+      opacity: 0;
+      top: -252px;
+      gap: 20px;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      transition: 0.7s;
+      z-index: 9999;
   }
+  
+  .display {
+    opacity: 1;
+    transform: translateY(320px);
+  }
+  
+  .navigation {
+    text-align: center;
+    flex-direction: column;
+    }
+  
+  .container {
+    padding-top: 80px;
+    margin-left: 70px; /* Sesuaikan dengan lebar sidebar */
+    width: calc(100% - 70px);
+  }
+    
+    /* Side navbar responsif */
+    .side-navbar {
+      width: 80px; /* Sesuaikan dengan ikon */
+      padding: 10px;
+    }
+  
+    .side-navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .side-navbar ul li {
+      flex-direction: column; /* Susun ikon dan teks secara vertikal */
+      align-items: center;
+      text-align: center;
+      padding: 15px 5px;
+    }
+  
+    .side-navbar ul li a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .side-navbar ul li a span {
+      display: none; /* Sembunyikan teks saja */
+    }
+  
+    .side-navbar ul li img.icon {
+      margin-right: 0; /* Hapus margin untuk ikon */
+      width: 30px; /* Atur ukuran ikon */
+      height: 30px;
+    }
+  }  
 
   .form-container {
-    margin-left: 8px;
-    width: 100%;
+    margin-left: 70px;
     height: 400px;
   }
-
-  .ask-question-container {
-    padding-left: 20px;
-  }
-
-  .side-navbar {
-    left: 0;
-    width: 40%;
-    height: 330px;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-  }
-
-  .rectangle {
-    width: 100%;
-    margin: 0;
-  }
-
-  .ask-question {
-    width: 100%;
-  }
-}
-
-/* Media Query untuk layar sangat kecil (misalnya ponsel) */
-@media (max-width: 480px) {
-  .navigation {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .side-navbar ul li {
-    font-size: 16px;
-  }
-
-  .form-container button {
-    width: 90%;
-  }
-}
