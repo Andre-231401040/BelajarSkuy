@@ -124,7 +124,7 @@ pg_close();
         <div class="container">
             <?php 
             while($row = pg_fetch_assoc($data_pertanyaan)){
-                $id_postingan = $row["id"];
+                $id_postingan = $row["id_postingan"];
                 $dateCreated = date_create($row["waktu_dibuat"]);
                 $diff = date_diff($dateCreated, $dateNow); // Menghitung selisih waktu
                 $isNewMinute = ($diff->h == 0 && $diff->i == 0 && $diff->s < 60); // Cek jika umur postingan kurang dari 1 menit

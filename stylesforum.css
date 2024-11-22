@@ -382,16 +382,15 @@ nav {
 
 .ask-question {
   width: 80px;
-  text-align: center;
+  justify-content: center;
 }
 
 .ask-question span {
   display: none;
 }
 
-.ask-question img.icon-pertanyaan {
-  width: 30px; /* Atur ukuran ikon */
-  height: 30px;
+.icon-pertanyaan{
+  margin-right: 0;
 }
   
   /* Side navbar responsif */

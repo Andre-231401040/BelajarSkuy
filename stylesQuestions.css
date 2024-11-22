@@ -211,7 +211,7 @@ nav {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 20%;
+  min-width: 20%;
   position: absolute;
   bottom: 20px;
   right: 20px;
