@@ -28,7 +28,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 $id_postingan = (int)$_GET['id']; // Mengambil ID postingan dari URL
 
 // Mengambil komentar untuk ID postingan tersebut
-$data_komentar = pg_query($con, "SELECT * FROM komentar WHERE id_postingan = $id_postingan ORDER BY waktu_dibuat DESC");
+$data_komentar = pg_query($con, "SELECT * FROM komentar WHERE id_postingan = $id_postingan");
 if (!$data_komentar) {
     die("Error fetching comments: " . pg_last_error($con));
 }
