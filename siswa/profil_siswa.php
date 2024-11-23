@@ -24,6 +24,7 @@ if(isset($_POST["submit"])){
     $nama = $_POST["nama"];
     $tanggal_lahir = $_POST["tanggal_lahir"];
     $email = $_POST["email"];
+    $jenjang = $_POST["jenjang"];
     $password = $_POST["password"];
     $confirmation_password = $_POST["confirmation_password"];
     $asal_sekolah = $_POST["asal_sekolah"];
@@ -146,7 +147,7 @@ pg_close($con);
                         </div>
                         <div class= input-data>
                             <label for="jenjang">Jenjang</label>
-                            <input type="text" id="jenjang" name="jenjang" required value="<?= $email; ?>">
+                            <input type="text" id="jenjang" name="jenjang" required value="<?= $jenjang; ?>">
                         </div>
                     </div>
                     <div class= form-section>
