@@ -75,7 +75,8 @@ form h1 {
   color: #7f7f7f;
 }
 
-.input-data input {
+.input-data input,
+select {
   border: none;
   outline: none;
   width: 100%;

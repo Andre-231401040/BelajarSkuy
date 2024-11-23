@@ -10,6 +10,7 @@ if (!isset($_SESSION["id_pengajar"])) {
 $id_pengajar = $_SESSION["id_pengajar"];
 $data_pengajar = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE id = $id_pengajar"));
 $gambar = $data_pengajar["foto_profil"];
+$nama = $data_pengajar["nama"];
 
 // Mendapatkan ID kursus dari URL atau sesi
 if (!isset($_GET["id_kursus"])) {

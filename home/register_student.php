@@ -4,7 +4,7 @@ require "../function.php";
 if(isset($_POST["submit"])){
     $nama = $_POST["first-name"] . ' ' . $_POST["last-name"];
     $tanggal_lahir = $_POST["birth-date"];
-    $asal_sekolah = $_POST["school"];
+    $jenjang = $_POST["jenjang"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     $confirm_password = $_POST["confirmation-password"];
@@ -12,7 +12,7 @@ if(isset($_POST["submit"])){
     if($password !== $confirm_password){
         echo "<p class='failed'>Registrasi Gagal</p>";
     }else{
-        $query = "INSERT INTO siswa (nama, tanggal_lahir, asal_sekolah, email, password) VALUES ('$nama', '$tanggal_lahir', '$asal_sekolah', '$email', '$password')";
+        $query = "INSERT INTO siswa (nama, tanggal_lahir, email, password, jenjang) VALUES ('$nama', '$tanggal_lahir', '$email', '$password', '$jenjang')";
         $result = pg_query($con, $query);
     
         if(!$result){
@@ -66,8 +66,13 @@ if(isset($_POST["submit"])){
                     <input type="date" id="birth-date" name="birth-date" required>
                 </div>
                 <div class="input-data">
-                    <label for="school">Sekolah / Instansi</label>
-                    <input type="text" id="school" name="school" required>
+                    <label for="jenjang">Jenjang</label>
+                    <select name="jenjang" id="jenjang" required>
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA">SMA</option>
+                        <option value="LAINNYA">LAINNYA</option>
+                    </select>
                 </div>
             </div>
             <div class="form-row">

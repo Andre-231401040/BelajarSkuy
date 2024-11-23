@@ -58,7 +58,7 @@ tbody tr:nth-child(even) {
 .profile {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
 }
 
 .profile-pic {
@@ -207,7 +207,7 @@ a:hover {
           flex-direction: column;
       }    
         table {
-           table-layout: auto; /*Biarkan tabel menyesuaikan lebar otomatis */
+           table-layout: auto; 
         } 
     
         

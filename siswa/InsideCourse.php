@@ -43,38 +43,32 @@ pg_close();
     <link rel="stylesheet" href="styles/InsideCoursestyle.css" />
   </head>
   <body>
-    <header>
+  <header>
       <nav>
-            <a href="./profil_siswa.php" class="profil">
-                <?php if($profil != null){ ?>
-                    <img src="../images/foto_profil/<?= $profil; ?>" alt="foto profil <?= $nama; ?>">
-                <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
-                <?php } ?>
-                <div class="nama">
-                    <h2><?= $nama; ?></h2>
-                </div>
-            </a>
-            <ul>
-                <li>
-                    <a href="./home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_siswa.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
+        <a href="./profil_siswa.php" class="profil">
+          <?php if($profil != null){ ?>
+              <img src="../images/foto_profil/<?= $profil; ?>" alt="foto profil <?= $nama; ?>">
+          <?php }else{ ?>
+              <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+          <?php } ?>
+          <div class="nama">
+            <h2><?= $nama; ?></h2>
+          </div>
+        </a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container">
+          <div class="navigation">
+            <a href="home.php">Beranda</a>
+            <a href="course.php">Kursus</a>
+            <a href="../forum_siswa.php">Forum</a>
+          </div>
         </nav>
     </header>
     <main>
-      <div class="container-judul">
-        <h1><?= $judul ?></h1>
-      </div>
       <div class="container-main">
         <div class="container-gambar">
           <img src="../thumbnail/<?= $thumbnail ?>" class="gambarkurs">
@@ -82,50 +76,63 @@ pg_close();
       </div>
       <div class="container-main2">
         <div class="container-materi">
-          <span class="judul">Nama Pengajar </span>
+          <span class = "judul">Judul </span>
+          <span class="deskripsi"> <?= $judul?></span>
+        </div>
+        <div class="container-materi">
+          <span class="judul">Pengajar </span>
             <span class="deskripsi"><?= $nama_pengajar?></span>
+        </div>
+        <div class="container-materi">
+          <span class="judul">Deskripsi </span>
+            <p  class="deskripsi"><?= $deskripsi ?></p>
         </div>
         <div class="container-materi">
           <span class="judul">kategori </span>
             <span class="deskripsi"><?= $kategori ?></span>
         </div>
         <div class="container-materi">
-          <span class="judul">Deskripsi </span>
-            <p  class="deskripsi"><?= $deskripsi ?></p>
-          </div>
-        <div class="container-materi">
           <span class="judul">PDF </span>
             <?php if ($pdf != null) { ?>
-              <a href="InsideCourse.php?id=<?= $row['id']?>" id="download-pdf" style="margin: 20px">Download</a>
+              <a href="InsideCourse.php?id=<?= $row['id']?>" id="download-pdf">Download</a>
             <?php } ?>
         </div>
-        <div class="container-materi">
+        <div class="container-materi video">
           <span class="judul">Video </span>
             <?php if ($video != null) { ?>
-            <video controls src="../materi/video/<?= $video ?>" class="video" style="margin: 20px"></video>
+            <video controls src="../materi/video/<?= $video ?>" class="video"></video>
             <?php } else {?>
-              <p style="margin: 30px">Tidak ada Video</p>
+              <p class="video">Tidak ada Video</p>
             <?php } ?>
           </div>
         <div class="container-materi">
           <span class="judul">Tugas </span>
             <?php if ($tugas != null) { ?>
-              <a href="<?= $tugas ?>" id="tugas" style="margin: 30px">Buka Link ini</a>
+              <a href="<?= $tugas ?>" id="tugas">Buka Link ini</a>
             <?php } else {?>
-              <p style="margin: 30px">Tidak ada Tugas</p>
+              <p id="tugas">Tidak ada Tugas</p>
             <?php } ?>
         </div>
         <div class="container-materi">
           <span class="judul">Quiz </span>
             <?php if ($quiz != null) { ?>
-              <a href="<?= $quiz ?>" id="kuis" style="margin: 30px">Buka Link ini</a>
+              <a href="<?= $quiz ?>" id="kuis">Buka Link ini</a>
             <?php } else {?>
-              <p style="margin: 30px">Tidak ada kuis</p>
+              <p id="kuis">Tidak ada kuis</p>
             <?php } ?>
         </div>
       </div>
     </main>
     <script>
+      const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
       document.getElementById('download-pdf').addEventListener('click', function(){
         const downloadLink = document.createElement('a');
         downloadLink.href = '../materi/pdf/<?= $pdf ?>'; 
