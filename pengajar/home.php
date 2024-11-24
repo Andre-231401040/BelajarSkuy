@@ -42,73 +42,87 @@ pg_close();
     <link rel="stylesheet" href="./styles/home.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="./edit_profil.php" class="profil">
-                <?php if($gambar != null){ ?>
-                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
-                <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
-                <?php } ?>
-                <div class="nama">
-                    <h2><?= $nama; ?></h2>
-                    <div class="underline"></div>
-                </div>
-            </a>
-            <ul>
-                <li>
-                    <a href="./home.php">Home</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="./course.php">Course</a>
-                    <div class="underline"></div>
-                </li>
-                <li>
-                    <a href="../forum_pengajar.php">Forum</a>
-                    <div class="underline"></div>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Hi, <?= $nama; ?></h1>
-        <div class="container">
-            <div class="jumlah-murid">
-                <h2>Jumlah Murid</h2>
-                <?php if(!is_null($jumlah_siswa)){ ?>
-                    <p><?= $jumlah_siswa; ?></p>
-                <?php }else{ ?>
-                    <p>0</p>
-                <?php } ?>
+<header>
+    <nav>
+        <a href="./edit_profil.php" class="profil">
+            <?php if($gambar != null){ ?>
+                <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+            <?php }else{ ?>
+                <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+            <?php } ?>
+            <div class="nama">
+                <h2><?= $nama; ?></h2>
             </div>
-            <div class="pendapatan">
-                <h2>Pendapatan</h2>
-                <?php if(!is_null($total_pendapatan)){ ?>
-                    <p>Rp<?= $total_pendapatan - $gaji_ditarik; ?></p>
-                <?php }else{ ?>
-                    <p>Rp0</p>
-                <?php } ?>
-                <form action="tarik_gaji.php" method="post">
-                    <input type="hidden" name="nama" value="<?= $nama; ?>">
-                    <input type="hidden" name="email" value="<?= $email; ?>">
-                    <input type="hidden" name="pendapatan" value="<?= $total_pendapatan - $gaji_ditarik; ?>">
-                    <button id="tarik" type="submit" name="tarik">Tarik</button>
-                </form>
+        </a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container">
+            <div class="navigation">
+                <a href="./home.php">Beranda</a>
+                <a href="./course.php">Kursus</a>
+                <a href="../forum_pengajar.php">Forum</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main>
+        <h1 style="color: #2E7DBF;">Selamat Datang, <?= $nama; ?></h1>
+        <div class="content">
+            <div class="container-rectangle">
+                <div class="rectangle">
+                    <h2 class="label">Jumlah Murid</h2>
+                    <?php if(!is_null($jumlah_siswa)){ ?>
+                        <p class="value"><?= $jumlah_siswa; ?></p>
+                    <?php }else{ ?>
+                        <p class="value">0 siswa</p>
+                    <?php } ?>
+                </div>
+                <div class="rectangle">
+                    <h2 class="label">Pendapatan</h2>
+                    <?php if(!is_null($total_pendapatan)){ ?>
+                        <p>Rp<?= $total_pendapatan - $gaji_ditarik; ?></p>
+                    <?php }else{ ?>
+                        <p>Rp0</p>
+                    <?php } ?>
+                    <form action="tarik_gaji.php" method="post">
+                        <input type="hidden" name="nama" value="<?= $nama; ?>">
+                        <input type="hidden" name="email" value="<?= $email; ?>">
+                        <input type="hidden" name="pendapatan" value="<?= $total_pendapatan - $gaji_ditarik; ?>">
+                        <button id="tarik" type="submit" name="tarik">Tarik</button>
+                    </form>
+                </div>
             </div>
             <div class="kursus">
-                <h2>Kursus</h2>
                 <?php if(pg_affected_rows($kursus) !== 0){ ?>
-                    <?php while($row = pg_fetch_assoc($kursus)){ ?>
-                        <p><?= $row["judul"]; ?></p>
-                    <?php } ?>
+                    <h2>Kursus terpopuler anda</h2>
+                    <div class="card-container">
+                        <?php while($row = pg_fetch_assoc($kursus)){ ?>
+                            <!-- masukkan div dengan class card -->
+                            <p><?= $row["judul"]; ?></p>
+                        <?php } ?>
+                    </div>
                 <?php }else{ ?>
-                    <p>Anda belum memiliki kursus.</p>
+                    <h2 class="label">anda belum memiliki kursus</h2>
                 <?php } ?>
             </div>
         </div>     
     </main>
+    
     <script>
+        const hamburgerBtn = document.querySelector(".hamburger");
+        const navList = document.querySelector(".container");
+        hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+            navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+        });
+
         const form = document.querySelector("form");
         const checkOutButton = document.querySelector("#tarik");
         checkOutButton.addEventListener("click", function(e){
@@ -123,11 +137,11 @@ pg_close();
         const formatMessage = (obj) => {
             return `
             Data Pengajar
-Nama: ${obj.nama}
-Email: ${obj.email}
-Pendapatan: ${obj.pendapatan}
-Metode Pembayaran: (Gopay, OVO, BCA, dll)
-Nomor Rekening atau VA: (Isi dengan nomor anda)
+            Nama: ${obj.nama}
+            Email: ${obj.email}
+            Pendapatan: ${obj.pendapatan}
+            Metode Pembayaran: (Gopay, OVO, BCA, dll)
+            Nomor Rekening atau VA: (Isi dengan nomor anda)
             `;
         };
     </script>
