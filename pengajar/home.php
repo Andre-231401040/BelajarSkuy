@@ -102,7 +102,17 @@ pg_close();
                     <div class="card-container">
                         <?php while($row = pg_fetch_assoc($kursus)){ ?>
                             <!-- masukkan div dengan class card -->
-                            <p><?= $row["judul"]; ?></p>
+                             <div class="card">
+                                <img src="../thumbnail/<?= $row["thumbnail"]; ?>" alt="thumbnail kursus <?= $row["judul"]; ?>">
+                                <h2><?= $row["judul"]; ?></h2>
+                                <?php if(is_null($row["jumlah_siswa"])){ ?>
+                                    <p>0 siswa terdaftar</p>
+                                <?php }else{ ?>
+                                    <p><?= $row["jumlah_siswa"]; ?> murid terdaftar <a href="./tabel.php?id_kursus=<?= $row["id"]; ?>">Lihat</a></p>
+                                <?php } ?>
+                                <p>Jenjang: <?= $row["kategori"]; ?></p>
+                                <p>Harga: Rp<?= $row["harga"]; ?></p>
+                             </div>
                         <?php } ?>
                     </div>
                 <?php }else{ ?>

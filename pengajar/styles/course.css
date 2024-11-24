@@ -5,9 +5,9 @@
 }
 
 body {
-  background-color: #79CAF5;
+  background-color: #79caf5;
   font-family: "Quicksand", sans-serif;
-} 
+}
 
 header {
   width: 100%;
@@ -33,14 +33,13 @@ nav .profil {
   border-radius: 50%;
   object-position: center;
 }
-  
+
 .profil .nama {
   gap: 2px;
   width: 100%;
   display: flex;
-  margin-top: -5px;
-  align-items : center;
-  color : #2E7DBF;
+  align-items: center;
+  color: #2e7dbf;
 }
 
 nav {
@@ -55,7 +54,6 @@ nav {
   background-color: white;
 }
 
-    
 .hamburger {
   cursor: pointer;
   height: 24px;
@@ -72,11 +70,10 @@ nav {
   border-radius: 3px;
   background-color: #2577ba;
 }
-    
+
 .navigation a {
-  font-size: 20px;
-  color : black;
-  text-decoration : none;
+  color: black;
+  text-decoration: none;
 }
 
 .navigation a:hover {
@@ -85,7 +82,7 @@ nav {
 }
 
 .navigation {
-  gap: 50px;
+  gap: 36px;
   display: flex;
   font-weight: bold;
   justify-content: center;
@@ -97,7 +94,7 @@ nav {
   flex-wrap: wrap;
 }
 
-.add-course{
+.add-course {
   width: fit-content;
   height: auto;
   background-color: white;
@@ -106,7 +103,7 @@ nav {
   text-align: justify;
   padding: 10px 20px;
   gap: 200px;
-  top : 120px;
+  top: 120px;
   right: 48px;
   font-weight: bold;
   text-decoration: none;
@@ -123,21 +120,21 @@ nav {
 }
 
 .course-card {
-    display : grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    border-radius: 10px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    width: 411px;
-    min-height: 500px;
-    background-color: white;
-    padding: 20px;
-    gap : 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 411px;
+  min-height: 500px;
+  background-color: white;
+  padding: 20px;
+  gap: 12px;
 }
 
 .course-card img {
-  width : 100%;
-  height : 200px;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
   object-position: center;
 }
@@ -145,7 +142,7 @@ nav {
 .button-container {
   display: flex;
   justify-content: center;
-  gap : 20px;
+  gap: 20px;
 }
 
 .button-container a {
@@ -156,14 +153,13 @@ nav {
   width: 100%;
   text-align: center;
   text-decoration: none;
-  cursor : pointer; 
-  color : white;
-  margin : auto;
+  cursor: pointer;
+  color: white;
+  margin: auto;
   font-size: 16px;
   font-weight: bolder;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
 
 @media screen and (max-width: 768px) {
   nav .profil {
@@ -176,11 +172,11 @@ nav {
   }
 
   nav {
-      justify-content: space-between;
-    }
-  
+    justify-content: space-between;
+  }
+
   .hamburger {
-      display: flex;
+    display: flex;
   }
 
   h1 {
@@ -199,44 +195,44 @@ nav {
     align-items: center;
     background-color: white;
     transition: 0.7s;
-}
+  }
 
-.display {
+  .display {
     opacity: 1;
     transform: translateY(320px);
-}
+  }
 
-.navigation {
+  .navigation {
     flex-direction: column;
-}
+  }
 
-.navigation a{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+  .navigation a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-.add-course{
-  right: 24px;
-}
+  .add-course {
+    right: 24px;
+  }
 
-.rectangle {
-  flex-direction: column; /* Atur rectangle agar tampil vertikal di layar kecil */
-  gap: 10px;
-  padding: 15px;
-  min-width: 200px;
-}
+  .rectangle {
+    flex-direction: column; /* Atur rectangle agar tampil vertikal di layar kecil */
+    gap: 10px;
+    padding: 15px;
+    min-width: 200px;
+  }
 
-.content {
-  flex-direction: column;
-  align-items: center;
-}
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.course-container{
-  padding: 20px;
-}
+  .course-container {
+    padding: 20px;
+  }
 
-.course-card {
-  width: 100%;
+  .course-card {
+    width: 100%;
+  }
 }
-}  

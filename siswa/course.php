@@ -82,7 +82,7 @@ pg_close();
         ?>
         <div class="container-course">
           <img src="../thumbnail/<?= $row["thumbnail"]?>" class="gambarKurs" alt="<?= $row["judul"]?>"/>
-          <h1 class="judul"><?= $row["judul"]?></h1>
+          <h2 class="judul"><?= $row["judul"]?></h2>
           <div class="container-circle2">
             <div class="bold">Nama Pengajar</div>: <?= $row["nama"]; ?>
           </div>
@@ -93,7 +93,7 @@ pg_close();
            <div class="bold">Jenjang</div>:&nbsp;<span class="jenjang-card"><?= $row["jenjang"]; ?></span>
           </div>
           <div class="container-circle2">
-            <div class="bold">Jumlah Murid</div>: <?= $row["jumlah_siswa"]; ?>
+            <div class="bold">Jumlah Murid</div>: <?= $row["jumlah_siswa"]; ?> &nbsp; <a href="./tabel_siswa.php?id_kursus=<?= $row["id"]; ?>">Lihat</a>
           </div>
           <div class="container-circle2">
             <div class="bold">Harga</div>: Rp<?= $row["harga"]; ?>

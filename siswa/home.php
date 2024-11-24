@@ -13,10 +13,11 @@ $gambar = $data_siswa["foto_profil"];
 
 $data_course = pg_query($con, "SELECT * FROM kursus");
 
-$data_enrolled_courses = pg_query($con, "SELECT DISTINCT ON (enroll.id_kursus) * FROM kursus INNER JOIN enroll ON kursus.id = enroll.id_kursus WHERE enroll.id_siswa = $id_siswa");
+// $data_enrolled_courses = pg_query($con, "SELECT judul, DISTINCT ON (enroll.id_kursus) * FROM kursus INNER JOIN enroll ON kursus.id = enroll.id_kursus WHERE enroll.id_siswa = $id_siswa");
+$data_enrolled_courses = pg_query($con, "SELECT kursus.id, judul, nama, pendidikan_terakhir, jenjang, jumlah_siswa, harga, thumbnail FROM kursus INNER JOIN pengajar ON kursus.id_pengajar = pengajar.id INNER JOIN enroll ON kursus.id = enroll.id_kursus WHERE enroll.id_siswa = $id_siswa");
 $courses = pg_fetch_all($data_enrolled_courses);
 
-$data_latest_courses = pg_query($con, "SELECT * FROM kursus ORDER BY id DESC LIMIT 3");
+$data_latest_courses = pg_query($con, "SELECT kursus.id, judul, nama, pendidikan_terakhir, jenjang, jumlah_siswa, harga, thumbnail FROM kursus INNER JOIN pengajar ON kursus.id_pengajar = pengajar.id ORDER BY kursus.id DESC LIMIT 3");
 $latest_courses = pg_fetch_all($data_latest_courses);
 
 pg_close();
@@ -76,31 +77,28 @@ pg_close();
 
     <div class="container2">
         <div class="rectangle">
-            <p class="title">Kursus Anda</p>
+            <p class="title">Kursus yang Anda Beli</p>
         </div>
 
         <div class="container-main">
         <?php 
-            $counter = 0;
-            while($row = pg_fetch_assoc($data_course)) { 
-            if ($counter >= 3) break;
-            $counter++;
+            while($row = pg_fetch_assoc($data_enrolled_courses)) { 
             $id_kursus = $row["id"];  
         ?>
         <div class="container-course">
           <img src="../thumbnail/<?= $row["thumbnail"]?>" class="gambarKurs" alt="<?= $row["judul"]?>"/>
-          <h1 class="judul"><?= $row["judul"]?></h1>
+          <h2 class="judul"><?= $row["judul"]?></h2>
           <div class="container-circle2">
-            <div class="bold">Nama Pengajar</div>: tes<!--mumpung blm ada backendnya -->
+            <div class="bold">Nama Pengajar</div>: <?= $row["nama"]; ?>
           </div>
           <div class="container-circle2">
-            <div class="bold">Pendidikan Terakhir</div>: S1-Ilmu Komputer <!--mumpung blm ada backendnya-->
+            <div class="bold">Pendidikan Terakhir</div>: <?= $row["pendidikan_terakhir"]; ?>
           </div>
           <div class="container-circle2">
-           <div class="bold">Jenjang</div>: Kuliah  <!--mumpung belum ada backendnya -->
+           <div class="bold">Jenjang</div>: <?= $row["jenjang"]; ?>
           </div>
           <div class="container-circle2">
-            <div class="bold">Jumlah Siswa</div>: <?= $row["jumlah_siswa"]; ?>
+            <div class="bold">Jumlah Siswa</div>: <?= $row["jumlah_siswa"]; ?> &nbsp; <a href="./tabel_siswa.php?id_kursus=<?= $row["id"]; ?>">Lihat</a>
           </div>
           <div class="container-circle2">
             <div class="bold">Harga</div>: <?= $row["harga"]; ?>
@@ -126,21 +124,23 @@ pg_close();
 
 
         <div class="container-main">
-        <?php foreach ($latest_courses as $row): ?>
+        <?php foreach ($latest_courses as $row): 
+          $id_kursus = $row["id"];    
+        ?>
         <div class="container-course">
           <img src="../thumbnail/<?= $row["thumbnail"]?>" class="gambarKurs" alt="<?= $row["judul"]?>"/>
-          <h1 class="judul"><?= $row["judul"]?></h1>
+          <h2 class="judul"><?= $row["judul"]?></h2>
           <div class="container-circle2">
-            <div class="bold">Nama Pengajar</div>: tes<!--mumpung blm ada backendnya -->
+            <div class="bold">Nama Pengajar</div>: <?= $row["nama"]; ?>
           </div>
           <div class="container-circle2">
-            <div class="bold">Pendidikan Terakhir</div>: S1-Ilmu Komputer <!--mumpung blm ada backendnya-->
+            <div class="bold">Pendidikan Terakhir</div>: <?= $row["pendidikan_terakhir"]; ?>
           </div>
           <div class="container-circle2">
-           <div class="bold">Jenjang</div>: Kuliah  <!--mumpung belum ada backendnya -->
+           <div class="bold">Jenjang</div>: <?= $row["jenjang"]; ?>
           </div>
           <div class="container-circle2">
-            <div class="bold">Jumlah Siswa</div>: <?= $row["jumlah_siswa"]; ?>
+            <div class="bold">Jumlah Siswa</div>: <?= $row["jumlah_siswa"]; ?> &nbsp; <a href="./tabel_siswa.php?id_kursus=<?= $row["id"]; ?>">Lihat</a>
           </div>
           <div class="container-circle2">
             <div class="bold">Harga</div>: <?= $row["harga"]; ?>

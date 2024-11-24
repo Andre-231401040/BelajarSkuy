@@ -38,6 +38,7 @@ pg_close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Siswa</title>
+    <link rel="icon" href="../images/logo.png" sizes="32x32" type="image/png" />
     <link rel="stylesheet" href="./styles/tabelstyle.css">
 
     <!-- Fonts -->
@@ -92,7 +93,11 @@ pg_close();
                         <?php foreach ($tabel as $row) { ?>
                             <tr>
                                 <td class="profile">
-                                    <img src="../images/foto_profil/<?= htmlspecialchars($row['foto_profil']); ?>" alt="Foto Profil <?= htmlspecialchars($row['nama']); ?>" class="profile-pic">
+                                    <?php if ($row["foto_profil"] != null) { ?>
+                                        <img src="../images/foto_profil/<?= htmlspecialchars($row["foto_profil"]); ?>" alt="foto profil <?= htmlspecialchars($row['nama']); ?>" class="profile-pic">
+                                    <?php } else { ?>
+                                        <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default" class="profile-pic">
+                                    <?php } ?>
                                     <span><?= htmlspecialchars($row['nama']); ?></span>
                                 </td>
                                 <td><?= htmlspecialchars($row['jenjang'] ?? '-'); ?></td>

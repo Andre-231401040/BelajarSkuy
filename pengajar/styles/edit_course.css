@@ -5,9 +5,9 @@
 }
 
 body {
-  background-color: #79CAF5;
+  background-color: #79caf5;
   font-family: "Quicksand", sans-serif;
-} 
+}
 
 header {
   width: 100%;
@@ -33,14 +33,13 @@ nav .profil {
   border-radius: 50%;
   object-position: center;
 }
-  
+
 .profil .nama {
   gap: 2px;
   width: 100%;
   display: flex;
-  margin-top: -5px;
-  align-items : center;
-  color : #2E7DBF;
+  align-items: center;
+  color: #2e7dbf;
 }
 
 nav {
@@ -54,7 +53,6 @@ nav {
   background-color: white;
 }
 
-    
 .hamburger {
   cursor: pointer;
   height: 24px;
@@ -71,11 +69,10 @@ nav {
   border-radius: 3px;
   background-color: #2577ba;
 }
-    
+
 .navigation a {
-  font-size: larger;
-  color : black;
-  text-decoration : none;
+  color: black;
+  text-decoration: none;
   display: flex;
 }
 
@@ -91,8 +88,7 @@ nav {
   justify-content: center;
 }
 
-
-.rectangle{
+.rectangle {
   width: auto;
   height: auto;
   background-color: white;
@@ -136,7 +132,7 @@ label {
 input,
 textarea {
   width: 80%;
-  border: 2px solid rgba(0, 0, 0, 0.2); 
+  border: 2px solid rgba(0, 0, 0, 0.2);
   padding: 12px;
   border-radius: 5px;
   background-color: #fff;
@@ -147,13 +143,14 @@ input {
   font-family: "Quicksand", sans-serif;
 }
 
-input, file {
+input,
+file {
   display: flex;
   flex-wrap: wrap;
 }
 
 textarea {
-  width: 78,5%;
+  width: 78, 5%;
   height: 60px;
   font-family: "Quicksand", sans-serif;
 }
@@ -162,34 +159,34 @@ textarea::-webkit-scrollbar {
   display: none;
 }
 
-#kategori, #jenjang{
-  display : flex;
+#kategori,
+#jenjang {
+  display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin : 0 0 0 0;
-  border-radius : 5px;
-  width : 80%;
-  height : 24px;
+  margin: 0 0 0 0;
+  border-radius: 5px;
+  width: 80%;
+  height: 24px;
   text-align: center;
   border: 2px solid rgba(0, 0, 0, 0.2);
   font-family: "Quicksand", sans-serif;
 }
 
-#kategori option{
+#kategori option {
   font-family: "Quicksand", sans-serif;
 }
 
-#kategori:focus{
+#kategori:focus {
   outline: none;
 }
 
 #materi_pdf,
 #materi_video,
 #thumbnail {
-  width : 80%;
+  width: 80%;
   height: fit-content;
   display: flex;
-  
 }
 
 button {
@@ -200,8 +197,8 @@ button {
   width: 160px;
   text-align: center;
   text-decoration: none;
-  cursor : pointer; 
-  color : white;
+  cursor: pointer;
+  color: white;
   font-size: 16px;
   font-weight: bolder;
   align-self: flex-end;
@@ -233,11 +230,11 @@ button:hover {
   }
 
   nav {
-      justify-content: space-between;
-    }
-  
+    justify-content: space-between;
+  }
+
   .hamburger {
-      display: flex;
+    display: flex;
   }
 
   h1 {
@@ -256,39 +253,38 @@ button:hover {
     align-items: center;
     background-color: white;
     transition: 0.7s;
-}
+  }
 
-.display {
+  .display {
     opacity: 1;
     transform: translateY(320px);
-}
+  }
 
-.navigation {
+  .navigation {
     flex-direction: column;
-}
+  }
 
-.navigation a{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+  .navigation a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-.rectangle {
-  flex-direction: column; /* Atur rectangle agar tampil vertikal di layar kecil */
-  gap: 10px;
-  padding: 15px;
-  min-width: 200px;
-}
+  .rectangle {
+    flex-direction: column; /* Atur rectangle agar tampil vertikal di layar kecil */
+    gap: 10px;
+    padding: 15px;
+    min-width: 200px;
+  }
 
-.content {
-  flex-direction: column;
-  align-items: center;
-}
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
 
-#materi_pdf,
-#materi_video,
-#thumbnail {
-min-width: 100%;
+  #materi_pdf,
+  #materi_video,
+  #thumbnail {
+    min-width: 100%;
+  }
 }
-
-}  
