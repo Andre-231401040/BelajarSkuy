@@ -41,11 +41,13 @@ nav {
   padding: 12px 40px;
   display: flex;
   align-items: center;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   justify-content: space-between;
   background-color: white;
+  z-index: 10;
 }
 
 .hamburger {
@@ -99,6 +101,7 @@ nav {
   padding-left: 24px;
   padding-right: 24px;
   align-items: flex-start;
+  margin-top: 88px;
 }
 
 .teks-pertanyaan {
@@ -164,19 +167,16 @@ nav {
 }
 
 .container {
-  margin-left: 180px;
+  margin-left: 128px;
   width: 80%;
-  margin-top: 100px;
 }
 
 .form-container {
   padding: 20px;
-  margin-left: 100px;
-  width: 60%;
+  width: 80%;
   height: 375px;
   box-sizing: border-box;
   background-color: #ffffff;
-  border: 2px solid #2577ba;
   border-radius: 10px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   position: relative;
@@ -219,6 +219,16 @@ nav {
 
 .form-container button:hover {
   background-color: #0d95e8;
+}
+
+.second-container {
+  padding: 20px;
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Media Query untuk layar lebih kecil */
@@ -267,9 +277,7 @@ nav {
   }
 
   .container {
-    padding-top: 80px;
     margin-left: 70px; /* Sesuaikan dengan lebar sidebar */
-    width: calc(100% - 70px);
   }
 
   /* Side navbar responsif */
@@ -305,9 +313,13 @@ nav {
     width: 30px; /* Atur ukuran ikon */
     height: 30px;
   }
-}
 
-.form-container {
-  margin-left: 70px;
-  height: 400px;
+  .form-container {
+    height: 400px;
+  }
+
+  .form-container,
+  .second-container {
+    width: 100%;
+  }
 }

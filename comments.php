@@ -122,25 +122,25 @@ pg_close();
                 <li><a href="./saved_post.php"><img src="images/tersimpan.png" alt="discussion" class="icon"><span>Tersimpan</span></a></li>
             </ul>
         </div>
-
-        <div class="form-container">
-            <form action="add_comment.php" method="post" autocomplete="off">
-                <input type="hidden" name="id_postingan" value="<?= $id_postingan; ?>"> <!-- Menyimpan ID postingan -->
-                <textarea id="konten" name="konten" placeholder="Tuliskan komentar disini" required></textarea>
-                <button type="submit" name="submit">Kirim Komentar</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="second-container" style="border: 1px solid #ccc; padding: 20px; margin-left: 10px; margin-right: 50px; margin-top: 20px; border-radius: 10px; background-color: #f9f9f9;">
-        <div class="comments-container">
-            <h3>Komentar</h3>
-            <?php while ($komentar = pg_fetch_assoc($data_komentar)): ?>
-                <div class="comment" style="border: 1px solid #ddd; padding: 10px; margin-top: 10px; border-radius: 5px; background-color: #ffffff;">
-                    <p><strong><?= htmlspecialchars($komentar['nama_pembuat']); ?></strong> (<?= $komentar['waktu_dibuat']; ?>)</p>
-                    <p><?= htmlspecialchars($komentar['komentar']); ?></p>
+        <div class="container">
+            <div class="form-container">
+                <form action="add_comment.php" method="post" autocomplete="off">
+                    <input type="hidden" name="id_postingan" value="<?= $id_postingan; ?>"> <!-- Menyimpan ID postingan -->
+                    <textarea id="konten" name="konten" placeholder="Tuliskan komentar disini" required></textarea>
+                    <button type="submit" name="submit">Kirim Komentar</button>
+                </form>
+            </div>
+            <div class="second-container">
+                <div class="comments-container">
+                <h3>Komentar</h3>
+                    <?php while ($komentar = pg_fetch_assoc($data_komentar)): ?>
+                        <div class="comment" style="border: 1px solid #ddd; padding: 10px; margin-top: 10px; border-radius: 5px; background-color: #ffffff;">
+                            <p><strong><?= htmlspecialchars($komentar['nama_pembuat']); ?></strong> (<?= $komentar['waktu_dibuat']; ?>)</p>
+                            <p><?= htmlspecialchars($komentar['komentar']); ?></p>
+                        </div>
+                    <?php endwhile; ?>
                 </div>
-            <?php endwhile; ?>
+            </div>
         </div>
     </div>
 </body>
