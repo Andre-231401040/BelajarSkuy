@@ -132,9 +132,9 @@ pg_close();
         </div>
     </div>
 
-    <div class="second-container" style="border: 1px solid #ccc; padding: 20px; margin-left: 10px; margin-right: 50px; margin-top: 20px; border-radius: 10px; background-color: #f9f9f9;">
+    <div class="second-container">
         <div class="comments-container">
-            <h3>Comments</h3>
+            <h3>Komentar</h3>
             <?php while ($komentar = pg_fetch_assoc($data_komentar)): ?>
                 <div class="comment" style="border: 1px solid #ddd; padding: 10px; margin-top: 10px; border-radius: 5px; background-color: #ffffff;">
                     <p><strong><?= htmlspecialchars($komentar['nama_pembuat']); ?></strong> (<?= $komentar['waktu_dibuat']; ?>)</p>
