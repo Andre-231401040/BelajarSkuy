@@ -217,7 +217,7 @@ nav {
 
 .navigation a:hover {
   transition: 0.2s;
-  color: #2e7dbf;
+  opacity: 0.5;
 }
 
 .navigation {

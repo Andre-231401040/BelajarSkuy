@@ -158,6 +158,11 @@ main a {
   font-weight: bolder;
 }
 
+main a:hover {
+  transition: 0.2s;
+  opacity: 0.8;
+}
+
 main a img {
   width: 36px;
 }
