@@ -11,10 +11,13 @@ $data_siswa = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE id = $id_
 $nama = $data_siswa["nama"];
 $gambar = $data_siswa["foto_profil"];
 
-$data_enrolled_courses = pg_query($con, "SELECT DISTINCT ON (enroll.id_kursus) * FROM kursus INNER JOIN enroll ON kursus.id = enroll.id_kursus WHERE enroll.id_siswa = $id_siswa");
+$data_course = pg_query($con, "SELECT * FROM kursus");
+
+// $data_enrolled_courses = pg_query($con, "SELECT judul, DISTINCT ON (enroll.id_kursus) * FROM kursus INNER JOIN enroll ON kursus.id = enroll.id_kursus WHERE enroll.id_siswa = $id_siswa");
+$data_enrolled_courses = pg_query($con, "SELECT kursus.id, judul, nama, pendidikan_terakhir, jenjang, jumlah_siswa, harga, thumbnail FROM kursus INNER JOIN pengajar ON kursus.id_pengajar = pengajar.id INNER JOIN enroll ON kursus.id = enroll.id_kursus WHERE enroll.id_siswa = $id_siswa");
 $courses = pg_fetch_all($data_enrolled_courses);
 
-$data_latest_courses = pg_query($con, "SELECT judul, harga FROM kursus ORDER BY id DESC LIMIT 6");
+$data_latest_courses = pg_query($con, "SELECT kursus.id, judul, nama, pendidikan_terakhir, jenjang, jumlah_siswa, harga, thumbnail FROM kursus INNER JOIN pengajar ON kursus.id_pengajar = pengajar.id ORDER BY kursus.id DESC LIMIT 3");
 $latest_courses = pg_fetch_all($data_latest_courses);
 
 pg_close();
@@ -42,71 +45,131 @@ pg_close();
 
 </head>
 <body>
+    
     <header>
-        <nav>
-            <a href="./profil_siswa.php" class="profil">
-                <?php if($gambar != null){ ?>
-                    <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
-                <?php }else{ ?>
-                    <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
-                <?php } ?>
-                <div class="nama">
-                    <h2><?= $nama; ?></h2>
-                </div>
-            </a>
-            <ul>
-                <li>
-                    <a href="./home.php">Beranda</a>
-                </li>
-                <li>
-                    <a href="./course.php">Kursus</a>
-                </li>
-                <li>
-                    <a href="../forum_siswa.php">Forum</a>
-                </li>
-            </ul>
-        </nav>
+      <nav>
+          <a href="./profil_siswa.php" class="profil">
+              <?php if($gambar != null){ ?>
+                  <img src="../images/foto_profil/<?= $gambar; ?>" alt="foto profil <?= $nama; ?>">
+              <?php }else{ ?>
+                  <img src="../images/foto_profil/foto-1.jpg" alt="foto profil default">
+              <?php } ?>
+              <div class="nama">
+                  <h2><?= $nama; ?></h2>
+              </div>
+          </a>
+          <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <div class="container">
+              <div class="navigation">
+                  <a href="./home.php">Beranda</a>
+                  <a href="./course.php">Kursus</a>
+                  <a href="../forum_pengajar.php">Forum</a>
+              </div>
+          </div>
+      </nav>
     </header>
 
     <h1 style="margin-left: 55px;margin-top:45px; color: white">Hi, <?= $nama; ?> </h1>
 
-    <div class="container">
+    <div class="container2">
         <div class="rectangle">
-            <p class="title">Kursus Anda</p>
+            <p class="title">Kursus yang Anda Beli</p>
         </div>
 
-        <div class="course">
-            <div class="courserectangle">
-
-            </div>
-            <div class="courserectangle">
-
-            </div>
-            <div class="courserectangle">
-
-            </div>
+        <div class="container-main">
+        <?php 
+            while($row = pg_fetch_assoc($data_enrolled_courses)) { 
+            $id_kursus = $row["id"];  
+        ?>
+        <div class="container-course">
+          <img src="../thumbnail/<?= $row["thumbnail"]?>" class="gambarKurs" alt="<?= $row["judul"]?>"/>
+          <h2 class="judul"><?= $row["judul"]?></h2>
+          <div class="container-circle2">
+            <div class="bold">Nama Pengajar</div>: <?= $row["nama"]; ?>
+          </div>
+          <div class="container-circle2">
+            <div class="bold">Pendidikan Terakhir</div>: <?= $row["pendidikan_terakhir"]; ?>
+          </div>
+          <div class="container-circle2">
+           <div class="bold">Jenjang</div>: <?= $row["jenjang"]; ?>
+          </div>
+          <div class="container-circle2">
+            <div class="bold">Jumlah Siswa</div>: <?= $row["jumlah_siswa"]; ?> &nbsp; <a href="./tabel_siswa.php?id_kursus=<?= $row["id"]; ?>">Lihat</a>
+          </div>
+          <div class="container-circle2">
+            <div class="bold">Harga</div>: <?= $row["harga"]; ?>
+          </div>
+          <div class="container-linktabel">
+            <?php if (pg_affected_rows(pg_query($con, "SELECT * FROM success_payment WHERE id = $id_kursus AND id_siswa = $id_siswa")) !== 0) { ?>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Bergabung</a>
+            <?php } else if ($row["harga"] != 0) { ?>
+              <a href="pay.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll">Enroll Saya</a>
+            <?php } else { ?>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Bergabung</a>
+            <?php } ?>
+          </div>
         </div>
+        <?php } ?>
+      </div>
     </div>
 
-    <div class="container">
+    <div class="container2">
         <div class="rectangle">
             <p class="title">Kursus Terbaru </p>
         </div>
 
-        <div class="course">
-            <div class="courserectangle">
 
-            </div>
-            <div class="courserectangle">
-
-            </div>
-            <div class="courserectangle">
-
-            </div>
+        <div class="container-main">
+        <?php foreach ($latest_courses as $row): 
+          $id_kursus = $row["id"];    
+        ?>
+        <div class="container-course">
+          <img src="../thumbnail/<?= $row["thumbnail"]?>" class="gambarKurs" alt="<?= $row["judul"]?>"/>
+          <h2 class="judul"><?= $row["judul"]?></h2>
+          <div class="container-circle2">
+            <div class="bold">Nama Pengajar</div>: <?= $row["nama"]; ?>
+          </div>
+          <div class="container-circle2">
+            <div class="bold">Pendidikan Terakhir</div>: <?= $row["pendidikan_terakhir"]; ?>
+          </div>
+          <div class="container-circle2">
+           <div class="bold">Jenjang</div>: <?= $row["jenjang"]; ?>
+          </div>
+          <div class="container-circle2">
+            <div class="bold">Jumlah Siswa</div>: <?= $row["jumlah_siswa"]; ?> &nbsp; <a href="./tabel_siswa.php?id_kursus=<?= $row["id"]; ?>">Lihat</a>
+          </div>
+          <div class="container-circle2">
+            <div class="bold">Harga</div>: <?= $row["harga"]; ?>
+          </div>
+          <div class="container-linktabel">
+            <?php if (pg_affected_rows(pg_query($con, "SELECT * FROM success_payment WHERE id = $id_kursus AND id_siswa = $id_siswa")) !== 0) { ?>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Bergabung</a>
+            <?php } else if ($row["harga"] != 0) { ?>
+              <a href="pay.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll">Enroll Saya</a>
+            <?php } else { ?>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="rectangle-3" id="Enroll-free">Bergabung</a>
+            <?php } ?>
+          </div>
         </div>
-    </div>
-    
-    
-   
+        <?php  endforeach;  ?>
+      </div>
+    </div>  
 </body>
+
+<script> 
+    const hamburgerBtn = document.querySelector(".hamburger");
+      const navList = document.querySelector(".container");
+      hamburgerBtn.addEventListener("click", () => {
+        if(navList.classList.contains("display")){
+          navList.classList.remove("display");
+        }else{
+          navList.classList.add("display");
+        }
+      });
+  </script>
+
 </html>

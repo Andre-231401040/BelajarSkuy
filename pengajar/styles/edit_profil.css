@@ -1,20 +1,58 @@
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #eeeed0;
+  background-color: #79CAF5;
   font-family: "Quicksand", sans-serif;
 }
 
-form {
-  gap: 12px;
-  padding: 12px 32px;
+main{
+  padding-bottom: 30px;
+  min-height: 172vh;
+}
+
+
+.bawah{
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  width: 80%;
+  height: 650px;
+  background-color: white;
+  box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4) ;
+  border-radius: 10px;
+  position: relative;
+}
+
+.atas{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 80%;
+  height: 180px;
+  background-color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  position: relative;
+}
+
+h3{
+  color: gray;
+}
+
+.nama{
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  font-size: 15px;
 }
 
 img {
@@ -23,55 +61,195 @@ img {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+  margin-left: 50px;
 }
 
-label {
+form {
+  gap: 28px;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  margin-bottom: 10px;
 }
 
-input,
-textarea {
+
+.input-data{
+  font-size: 13px;
+  padding: 10px;
+  position: relative;
+  width: 48%;
+  border-radius: 8px;
+  border: 1px solid #7f7f7f;
+  margin-bottom: 35px;
+}
+
+
+.input-data label {
+  position: absolute;
+  top: -29px;
+  left: 12px;
+  color: #7f7f7f;
+}
+
+.input-data input {
+  font-size: 13px;
   border: none;
-  padding: 12px;
-  border-radius: 24px;
-  background-color: #d9d9d9;
+  outline: none;
+  width: 100%;
 }
 
-input {
-  width: 80%;
-  height: 24px;
-  font-family: "Quicksand", sans-serif;
+
+
+.deskripsi{
+  font-size: 13px;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  height: 130px;
+  border-radius: 8px;
+  border: 1px solid #7f7f7f;
+  margin-bottom: 35px;
 }
 
-textarea {
-  width: 80%;
-  height: 60px;
-  font-family: "Quicksand", sans-serif;
+
+.deskripsi label {
+  position: absolute;
+  top: -29px;
+  left: 12px;
+  color: #7f7f7f;
 }
 
-textarea::-webkit-scrollbar {
-  display: none;
+.deskripsi input {
+  font-size: 13px;
+  border: none;
+  outline: none;
+  width: 100%;
 }
 
-#foto-profil {
-  height: fit-content;
+
+textarea{
+  border: 0;
+  min-width: 100%;
+  height: 110px;
+  background: none;
 }
 
-button {
-  padding: 12px;
-  font-size: 20px;
+
+button{
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: -78px;
+  width: 145px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bolder;
+  border-radius: 10px;
   border: none;
   color: white;
-  font-weight: bolder;
-  transition: 0.2s;
-  font-family: "Quicksand", sans-serif;
+  box-sizing:initial;
   background-color: #2577ba;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-button:hover {
-  opacity: 0.8;
+.button-profile{
+  margin-left: auto;
+  margin-top: -120px;
+}
+
+.data{
+  margin-top: 90px;
+  position: relative;
+}
+
+
+.custom-profile {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #2577ba;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bolder;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+@media (max-width: 768px) {
+  
+  .bawah {
+    width: 90%; 
+    height: 830px; 
+  }
+
+  .atas {
+    width: 90%;
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .atas img {
+    margin: 20px 0;
+  }
+
+  .nama {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .form-section {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .input-data {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .deskripsi {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  textarea {
+    max-width: 100%;
+    height: 100px;
+  }
+
+  button {
+    
+    margin-top: 10px;
+    margin-left: 390px;
+    display: block;
+  }
+
+  .button-profile {
+    margin-top: -110px;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .data {
+    margin-top: 60px;
+  }
+  .input-data label{
+    margin-top: 10px;
+  }
+  .deskripsi label{
+    top: -20px;
+  }
 }
