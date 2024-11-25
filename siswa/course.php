@@ -59,7 +59,7 @@ pg_close();
         </nav>
     </header>
     <main>
-      <label for="jenjang"> </label>
+      <!-- <label for="jenjang"> </label> -->
         <select id="jenjang" name="jenjangList" form="jenjangform">
             <option value="" disabled selected hidden>Jenjang</option>
             <option value="SD"> SD </option>
