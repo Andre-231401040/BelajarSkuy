@@ -89,6 +89,11 @@ form button {
   background-color: #2577ba;
 }
 
+form button:hover {
+  transition: 0.2s;
+  opacity: 0.8;
+}
+
 form .links {
   width: 100%;
   display: flex;

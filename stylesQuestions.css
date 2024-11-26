@@ -12,7 +12,7 @@ body {
 
 nav .profil {
   gap: 12px;
-  width: 25%;
+  width: 60%;
   padding: 4px;
   color: black;
   display: flex;
@@ -121,6 +121,7 @@ nav {
   justify-self: center;
   top: 200px;
 }
+
 .title {
   font-size: 25px;
   font-weight: bold;
@@ -173,13 +174,19 @@ nav {
 
 .form-container {
   padding: 20px;
-  width: 80%;
+  width: 60%;
   height: 375px;
+  margin-left: 128px;
   box-sizing: border-box;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   position: relative;
+}
+
+.form-container.comments {
+  width: 80%;
+  margin-left: 0;
 }
 
 .form-container input#topik {
@@ -277,13 +284,14 @@ nav {
   }
 
   .container {
-    margin-left: 70px; /* Sesuaikan dengan lebar sidebar */
+    margin-left: 50px; /* Sesuaikan dengan lebar sidebar */
   }
 
   /* Side navbar responsif */
   .side-navbar {
     width: 80px; /* Sesuaikan dengan ikon */
     padding: 10px;
+    left: 0;
   }
 
   .side-navbar ul {
@@ -316,9 +324,11 @@ nav {
 
   .form-container {
     height: 400px;
+    margin-left: 50px;
   }
 
   .form-container,
+  .form-container.comments,
   .second-container {
     width: 100%;
   }

@@ -172,7 +172,6 @@ nav .profil {
   gap: 2px;
   width: 100%;
   display: flex;
-  margin-top: -5px;
   align-items: center;
   color: #2e7dbf;
 }
@@ -218,7 +217,7 @@ nav {
 
 .navigation a:hover {
   transition: 0.2s;
-  color: #2e7dbf;
+  opacity: 0.5;
 }
 
 .navigation {

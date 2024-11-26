@@ -1,233 +1,226 @@
 body {
-    font-family: "Quicksand", sans-serif;
-    background-color: #79caf5;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: "Quicksand", sans-serif;
+  background-color: #79caf5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container-tabel {
-    text-align: center;
-    width: 90%;
-    height: auto;
-    margin: auto;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
 
 thead th {
-    background-color: #2577ba;
-    color: #ffffff;
-    padding: 10px;
-    font-size: 16px;
-    text-align: center;
+  background-color: #2577ba;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
 }
 
 tbody td {
-    border: 1px solid #d9e6f7;
-    padding: 10px;
-    font-size: 14px;
+  border: 1px solid #d9e6f7;
+  padding: 10px;
+  font-size: 14px;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #f3f7ff;
+  background-color: #f3f7ff;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 a {
-    color: #2E7DBF;
-    text-decoration: none;
+  color: #2e7dbf;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .container {
-    gap: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    display: inline;
-  }
-  
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: inline;
+}
+
+nav .profil {
+  gap: 12px;
+  width: 60%;
+  padding: 4px;
+  color: black;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.profil img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center;
+}
+
+.profil .nama {
+  gap: 2px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #2e7dbf;
+}
+
+nav {
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.hamburger {
+  cursor: pointer;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #2577ba;
+}
+
+.navigation a {
+  font-size: larger;
+  color: black;
+  text-decoration: none;
+  display: flex;
+}
+
+.navigation a:hover {
+  transition: 0.2s;
+  color: #2e7dbf;
+}
+
+.navigation {
+  gap: 50px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
   nav .profil {
-    gap: 12px;
-    width: 60%;
-    padding: 4px;
-    color: black;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-  
-  .profil img {
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
+    width: fit-content;
     border-radius: 50%;
-    object-position: center;
   }
-    
+
   .profil .nama {
-    gap: 2px;
-    width: 100%;
-    display: flex;
-    margin-top: -5px;
-    align-items : center;
-    color : #2E7DBF;
-  }
-  
-  nav {
-    padding: 12px 40px;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    justify-content: space-between;
-    background-color: white;
-  }
-  
-      
-  .hamburger {
-    cursor: pointer;
-    height: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     display: none;
   }
-  
-  .hamburger span {
-    display: block;
-    width: 40px;
-    height: 4px;
-    border-radius: 3px;
-    background-color: #2577ba;
+
+  nav {
+    justify-content: space-between;
   }
-      
-  .navigation a {
-    font-size: larger;
-    color : black;
-    text-decoration : none;
+
+  .hamburger {
     display: flex;
   }
-  
-  .navigation a:hover {
-    transition: 0.2s;
-    color:#2E7DBF;
+
+  .container {
+    opacity: 0;
+    top: -252px;
+    gap: 20px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    transition: 0.7s;
   }
-  
+
+  .display {
+    opacity: 1;
+    transform: translateY(320px);
+  }
+
   .navigation {
-    gap: 50px;
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  table {
+    table-layout: auto;
   }
 
-
-@media (max-width:768px) {
-    nav .profil {
-        width: fit-content;
-        border-radius: 50%;
-      }
-    
-      .profil .nama {
-        display: none;
-      }
-    
-      nav {
-          justify-content: space-between;
-        }
-      
-      .hamburger {
-          display: flex;
-      }
-      
-      .container {
-          opacity: 0;
-          top: -252px;
-          gap: 20px;
-          left: 0;
-          width: 100%;
-          padding: 20px 0;
-          position: absolute;
-          flex-direction: column;
-          align-items: center;
-          background-color: white;
-          transition: 0.7s;
-      }
-      
-      .display {
-          opacity: 1;
-          transform: translateY(320px);
-      }
-      
-      .navigation {
-          text-align: center;
-          flex-direction: column;
-      }    
-        table {
-           table-layout: auto; 
-        } 
-    
-        
-        tbody td:nth-child(2), /* Jenjang Sekolah */
+  tbody td:nth-child(2), /* Jenjang Sekolah */
         tbody td:nth-child(3), /* Asal Sekolah */
         thead th:nth-child(2), /* Header Jenjang Sekolah */
         thead th:nth-child(3) /* Header Asal Sekolah */ {
-            display: none;
-        }
-    
-       
-        tbody td, thead th {
-            text-align: center;
-            padding: 8px;
-        }
-    
-        .profile {
-            gap: 8px; 
-        }
-    }
-    
-    
-    
+    display: none;
+  }
+
+  tbody td,
+  thead th {
+    text-align: center;
+    padding: 8px;
+  }
+
+  .profile {
+    gap: 8px;
+  }
+}

@@ -123,7 +123,7 @@ pg_close();
             </ul>
         </div>
         <div class="container">
-            <div class="form-container">
+            <div class="form-container comments">
                 <form action="add_comment.php" method="post" autocomplete="off">
                     <input type="hidden" name="id_postingan" value="<?= $id_postingan; ?>"> <!-- Menyimpan ID postingan -->
                     <textarea id="konten" name="konten" placeholder="Tuliskan komentar disini" required></textarea>
