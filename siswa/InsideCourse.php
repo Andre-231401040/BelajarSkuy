@@ -71,7 +71,7 @@ pg_close();
     <main>
       <div class="container-main">
         <div class="container-gambar">
-          <img src="../thumbnail/<?= $thumbnail ?>" class="gambarkurs">
+          <img src="../thumbnail/<?= $thumbnail ?>" class="gambarkursus">
         </div>
       </div>
       <div class="container-main2">

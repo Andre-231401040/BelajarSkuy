@@ -9,43 +9,9 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.nama {
-  font-weight: bold;
-  left: 80px;
-  top: 15px;
-}
-
 .underline {
   text-decoration: underline;
   text-decoration-color: #069cb4;
-}
-
-.container-sebelummain {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.rectangle-2 {
-  display: flex;
-  align-items: right;
-  background-color: #77e8fa;
-  border-radius: 50px;
-  padding: 10px 20px;
-  width: 100%;
-  max-width: 200px;
-  margin: 20px;
-  border: 2px solid #000;
-}
-
-.circle-2 {
-  width: 20px !important;
-  height: 20px !important;
-  border-radius: 50%;
-  background-color: #c9f8fc;
-  margin-right: 10px;
-  border: 2px solid #000;
 }
 
 nav .profil {
@@ -132,7 +98,7 @@ main {
   padding: 20px;
 }
 
-.gambarkurs {
+.gambarkursus {
   margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
@@ -142,34 +108,6 @@ main {
   object-fit: cover;
   object-position: center;
 }
-
-.container-linktabel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-circle2 {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.circle-3 {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #d9d9d9;
-  margin-right: 10px;
-  border: 2px solid #000;
-}
-
-.container-namapengajar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 10px 20px;
-}
-
 .container-main {
   display: flex;
   flex-direction: column;
@@ -232,17 +170,6 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.container-linktabel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-circle2 {
-  display: flex;
-  justify-content: flex-start;
 }
 
 .container-materi,

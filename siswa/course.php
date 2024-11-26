@@ -81,30 +81,30 @@ pg_close();
           $id_kursus = $row["id"];  
         ?>
         <div class="container-course">
-          <img src="../thumbnail/<?= $row["thumbnail"]?>" class="gambarKurs" alt="<?= $row["judul"]?>"/>
+          <img src="../thumbnail/<?= $row["thumbnail"]?>" class="gambarKursus" alt="<?= $row["judul"]?>"/>
           <h2 class="judul"><?= $row["judul"]?></h2>
-          <div class="container-circle2">
+          <div class="container-deskripsi">
             <div class="bold">Nama Pengajar</div>: <?= $row["nama"]; ?>
           </div>
-          <div class="container-circle2">
+          <div class="container-deskripsi">
             <div class="bold">Pendidikan Terakhir</div>: <?= $row['pendidikan_terakhir']; ?>
           </div>
-          <div class="container-circle2">
+          <div class="container-deskripsi">
            <div class="bold">Jenjang</div>:&nbsp;<span class="jenjang-card"><?= $row["jenjang"]; ?></span>
           </div>
-          <div class="container-circle2">
+          <div class="container-deskripsi">
             <div class="bold">Jumlah Murid</div>: <?= $row["jumlah_siswa"]; ?> &nbsp; <a href="./tabel_siswa.php?id_kursus=<?= $row["id"]; ?>">Lihat</a>
           </div>
-          <div class="container-circle2">
+          <div class="container-deskripsi">
             <div class="bold">Harga</div>: Rp<?= $row["harga"]; ?>
           </div>
           <div class="container-linktabel">
             <?php if (pg_affected_rows(pg_query($con, "SELECT * FROM success_payment WHERE id = $id_kursus AND id_siswa = $id_siswa")) != 0) { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $id_kursus; ?>" class="rectangle-3" id="Enroll-free">Bergabung</a>
+              <a href="tambahJumlahSiswa.php?id=<?= $id_kursus; ?>" class="tombol" id="Enroll-free">Bergabung</a>
             <?php } else if ($row["harga"] != 0) { ?>
-              <a href="pay.php?id=<?= $id_kursus; ?>" class="rectangle-3" id="Enroll">Enroll Saya</a>
+              <a href="pay.php?id=<?= $id_kursus; ?>" class="tombol" id="Enroll">Enroll Saya</a>
             <?php } else { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $id_kursus; ?>" class="rectangle-3" id="Enroll-free">Bergabung</a>
+              <a href="tambahJumlahSiswa.php?id=<?= $id_kursus; ?>" class="tombol" id="Enroll-free">Bergabung</a>
             <?php } ?>
           </div>
         </div>

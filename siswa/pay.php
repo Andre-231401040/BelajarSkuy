@@ -73,12 +73,12 @@ pg_close();
         <div class="container-payment">
             <h1 class="judul"> Pembayaran </h1> 
             <img class = "thumbnail" src = "../thumbnail/<?= $thumbnail ?>" alt = "<?= $nama_course ?>">
-            <div class = "rectangle judulcourse"> <?= $nama_course ?> </div>
-            <div class = "rectangle"> <?= $nama_pengajar ?> </div> 
-            <div class = "rectangle"> <?= $jumlah_murid?> murid terdaftar </div>
-            <div class = "rectangle"> Rp<?= $harga_course ?> </div>         
+            <div class = "deskripsi judulcourse"> <?= $nama_course ?> </div>
+            <div class = "deskripsi"> <?= $nama_pengajar ?> </div> 
+            <div class = "deskripsi"> <?= $jumlah_murid?> murid terdaftar </div>
+            <div class = "deskripsi"> Rp<?= $harga_course ?> </div>         
             <div class="container-linktabel"> 
-            <form> <button class="rectangle-3" type="submit" id="pay" value="checkout"> Bayar </button></form>
+            <form> <button class="tombol" type="submit" id="pay" value="checkout"> Bayar </button></form>
             </div>
         </div>
     </main>

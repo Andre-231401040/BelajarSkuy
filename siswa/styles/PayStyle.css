@@ -9,17 +9,6 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.nama {
-  font-weight: bold;
-  left: 80px;
-  top: 15px;
-}
-
-.underline {
-  text-decoration: underline;
-  text-decoration-color: #069cb4;
-}
-
 nav .profil {
   gap: 12px;
   width: 60%;
@@ -110,7 +99,7 @@ form {
   width: 100%;
 }
 
-.rectangle-3 {
+.tombol {
   border: none;
   background-color: #2577ba;
   border-radius: 5px;
@@ -152,7 +141,7 @@ form {
   text-align: center;
 }
 
-.rectangle.judulcourse {
+.deskripsi.judulcourse {
   font-weight: 600;
 }
 
