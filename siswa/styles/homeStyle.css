@@ -41,13 +41,13 @@ nav ul li a:hover {
   color: #2e7dbf;
 }
 
-.container2 {
+.main-section {
   display: flex;
   padding: 24px;
   flex-direction: column;
 }
 
-.rectangle {
+.title-rectangle {
   width: 100%;
   height: 70px;
   background-color: white;
@@ -115,7 +115,7 @@ nav ul li a:hover {
   word-break: break-word;
   max-width: 100%;
 }
-.container-circle2 {
+.course-attribute {
   display: flex;
   justify-content: flex-start;
 }
@@ -127,7 +127,7 @@ nav ul li a:hover {
   justify-content: space-between;
 }
 
-.rectangle-3 {
+.enroll-rectangle {
   border: none;
   background-color: #2577ba;
   border-radius: 5px;
@@ -269,7 +269,7 @@ nav {
     flex-direction: column;
   }
 
-  .rectangle {
+  .title-rectangle {
     width: 100%;
   }
 

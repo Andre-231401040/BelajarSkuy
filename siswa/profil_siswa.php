@@ -107,7 +107,7 @@ pg_close($con);
 </head>
 <body>
     <main>
-        <div class="atas">
+        <div class="profil-atas">
             <?php if($foto_profil != null){ ?>
                 <img src="../images/foto_profil/<?= $foto_profil; ?>" alt="foto profil <?= $nama; ?>">
             <?php }else{ ?>
@@ -120,7 +120,7 @@ pg_close($con);
         </div>
 
 
-        <div class="bawah">
+        <div class="profil-bawah">
             <form action="./profil_siswa.php" method="post" enctype="multipart/form-data">
                 <div class = "button-profile">
                     <label for="foto-profil" class= "custom-profile">
@@ -129,7 +129,7 @@ pg_close($con);
                     </labe>
                 </div>
             
-                <div class="data">
+                <div class="profil-data">
                     <div class= form-section>
                         <div class= input-data>
                             <label for="nama">Nama</label>
@@ -178,7 +178,7 @@ pg_close($con);
                     </div>
 
                     <div class= form-section>
-                        <div class= deskripsi>
+                        <div class= deskripsi-diri>
                             <label for="deskripsi_diri">Deskripsi Diri</label>
                             <textarea id="deskripsi_diri" name="deskripsi_diri"><?= $deskripsi_diri; ?></textarea>
                         </div>
