@@ -14,7 +14,7 @@ main{
 }
 
 
-.bawah{
+.profil-bawah{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,12 +24,12 @@ main{
   width: 80%;
   height: 650px;
   background-color: white;
-  box-shadow:3px 3px 4px rgba(0, 0, 0, 0.4) ;
+  box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4) ;
   border-radius: 10px;
   position: relative;
 }
 
-.atas{
+.profil-atas{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,7 +39,7 @@ main{
   width: 80%;
   height: 180px;
   background-color: white;
-  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   position: relative;
 }
@@ -166,7 +166,7 @@ button{
   margin-top: -120px;
 }
 
-.data{
+.profil-data{
   margin-top: 90px;
   position: relative;
 }
@@ -187,12 +187,12 @@ button{
 
 @media (max-width: 768px) {
   
-  .bawah {
+  .profil-bawah {
     width: 90%; 
     height: 830px; 
   }
 
-  .atas {
+  .profil-atas {
     width: 90%;
     height: 300px;
     flex-direction: column;
@@ -200,7 +200,7 @@ button{
     text-align: center;
   }
 
-  .atas img {
+  .profil-atas img {
     margin: 20px 0;
   }
 
@@ -243,7 +243,7 @@ button{
     margin-left: 0;
   }
 
-  .data {
+  .profil-data {
     margin-top: 60px;
   }
   .input-data label{

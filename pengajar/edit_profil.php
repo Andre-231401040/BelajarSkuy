@@ -109,7 +109,7 @@ pg_close($con);
 
 <body>
     <main>
-        <div class="atas">
+        <div class="profil-atas">
             <?php if($foto_profil != null){ ?>
                 <img src="../images/foto_profil/<?= $foto_profil; ?>" alt="foto profil <?= $nama; ?>">
             <?php }else{ ?>
@@ -122,16 +122,16 @@ pg_close($con);
         </div>
 
 
-        <div class="bawah">
+        <div class="profil-bawah">
             <form action="./edit_profil.php" method="post" enctype="multipart/form-data">
                 <div class = "button-profile">
                     <label for="foto-profil" class= "custom-profile">
                         ubah foto
                         <input type="file" id="foto-profil" name="foto-profil" style="display : none">
-                    </labe>
+                    </label>
                 </div>
             
-                <div class="data">
+                <div class="profil-data">
                     <div class= form-section>
                         <div class= input-data>
                             <label for="nama">Nama</label>
@@ -148,8 +148,8 @@ pg_close($con);
                             <input type="text" id="pekerjaan" name="pekerjaan" value="<?= $pekerjaan; ?>">
                         </div>
                         <div class= input-data>
-                            <label for="jenjang">Jenjang</label>
-                            <input type="text" id="jenjang" name="jenjang" required value="<?= $email; ?>">
+                            <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
+                            <input type="text" id="pendidikan_terakhir" name="pendidikan_terakhir" required value="<?= $pendidikan_terakhir; ?>">
                         </div>
                     </div>
                     <div class= form-section>

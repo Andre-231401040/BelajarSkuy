@@ -19,6 +19,7 @@ $nomor_handphone = $data_siswa["nomor_handphone"];
 $minat = $data_siswa["minat"];
 $deskripsi_diri = $data_siswa["deskripsi_diri"];
 $foto_profil = $data_siswa["foto_profil"];
+$jenjang = $data_siswa["jenjang"];
 
 if(isset($_POST["submit"])){
     $nama = $_POST["nama"];
@@ -107,7 +108,7 @@ pg_close($con);
 </head>
 <body>
     <main>
-        <div class="atas">
+        <div class="profil-atas">
             <?php if($foto_profil != null){ ?>
                 <img src="../images/foto_profil/<?= $foto_profil; ?>" alt="foto profil <?= $nama; ?>">
             <?php }else{ ?>
@@ -120,7 +121,7 @@ pg_close($con);
         </div>
 
 
-        <div class="bawah">
+        <div class="profil-bawah">
             <form action="./profil_siswa.php" method="post" enctype="multipart/form-data">
                 <div class = "button-profile">
                     <label for="foto-profil" class= "custom-profile">
@@ -129,7 +130,7 @@ pg_close($con);
                     </labe>
                 </div>
             
-                <div class="data">
+                <div class="profil-data">
                     <div class= form-section>
                         <div class= input-data>
                             <label for="nama">Nama</label>
