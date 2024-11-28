@@ -67,7 +67,7 @@ pg_close();
               <div class="navigation">
                   <a href="./home.php">Beranda</a>
                   <a href="./course.php">Kursus</a>
-                  <a href="../forum_pengajar.php">Forum</a>
+                  <a href="../forum_siswa.php">Forum</a>
               </div>
           </div>
       </nav>

@@ -182,6 +182,10 @@ h1 {
   object-position: center;
 }
 
+span {
+  font-weight: 600;
+}
+
 @media screen and (max-width: 768px) {
   nav .profil {
     width: fit-content;

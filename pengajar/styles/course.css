@@ -125,7 +125,7 @@ nav {
   grid-template-rows: auto auto;
   border-radius: 10px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  width: 411px;
+  width: 368px;
   min-height: 500px;
   background-color: white;
   padding: 20px;
@@ -137,6 +137,10 @@ nav {
   height: 200px;
   object-fit: cover;
   object-position: center;
+}
+
+span {
+  font-weight: 600;
 }
 
 .button-container {

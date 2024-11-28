@@ -70,8 +70,9 @@ pg_close();
           <?php }else{ ?>
             <p><?= $row["jumlah_siswa"]; ?> murid terdaftar <a href="./tabel.php?id_kursus=<?= $row["id"]; ?>">Lihat</a></p>
           <?php } ?>
-          <p>Jenjang: <?= $row["kategori"]; ?></p>
-          <p>Harga: Rp<?= $row["harga"]; ?></p>
+          <p><span>Kategori:</span> <?= $row["kategori"]; ?></p>
+          <p><span>Jenjang:</span> <?= $row["jenjang"]; ?></p>
+          <p><span>Harga:</span> Rp<?= $row["harga"]; ?></p>
           <div class="button-container">
             <a href="edit_course.php?id_kursus=<?= $row["id"]; ?>">Edit</a>
             <a href="hapus_course.php?id_kursus=<?= $row["id"]; ?>">Hapus</a>

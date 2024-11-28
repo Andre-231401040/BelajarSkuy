@@ -20,6 +20,7 @@ if(isset($_GET["id_kursus"])){
         $judul = $_POST["judul"];
         $deskripsi = $_POST["deskripsi"];
         $kategori = $_POST["kategori"];
+        $jenjang = $_POST["jenjang"];
         $harga = $_POST["harga"];
         $tugas = $_POST["tugas"];
         $kuis = $_POST["kuis"];
@@ -55,7 +56,7 @@ if(isset($_GET["id_kursus"])){
                 move_uploaded_file($tmp_video, "../materi/video/" . $materi_video);
                 move_uploaded_file($tmp_thumbnail, "../thumbnail/" . $thumbnail);
 
-                $query = "INSERT INTO kursus (id_pengajar, judul, deskripsi, kategori, harga, materi_pdf, materi_video, tugas, kuis, thumbnail) VALUES ($id_pengajar, '$judul', '$deskripsi', '$kategori', $harga, '$materi_pdf', '$materi_video', '$tugas', '$kuis', '$thumbnail')";
+                $query = "INSERT INTO kursus (id_pengajar, judul, deskripsi, kategori, jenjang, harga, materi_pdf, materi_video, tugas, kuis, thumbnail) VALUES ($id_pengajar, '$judul', '$deskripsi', '$kategori', '$jenjang', $harga, '$materi_pdf', '$materi_video', '$tugas', '$kuis', '$thumbnail')";
                 $result = pg_query($con, $query);
 
                 if(!$result){
@@ -81,7 +82,7 @@ if(isset($_GET["id_kursus"])){
                 move_uploaded_file($tmp_pdf, "../materi/pdf/" . $materi_pdf);
                 move_uploaded_file($tmp_thumbnail, "../thumbnail/" . $thumbnail);
 
-                $query = "INSERT INTO kursus (id_pengajar, judul, deskripsi, kategori, harga, materi_pdf, tugas, kuis, thumbnail) VALUES ($id_pengajar, '$judul', '$deskripsi', '$kategori', $harga, '$materi_pdf', '$tugas', '$kuis', '$thumbnail')";
+                $query = "INSERT INTO kursus (id_pengajar, judul, deskripsi, kategori, jenjang, harga, materi_pdf, tugas, kuis, thumbnail) VALUES ($id_pengajar, '$judul', '$deskripsi', '$kategori', '$jenjang', $harga, '$materi_pdf', '$tugas', '$kuis', '$thumbnail')";
                 $result = pg_query($con, $query);
 
                 if(!$result){
@@ -155,17 +156,16 @@ pg_close();
                 </div>
                 <div class="rectangle">
                     <label for="kategori">Kategori
-                        <input type="text" id="kategori" name="kategori">
+                        <input type="text" id="kategori" name="kategori" required value="<?= $data["kategori"]; ?>">
                     </label>
                 </div>
                 <div class="rectangle">
                 <label for="jenjang">Jenjang
-                    <!-- <input type="text" id="kategori" name="kategori" required value="<?= $data["kategori"]; ?>"> -->
                     <select id="jenjang" name="jenjang">
-                        <option value="sd">SD</option>
-                        <option value="smp">SMP</option>
-                        <option value="sma">SMA</option>
-                        <option value="lainnya">Lainnya</option>
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA">SMA</option>
+                        <option value="Lainnya">Lainnya</option>
                     </select>
                 </label>
                 </div>
@@ -218,17 +218,16 @@ pg_close();
                 </div>
                 <div class="rectangle">
                     <label for="kategori">Kategori
-                        <input type="text" id="kategori" name="kategori">
+                        <input type="text" id="kategori" name="kategori" required>
                     </label>
                 </div>
                 <div class="rectangle">
                 <label for="jenjang">Jenjang
-                    <!-- <input type="text" id="kategori" name="kategori" required> -->
                     <select id="jenjang" name="jenjang">
-                        <option value="sd">SD</option>
-                        <option value="smp">SMP</option>
-                        <option value="sma">SMA</option>
-                        <option value="lainnya">Lainnya</option>
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA">SMA</option>
+                        <option value="Lainnya">Lainnya</option>
                     </select>
                 </label>
                 </div>

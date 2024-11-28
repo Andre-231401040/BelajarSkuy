@@ -12,6 +12,7 @@ if(isset($_POST["submit"])){
     $judul = $_POST["judul"];
     $deskripsi = $_POST["deskripsi"];
     $kategori = $_POST["kategori"];
+    $jenjang = $_POST["jenjang"];
     $harga = $_POST["harga"];
     $tugas = $_POST["tugas"];
     $kuis = $_POST["kuis"];
@@ -48,7 +49,7 @@ if(isset($_POST["submit"])){
             move_uploaded_file($tmp_thumbnail, "../thumbnail/" . $thumbnail);
 
             $query = "UPDATE kursus 
-            SET judul = '$judul', deskripsi = '$deskripsi', kategori = '$kategori', harga = $harga, materi_pdf = '$materi_pdf', materi_video = '$materi_video', tugas = '$tugas', kuis = '$kuis', thumbnail = '$thumbnail' 
+            SET judul = '$judul', deskripsi = '$deskripsi', kategori = '$kategori', jenjang = '$jenjang', harga = $harga, materi_pdf = '$materi_pdf', materi_video = '$materi_video', tugas = '$tugas', kuis = '$kuis', thumbnail = '$thumbnail' 
             WHERE id = $id_kursus";
             $result = pg_query($con, $query);
 
@@ -76,7 +77,7 @@ if(isset($_POST["submit"])){
             move_uploaded_file($tmp_thumbnail, "../thumbnail/" . $thumbnail);
 
             $query = "UPDATE kursus 
-            SET judul = '$judul', deskripsi = '$deskripsi', kategori = '$kategori', harga = $harga, materi_pdf = '$materi_pdf', materi_video = '$materi_video', tugas = '$tugas', kuis = '$kuis', thumbnail = '$thumbnail' 
+            SET judul = '$judul', deskripsi = '$deskripsi', kategori = '$kategori', jenjang = '$jenjang', harga = $harga, materi_pdf = '$materi_pdf', materi_video = '$materi_video', tugas = '$tugas', kuis = '$kuis', thumbnail = '$thumbnail' 
             WHERE id = $id_kursus";
             $result = pg_query($con, $query);
 
