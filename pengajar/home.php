@@ -12,7 +12,7 @@ $nama = $data_pengajar["nama"];
 $email = $data_pengajar["email"];
 $gambar = $data_pengajar["foto_profil"];
 
-$kursus = pg_query($con, "SELECT * FROM kursus WHERE id_pengajar = $id_pengajar");
+$kursus = pg_query($con, "SELECT * FROM kursus WHERE id_pengajar = $id_pengajar AND jumlah_siswa >= 0 ORDER BY jumlah_siswa DESC LIMIT 3");
 $jumlah_siswa = pg_fetch_assoc(pg_query($con, "SELECT SUM(jumlah_siswa) FROM kursus WHERE id_pengajar = $id_pengajar"))["sum"];
 $total_pendapatan = pg_fetch_assoc(pg_query($con, "SELECT SUM(harga * jumlah_siswa) FROM kursus WHERE id_pengajar = $id_pengajar"))["sum"];
 $data_gaji_ditarik = pg_query($con, "SELECT * FROM gaji_ditarik where id_pengajar = $id_pengajar");
@@ -101,7 +101,6 @@ pg_close();
                     <h2>Kursus terpopuler anda</h2>
                     <div class="card-container">
                         <?php while($row = pg_fetch_assoc($kursus)){ ?>
-                            <!-- masukkan div dengan class card -->
                              <div class="card">
                                 <img src="../thumbnail/<?= $row["thumbnail"]; ?>" alt="thumbnail kursus <?= $row["judul"]; ?>">
                                 <h2><?= $row["judul"]; ?></h2>
