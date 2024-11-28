@@ -179,7 +179,7 @@ pg_close($con);
                     </div>
 
                     <div class= form-section>
-                        <div class= deskripsi-diri>
+                        <div class= deskripsi>
                             <label for="deskripsi_diri">Deskripsi Diri</label>
                             <textarea id="deskripsi_diri" name="deskripsi_diri"><?= $deskripsi_diri; ?></textarea>
                         </div>

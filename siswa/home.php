@@ -72,8 +72,9 @@ pg_close();
           </div>
       </nav>
     </header>
-
-    <h1 style="margin-left: 55px;margin-top:45px; color: white">Hi, <?= $nama; ?> </h1>
+    
+    <main>
+    <h1 style="color: #2E7DBF;">Selamat Datang, <?= $nama; ?></h1>
 
     <div class="main-section">
         <div class="title-rectangle">
@@ -157,7 +158,8 @@ pg_close();
         </div>
         <?php  endforeach;  ?>
       </div>
-    </div>  
+    </div> 
+    </main> 
 </body>
 
 <script> 

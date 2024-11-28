@@ -24,7 +24,7 @@ main{
   width: 80%;
   height: 650px;
   background-color: white;
-  box-shadow:3px 3px 4px rgba(0, 0, 0, 0.4) ;
+  box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4) ;
   border-radius: 10px;
   position: relative;
 }
@@ -39,7 +39,7 @@ main{
   width: 80%;
   height: 180px;
   background-color: white;
-  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   position: relative;
 }
@@ -61,7 +61,7 @@ img {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  margin : 20px 0;
+  margin-left: 50px;
 }
 
 form {
@@ -108,7 +108,7 @@ form {
 
 
 
-.deskripsi-diri{
+.deskripsi{
   font-size: 13px;
   padding: 10px;
   position: relative;
@@ -120,14 +120,14 @@ form {
 }
 
 
-.deskripsi-diri label {
+.deskripsi label {
   position: absolute;
   top: -29px;
   left: 12px;
   color: #7f7f7f;
 }
 
-.deskripsi-diri input {
+.deskripsi input {
   font-size: 13px;
   border: none;
   outline: none;
@@ -200,7 +200,7 @@ button{
     text-align: center;
   }
 
-  .atas img {
+  .profil-atas img {
     margin: 20px 0;
   }
 
@@ -220,7 +220,7 @@ button{
     margin-top: 10px;
   }
 
-  .deskripsi-diri {
+  .deskripsi {
     width: 100%;
     margin-top: 10px;
   }
@@ -249,7 +249,7 @@ button{
   .input-data label{
     margin-top: 10px;
   }
-  .deskripsi-diri label{
+  .deskripsi label{
     top: -20px;
   }
 }
