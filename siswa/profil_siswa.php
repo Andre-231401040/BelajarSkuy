@@ -19,6 +19,7 @@ $nomor_handphone = $data_siswa["nomor_handphone"];
 $minat = $data_siswa["minat"];
 $deskripsi_diri = $data_siswa["deskripsi_diri"];
 $foto_profil = $data_siswa["foto_profil"];
+$jenjang = $data_siswa["jenjang"];
 
 if(isset($_POST["submit"])){
     $nama = $_POST["nama"];

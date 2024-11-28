@@ -128,7 +128,7 @@ pg_close($con);
                     <label for="foto-profil" class= "custom-profile">
                         ubah foto
                         <input type="file" id="foto-profil" name="foto-profil" style="display : none">
-                    </labe>
+                    </label>
                 </div>
             
                 <div class="profil-data">
@@ -148,8 +148,8 @@ pg_close($con);
                             <input type="text" id="pekerjaan" name="pekerjaan" value="<?= $pekerjaan; ?>">
                         </div>
                         <div class= input-data>
-                            <label for="jenjang">Jenjang</label>
-                            <input type="text" id="jenjang" name="jenjang" required value="<?= $email; ?>">
+                            <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
+                            <input type="text" id="pendidikan_terakhir" name="pendidikan_terakhir" required value="<?= $pendidikan_terakhir; ?>">
                         </div>
                     </div>
                     <div class= form-section>
