@@ -173,6 +173,10 @@ textarea::-webkit-scrollbar {
   font-family: "Quicksand", sans-serif;
 }
 
+#kategori {
+  text-align: left;
+}
+
 #kategori option {
   font-family: "Quicksand", sans-serif;
 }
