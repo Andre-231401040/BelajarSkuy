@@ -106,11 +106,11 @@ pg_close();
           </div>
           <div class="container-linktabel">
             <?php if (pg_affected_rows(pg_query($con, "SELECT * FROM success_payment WHERE id = $id_kursus AND id_siswa = $id_siswa")) !== 0) { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll-free">Bergabung</a>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll-free">Mulai</a>
             <?php } else if ($row["harga"] != 0) { ?>
-              <a href="pay.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll">Enroll Saya</a>
+              <a href="pay.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll">Daftar</a>
             <?php } else { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll-free">Bergabung</a>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll-free">Mulai</a>
             <?php } ?>
           </div>
         </div>
@@ -148,11 +148,11 @@ pg_close();
           </div>
           <div class="container-linktabel">
             <?php if (pg_affected_rows(pg_query($con, "SELECT * FROM success_payment WHERE id = $id_kursus AND id_siswa = $id_siswa")) !== 0) { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll-free">Bergabung</a>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll-free">Mulai</a>
             <?php } else if ($row["harga"] != 0) { ?>
-              <a href="pay.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll">Enroll Saya</a>
+              <a href="pay.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll">Daftar</a>
             <?php } else { ?>
-              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll-free">Bergabung</a>
+              <a href="tambahJumlahSiswa.php?id=<?= $row['id']?>" class="enroll-rectangle" id="Enroll-free">Mulai</a>
             <?php } ?>
           </div>
         </div>
