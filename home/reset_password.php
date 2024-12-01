@@ -2,7 +2,7 @@
 require "../function.php";
 
 if(isset($_POST["reset"])){
-    $email = $_POST["email"];
+    $email = htmlspecialchars($_POST["email"]);
     $isFoundStudent = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE email = '$email'"));
     $isFoundTeacher = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE email = '$email'"));
   

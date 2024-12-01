@@ -3,14 +3,13 @@ require "../function.php";
 
 if(isset($_POST["login"])){
   session_start();
-  // $_SESSION = array();
-  $email = $_POST["email"];
+  $email = htmlspecialchars($_POST["email"]);
   $isFoundStudent = pg_fetch_assoc(pg_query($con, "SELECT * FROM siswa WHERE email = '$email'"));
   $isFoundTeacher = pg_fetch_assoc(pg_query($con, "SELECT * FROM pengajar WHERE email = '$email'"));
   
   if($isFoundStudent){
     $_SESSION["id_siswa"] = $isFoundStudent["id"];
-    $password = $_POST["password"];
+    $password = htmlspecialchars($_POST["password"]);
     if($password === $isFoundStudent['password']){
       header("Location: ../siswa/home.php");
     }else{
@@ -18,7 +17,7 @@ if(isset($_POST["login"])){
     }
   }else if($isFoundTeacher){
     $_SESSION["id_pengajar"] = $isFoundTeacher["id"];
-    $password = $_POST["password"];
+    $password = htmlspecialchars($_POST["password"]);
     if($password === $isFoundTeacher["password"]){
       header("Location: ../pengajar/home.php?");
     }else{

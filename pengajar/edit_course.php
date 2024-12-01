@@ -17,13 +17,13 @@ if(isset($_GET["id_kursus"])){
     $materi_video = $data["materi_video"];
 }else{
     if(isset($_POST["submit"])){
-        $judul = $_POST["judul"];
-        $deskripsi = $_POST["deskripsi"];
-        $kategori = $_POST["kategori"];
-        $jenjang = $_POST["jenjang"];
+        $judul = htmlspecialchars($_POST["judul"]);
+        $deskripsi = htmlspecialchars($_POST["deskripsi"]);
+        $kategori = htmlspecialchars($_POST["kategori"]);
+        $jenjang = htmlspecialchars($_POST["jenjang"]);
         $harga = $_POST["harga"];
-        $tugas = $_POST["tugas"];
-        $kuis = $_POST["kuis"];
+        $tugas = htmlspecialchars($_POST["tugas"]);
+        $kuis = htmlspecialchars($_POST["kuis"]);
         $nama_file_pdf = $_FILES["materi_pdf"]["name"];
         $tmp_pdf = $_FILES["materi_pdf"]["tmp_name"];
         $nama_file_thumbnail = $_FILES["thumbnail"]["name"];

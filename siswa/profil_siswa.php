@@ -22,16 +22,16 @@ $foto_profil = $data_siswa["foto_profil"];
 $jenjang = $data_siswa["jenjang"];
 
 if(isset($_POST["submit"])){
-    $nama = $_POST["nama"];
-    $tanggal_lahir = $_POST["tanggal_lahir"];
-    $email = $_POST["email"];
-    $jenjang = $_POST["jenjang"];
-    $password = $_POST["password"];
-    $confirmation_password = $_POST["confirmation_password"];
-    $asal_sekolah = $_POST["asal_sekolah"];
-    $nomor_handphone = $_POST["nomor_handphone"];
-    $minat = $_POST["minat"];
-    $deskripsi_diri = $_POST["deskripsi_diri"];
+    $nama = htmlspecialchars($_POST["nama"]);
+    $tanggal_lahir = htmlspecialchars($_POST["tanggal_lahir"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $jenjang = htmlspecialchars($_POST["jenjang"]);
+    $password = htmlspecialchars($_POST["password"]);
+    $confirmation_password = htmlspecialchars($_POST["confirmation_password"]);
+    $asal_sekolah = htmlspecialchars($_POST["asal_sekolah"]);
+    $nomor_handphone = htmlspecialchars($_POST["nomor_handphone"]);
+    $minat = htmlspecialchars($_POST["minat"]);
+    $deskripsi_diri = htmlspecialchars($_POST["deskripsi_diri"]);
 
     if($password !== $confirmation_password){
         echo "<script>alert('Password dan Confirmation Password Harus Sama')</script>";

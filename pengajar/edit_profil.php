@@ -22,16 +22,16 @@ $deskripsi_diri = $data_pengajar["deskripsi_diri"];
 $foto_profil = $data_pengajar["foto_profil"];
 
 if(isset($_POST["submit"])){
-    $nama = $_POST["nama"];
-    $tanggal_lahir = $_POST["tanggal_lahir"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $confirmation_password = $_POST["confirmation_password"];
-    $pendidikan_terakhir = $_POST["pendidikan_terakhir"];
-    $pekerjaan = $_POST["pekerjaan"];
-    $nomor_handphone = $_POST["nomor_handphone"];
-    $bidang_keahlian = $_POST["bidang_keahlian"];
-    $deskripsi_diri = $_POST["deskripsi_diri"];
+    $nama = htmlspecialchars($_POST["nama"]);
+    $tanggal_lahir = htmlspecialchars($_POST["tanggal_lahir"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $password = htmlspecialchars($_POST["password"]);
+    $confirmation_password = htmlspecialchars($_POST["confirmation_password"]);
+    $pendidikan_terakhir = htmlspecialchars($_POST["pendidikan_terakhir"]);
+    $pekerjaan = htmlspecialchars($_POST["pekerjaan"]);
+    $nomor_handphone = htmlspecialchars($_POST["nomor_handphone"]);
+    $bidang_keahlian = htmlspecialchars($_POST["bidang_keahlian"]);
+    $deskripsi_diri = htmlspecialchars($_POST["deskripsi_diri"]);
 
     if($password !== $confirmation_password){
         echo "<script>alert('Password dan Confirmation Password Harus Sama')</script>";

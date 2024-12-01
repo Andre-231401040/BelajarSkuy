@@ -2,11 +2,11 @@
 require "../function.php";
 
 if(isset($_POST["submit"])){
-    $nama = $_POST["first-name"] . ' ' . $_POST["last-name"];
-    $tanggal_lahir = $_POST["birth-date"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $confirm_password = $_POST["confirmation-password"];
+    $nama = htmlspecialchars($_POST["first-name"]) . ' ' . htmlspecialchars($_POST["last-name"]);
+    $tanggal_lahir = htmlspecialchars($_POST["birth-date"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $password = htmlspecialchars($_POST["password"]);
+    $confirm_password = htmlspecialchars($_POST["confirmation-password"]);
 
     if($password !== $confirm_password){
         echo "<p class='failed'>Registrasi Gagal</p>";
